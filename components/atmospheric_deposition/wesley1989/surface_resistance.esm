@@ -29,7 +29,7 @@
             "reference": {
                 "doi": "10.1016/0004-6981(89)90153-4",
                 "citation": "Wesely, M. L. (1989). Parameterization of surface resistances to gaseous dry deposition in regional-scale numerical models. Atmospheric Environment 23(6), 1293-1304.",
-                "notes": "source_ref: AtmosphericDeposition.jl@e4468c79c8dd4aae88646cd16d6bcf290874742c:src/wesley1989.jl:360\n\nUpstream `WesleySurfaceResistance` is a plain Julia builder function (not an MTK @component): the low-level surface-resistance kernel called by DryDepGas in src/dry_deposition.jl. It is migrated here as a standalone, fully-explicit algebraic model. The three GasData struct fields (Dh2oPerDx, Hstar, Fo) and the nine scalar arguments (G, Ts, theta, iSeason, iLandUse, rain, dew, isSO2, isO3) become `parameter`s; every intermediate resistance and the total r_c become algebraic `state` outputs fixed by explicit equations. There are no differential states, so `system_kind` is left unset (the triangular-algebraic convention of the sibling observed-only migrations, e.g. sp_ch1/barometric.esm).\n\nLookup tables. The seven season x land-use tables (r_i, r_lu, r_ac, r_gsS, r_gsO, r_clS, r_clO) are migrated as `interp.linear` over the 55-entry column-major flattening of each 5x11 grid, on the integer axis [1..55], evaluated at table_index = (iLandUse-1)*5 + iSeason. This mirrors upstream `obtain_value`, which builds a 1-D DataInterpolations.LinearInterpolation over `vec(matrix)` (Julia's column-major flatten) on the index range 1:55 and evaluates it at that same coordinate. iSeason in 1..5 and iLandUse in 1..11 are categorical integers, so every lookup lands exactly on an integer axis knot — interp.linear returns the exact table entry with a zero blend weight, bit-identical to the upstream interpolation. (A 2-D interp.bilinear form over the 5x11 grid was rejected: at a query on the upper season edge its w=1 endpoint blend t_i + 1*(t_{i+1} - t_i) catastrophically cancels when the lower cell corner is the 1e25 sentinel — e.g. 1e25 + (4000 - 1e25) = 0 — whereas the 1-D flatten is always queried at an integer knot, w=0, and never cancels.)\n\nFloat32 tables. The upstream tables are `SA_F32` (Float32) static arrays, so each entry is stored as its exact Float64-promoted Float32 value to reproduce upstream arithmetic. In practice only the sentinel `inf = 1e25` is inexact in Float32 — Float64(Float32(1e25)) = 9.999999562023526e24; every other table entry is an integer <= 9000 and is exact in Float32.\n\nFaithful-behavior note. Upstream `r_s` assigns `rs = ifelse(Ts >= 39.9, inf, ...)` and then immediately overwrites `rs = ifelse(Ts <= 0.1, inf, ...)`; the first assignment is dead code. The migrated `rs` equation reproduces the actual upstream behavior — only the Ts <= 0.1 guard — and intentionally does not migrate the unreachable Ts >= 39.9 case. The `1.0e25` literal inside the `rs` ifelse is the upstream Float64 `inf` constant and is distinct from the Float32 table sentinel. The boolean arguments rain, dew, isSO2 and isO3 are 0/1 parameters; conditions test them as `> 0.5`.\n\nDomain note. For water (iLandUse=7, every season) and non-winter wetland (iLandUse=9, iSeason != 4) the r_gsS ground-resistance table entry is 0, so the general-gas ground term Hstar/(1e5*r_gsS_val) of Wesely Eq. 9 is infinite. Upstream Julia evaluates that as Inf — giving r_gsx_gen = 0 (an infinitely fast ground sink) and r_c clamped to its 10 s/m floor — whereas the ESS Python runner's strict float division raises on it. The migrated equation keeps the faithful Eq. 9 form, so 51 of the 55 (season, land-use) cells are directly evaluable by the Python runner; the four water/wetland cells need a binding whose division yields Inf rather than raising. Inline tests use vegetated and urban land uses (iLandUse in {1, 3, 4, 5, 6}), matching the upstream wesely1989_test.jl TestWesely suite, which fixes iLandUse=4 throughout.\n\nTolerance rationale (model-level rel=1e-6): an explicit algebraic system with no ODE integration; 1e-6 covers Float64 round-off across the resistance expression chain (reciprocal sums, the exp() cold correction, and the interp.linear table lookups), well above the bit-level agreement expected between bindings."
+                "notes": "source_ref: AtmosphericDeposition.jl@e4468c79c8dd4aae88646cd16d6bcf290874742c:src/wesley1989.jl:360\n\nUpstream `WesleySurfaceResistance` is a plain Julia builder function (not an MTK @component): the low-level surface-resistance kernel called by DryDepGas in src/dry_deposition.jl. It is migrated here as a standalone, fully-explicit algebraic model. The three GasData struct fields (Dh2oPerDx, Hstar, Fo) and the nine scalar arguments (G, Ts, theta, iSeason, iLandUse, rain, dew, isSO2, isO3) become `parameter`s; every intermediate resistance and the total r_c become algebraic `state` outputs fixed by explicit equations. There are no differential states, so `system_kind` is left unset (the triangular-algebraic convention of the sibling observed-only migrations, e.g. sp_ch1/barometric.esm).\n\nLookup tables. The seven season x land-use tables (r_i, r_lu, r_ac, r_gsS, r_gsO, r_clS, r_clO) are migrated as `interp.linear` over the 55-entry column-major flattening of each 5x11 grid, on the integer axis [1..55], evaluated at table_index = (iLandUse-1)*5 + iSeason. This mirrors upstream `obtain_value`, which builds a 1-D DataInterpolations.LinearInterpolation over `vec(matrix)` (Julia's column-major flatten) on the index range 1:55 and evaluates it at that same coordinate. iSeason in 1..5 and iLandUse in 1..11 are categorical integers, so every lookup lands exactly on an integer axis knot — interp.linear returns the exact table entry with a zero blend weight, bit-identical to the upstream interpolation. (A 2-D interp.bilinear form over the 5x11 grid was rejected: at a query on the upper season edge its w=1 endpoint blend t_i + 1*(t_{i+1} - t_i) catastrophically cancels when the lower cell corner is the 1e25 sentinel — e.g. 1e25 + (4000 - 1e25) = 0 — whereas the 1-D flatten is always queried at an integer knot, w=0, and never cancels.)\n\nFloat32 tables. The upstream tables are `SA_F32` (Float32) static arrays, so each entry is stored as its exact Float64-promoted Float32 value to reproduce upstream arithmetic. In practice only the sentinel `inf = 1e25` is inexact in Float32 — Float64(Float32(1e25)) = 9.999999562023526e24; every other table entry is an integer <= 9000 and is exact in Float32.\n\nFaithful-behavior note. Upstream `r_s` assigns `rs = ifelse(Ts >= 39.9, inf, ...)` and then immediately overwrites `rs = ifelse(Ts <= 0.1, inf, ...)`; the first assignment is dead code. The migrated `rs` equation reproduces the actual upstream behavior — only the Ts <= 0.1 guard — and intentionally does not migrate the unreachable Ts >= 39.9 case. The `1.0e25` literal inside the `rs` ifelse is the upstream Float64 `inf` constant and is distinct from the Float32 table sentinel. The boolean arguments rain, dew, isSO2 and isO3 are 0/1 parameters; conditions test them as `> 0.5`.\n\nDomain note. For water (iLandUse=7, every season) and non-winter wetland (iLandUse=9, iSeason != 4) the r_gsS ground-resistance table entry is 0, so the general-gas ground term Hstar/(1e5*r_gsS_val) of Wesely Eq. 9 is infinite. Upstream Julia evaluates that as Inf — giving r_gsx_gen = 0 (an infinitely fast ground sink) and r_c clamped to its 10 s/m floor — whereas the ESS Python runner's strict float division raises on it. The migrated equation keeps the faithful Eq. 9 form, so 51 of the 55 (season, land-use) cells are directly evaluable by the Python runner; the four water/wetland cells need a binding whose division yields Inf rather than raising. Inline tests use vegetated and urban land uses (iLandUse in {1, 3, 4, 5, 6}), matching the upstream wesely1989_test.jl TestWesely suite, which fixes iLandUse=4 throughout.\n\nTolerance rationale (model-level rel=1e-6): an explicit algebraic system with no ODE integration; 1e-6 covers Float64 round-off across the resistance expression chain (reciprocal sums, the exp() cold correction, and the interp.linear table lookups), well above the bit-level agreement expected between bindings.\n\nUpdated 2026-10-28 to jialinl6/DepositionMTK.jl@cbe7d7db (branch superfast-gas-only): r_s keeps its hot-closure guard (stomata closed at Ts >= 39.9 °C; the previous code re-evaluated eq. 3 and discarded the guard, so r_s went negative above 40 °C), and r_ac and r_gsS are floored at 1 s/m in r_c, r_gsx and the SO2 branch, as GEOS-Chem drydep_mod.F90 does. The expected values of rs, rlux, rclx, rgsx, r_clx_gen, r_gsx_gen, correction and r_c are upstream's own functions at each test's inputs."
             },
             "tolerance": {
                 "rel": 1e-06
@@ -150,7 +150,7 @@
                 "rs": {
                     "type": "unknown",
                     "units": "s/m",
-                    "description": "Bulk-canopy stomatal resistance (Wesely Eq. 3), tripled when rain or dew is present."
+                    "description": "Bulk-canopy stomatal resistance (Wesely Eq. 3), tripled when rain or dew is present. Closed (1e25) at Ts >= 39.9 °C as well as at Ts <= 0.1 °C (upstream hot-closure fix)."
                 },
                 "rmx": {
                     "type": "unknown",
@@ -205,7 +205,7 @@
                 "r_gsx_gen": {
                     "type": "unknown",
                     "units": "s/m",
-                    "description": "Ground-uptake resistance for a general gas, i.e. neither SO2 nor O3 (Wesely Eq. 9)."
+                    "description": "Ground-uptake resistance for a general gas, i.e. neither SO2 nor O3 (Wesely Eq. 9). r_gsS floored at 1 s/m (upstream, after GEOS-Chem)."
                 },
                 "rclx": {
                     "type": "unknown",
@@ -225,7 +225,7 @@
                 "r_c": {
                     "type": "unknown",
                     "units": "s/m",
-                    "description": "Total bulk surface (canopy) resistance to dry deposition (Wesely Eq. 2), clamped to [10, 9999] s/m."
+                    "description": "Total bulk surface (canopy) resistance to dry deposition (Wesely Eq. 2), clamped to [10, 9999] s/m. r_ac floored at 1 s/m (upstream, after GEOS-Chem)."
                 }
             },
             "equations": [
@@ -1192,47 +1192,60 @@
                                     },
                                     1e+25,
                                     {
-                                        "op": "*",
+                                        "op": "ifelse",
                                         "args": [
-                                            "r_i_val",
                                             {
-                                                "op": "+",
+                                                "op": ">=",
                                                 "args": [
-                                                    1,
-                                                    {
-                                                        "op": "^",
-                                                        "args": [
-                                                            {
-                                                                "op": "/",
-                                                                "args": [
-                                                                    200.0,
-                                                                    {
-                                                                        "op": "+",
-                                                                        "args": [
-                                                                            "G",
-                                                                            1.0
-                                                                        ]
-                                                                    }
-                                                                ]
-                                                            },
-                                                            2
-                                                        ]
-                                                    }
+                                                    "Ts",
+                                                    39.9
                                                 ]
                                             },
+                                            1e+25,
                                             {
-                                                "op": "/",
+                                                "op": "*",
                                                 "args": [
-                                                    400.0,
+                                                    "r_i_val",
                                                     {
-                                                        "op": "*",
+                                                        "op": "+",
                                                         "args": [
-                                                            "Ts",
+                                                            1,
                                                             {
-                                                                "op": "-",
+                                                                "op": "^",
                                                                 "args": [
-                                                                    40.0,
-                                                                    "Ts"
+                                                                    {
+                                                                        "op": "/",
+                                                                        "args": [
+                                                                            200.0,
+                                                                            {
+                                                                                "op": "+",
+                                                                                "args": [
+                                                                                    "G",
+                                                                                    1.0
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    2
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "op": "/",
+                                                        "args": [
+                                                            400.0,
+                                                            {
+                                                                "op": "*",
+                                                                "args": [
+                                                                    "Ts",
+                                                                    {
+                                                                        "op": "-",
+                                                                        "args": [
+                                                                            40.0,
+                                                                            "Ts"
+                                                                        ]
+                                                                    }
                                                                 ]
                                                             }
                                                         ]
@@ -1783,7 +1796,13 @@
                                                 "op": "*",
                                                 "args": [
                                                     100000.0,
-                                                    "r_gsS_val"
+                                                    {
+                                                        "op": "max",
+                                                        "args": [
+                                                            "r_gsS_val",
+                                                            1.0
+                                                        ]
+                                                    }
                                                 ]
                                             }
                                         ]
@@ -1842,7 +1861,13 @@
                                     0.5
                                 ]
                             },
-                            "r_gsS_val",
+                            {
+                                "op": "max",
+                                "args": [
+                                    "r_gsS_val",
+                                    1.0
+                                ]
+                            },
                             {
                                 "op": "ifelse",
                                 "args": [
@@ -1955,7 +1980,13 @@
                                                             {
                                                                 "op": "+",
                                                                 "args": [
-                                                                    "r_ac_val",
+                                                                    {
+                                                                        "op": "max",
+                                                                        "args": [
+                                                                            "r_ac_val",
+                                                                            1.0
+                                                                        ]
+                                                                    },
                                                                     "rgsx",
                                                                     "correction"
                                                                 ]
@@ -2582,6 +2613,153 @@
                             "variable": "r_c",
                             "time": 0.0,
                             "expected": 286.22269447980483
+                        }
+                    ]
+                },
+                {
+                    "id": "hot_closure_45C_general",
+                    "description": "Ts = 45 °C: the stomata are closed (rs = 1e25) by the hot-closure guard the previous revision discarded. Expected values are upstream's functions at these inputs (jialinl6/DepositionMTK.jl@cbe7d7db (branch superfast-gas-only)).",
+                    "parameter_overrides": {
+                        "isSO2": 0,
+                        "isO3": 0,
+                        "Ts": 45.0,
+                        "theta": 0.0,
+                        "dew": 0,
+                        "rain": 0,
+                        "Dh2oPerDx": 1.6,
+                        "G": 800.0,
+                        "Fo": 0.1,
+                        "iLandUse": 2,
+                        "Hstar": 0.01,
+                        "iSeason": 1
+                    },
+                    "time_span": {
+                        "start": 0.0,
+                        "end": 1.0
+                    },
+                    "assertions": [
+                        {
+                            "variable": "rs",
+                            "time": 0.0,
+                            "expected": 1e+25
+                        },
+                        {
+                            "variable": "rclx",
+                            "time": 0.0,
+                            "expected": 9999.995000002498
+                        },
+                        {
+                            "variable": "rgsx",
+                            "time": 0.0,
+                            "expected": 1499.9985000015
+                        },
+                        {
+                            "variable": "r_gsx_gen",
+                            "time": 0.0,
+                            "expected": 1499.9985000015
+                        },
+                        {
+                            "variable": "r_c",
+                            "time": 0.0,
+                            "expected": 1358.603014968358
+                        }
+                    ]
+                },
+                {
+                    "id": "water_floors_so2",
+                    "description": "SO2 over water (class 7), where the r_ac and r_gsS tables hold 0: both are floored at 1 s/m. Expected values are upstream's functions at these inputs (jialinl6/DepositionMTK.jl@cbe7d7db (branch superfast-gas-only)).",
+                    "parameter_overrides": {
+                        "isSO2": 1,
+                        "isO3": 0,
+                        "Ts": 20.0,
+                        "theta": 0.0,
+                        "dew": 0,
+                        "rain": 0,
+                        "Dh2oPerDx": 1.9,
+                        "G": 300.0,
+                        "Fo": 0.0,
+                        "iLandUse": 7,
+                        "Hstar": 100000.0,
+                        "iSeason": 1
+                    },
+                    "time_span": {
+                        "start": 0.0,
+                        "end": 1.0
+                    },
+                    "assertions": [
+                        {
+                            "variable": "rs",
+                            "time": 0.0,
+                            "expected": 1.4414961675917866e+25
+                        },
+                        {
+                            "variable": "rclx",
+                            "time": 0.0,
+                            "expected": 9.999999562023526e+24
+                        },
+                        {
+                            "variable": "rgsx",
+                            "time": 0.0,
+                            "expected": 1.0
+                        },
+                        {
+                            "variable": "r_gsx_gen",
+                            "time": 0.0,
+                            "expected": 1.0
+                        },
+                        {
+                            "variable": "r_c",
+                            "time": 0.0,
+                            "expected": 10.0
+                        }
+                    ]
+                },
+                {
+                    "id": "wetland_floor_soluble_gas",
+                    "description": "A very soluble gas over nonforested wetland (class 9, r_gsS = 0): the generic r_gsx uses the floored r_gsS. Expected values are upstream's functions at these inputs (jialinl6/DepositionMTK.jl@cbe7d7db (branch superfast-gas-only)).",
+                    "parameter_overrides": {
+                        "isSO2": 0,
+                        "isO3": 0,
+                        "Ts": 20.0,
+                        "theta": 0.0,
+                        "dew": 0,
+                        "rain": 0,
+                        "Dh2oPerDx": 1.9,
+                        "G": 300.0,
+                        "Fo": 0.0,
+                        "iLandUse": 9,
+                        "Hstar": 100000000000000.0,
+                        "iSeason": 1
+                    },
+                    "time_span": {
+                        "start": 0.0,
+                        "end": 1.0
+                    },
+                    "assertions": [
+                        {
+                            "variable": "rs",
+                            "time": 0.0,
+                            "expected": 115.31969845807441
+                        },
+                        {
+                            "variable": "rclx",
+                            "time": 0.0,
+                            "expected": 2.5e-06
+                        },
+                        {
+                            "variable": "rgsx",
+                            "time": 0.0,
+                            "expected": 1e-09
+                        },
+                        {
+                            "variable": "r_gsx_gen",
+                            "time": 0.0,
+                            "expected": 1e-09
+                        },
+                        {
+                            "variable": "r_c",
+                            "time": 0.0,
+                            "expected": 10.0
                         }
                     ]
                 }

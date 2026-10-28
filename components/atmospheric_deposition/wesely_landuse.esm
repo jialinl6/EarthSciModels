@@ -1,0 +1,252 @@
+{
+  "esm": "1.0.0",
+  "metadata": {
+    "name": "WeselyLandUse",
+    "description": "Wesely (1989) land-use area fractions for CONUS at 0.05°, from MODIS MCD12C1 v6.1 (2016): the 11 class fractions f_<class> that DryDepositionGas weights its mosaic deposition velocity by. Data source + loader model; the host regrids it onto its grid.",
+    "authors": ["AtmosphericDeposition.jl / DepositionMTK.jl contributors", "EarthSciModels"],
+    "created": "2026-10-28T00:00:00Z",
+    "tags": ["atmospheric_deposition", "land-use", "wesley-1989", "modis", "static", "conus", "longlat"],
+    "references": [
+      {
+        "citation": "Friedl, M., Sulla-Menashe, D. (2022). MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 0.05Deg CMG V061 (MCD12C1). NASA EOSDIS Land Processes DAAC. doi:10.5067/MODIS/MCD12C1.061"
+      },
+      {
+        "citation": "Wesely, M. L. (1989). Atmospheric Environment 23(6), 1293-1304 (the 11 land-use classes)."
+      },
+      {
+        "citation": "Source: jialinl6/DepositionMTK.jl@cbe7d7db (branch superfast-gas-only), src/landuse_fractions.jl, data/landuse_wesely_conus_0p05.nc (built by data/preprocess_landuse.jl)."
+      }
+    ]
+  },
+  "data_sources": {
+    "WESELY_LANDUSE_CONUS": {
+      "kind": "static",
+      "source": {
+        "url_template": "https://raw.githubusercontent.com/jialinl6/DepositionMTK.jl/cbe7d7db0a86bd6945f6b06d1fdc8274399b33de/data/landuse_wesely_conus_0p05.nc"
+      },
+      "reference": {
+        "citation": "MODIS MCD12C1 v6.1 2016 Land_Cover_Type_1_Percent, IGBP bands summed into the Wesely (1989) classes (many-to-one, covering all 17) and windowed to CONUS.",
+        "url": "https://github.com/jialinl6/DepositionMTK.jl/tree/superfast-gas-only/data"
+      },
+      "metadata": {
+        "tags": ["land-use", "static", "conus", "categorical-fractions", "longlat"],
+        "file_format": "netCDF-4; variable percent (ubyte, 0..100), dims (class, lat, lon) = (11, 700, 1400)",
+        "native_resolution_deg": {"lon": 0.05, "lat": 0.05},
+        "native_extent_edges_deg": {"lon": [-130.0, -60.0], "lat": [20.0, 55.0]},
+        "coordinates": "lon/lat are Float32 cell centres; exact edges are window_*_min + k*cell_size.",
+        "classes": [
+          "urban",
+          "agricultural",
+          "range",
+          "deciduous",
+          "coniferous",
+          "mixedforest",
+          "water",
+          "barren",
+          "wetland",
+          "rangeag",
+          "rockyshrubs"
+        ]
+      }
+    }
+  },
+  "models": {
+    "WeselyLandUse": {
+      "reference": {
+        "notes": "source_ref: jialinl6/DepositionMTK.jl@cbe7d7db (branch superfast-gas-only):src/landuse_fractions.jl and data/landuse_wesely_conus_0p05.nc.\n\nUpstream reads this file at run time, conservatively area-averages it onto the simulation grid (_remap_landuse: weights dlon*(sin(lat_hi) - sin(lat_lo)) per overlap, cell edges rebuilt from the window_* / cell_size attributes because the Float32 lon/lat centres sit ~1e-6° off the 0.05° multiples), refuses a grid that reaches outside the window, and its GEOS-FP coupling binds DryDepositionGas.f_<class> to the result at each cell. Here the file is a data source and the 11 fractions are data-fed parameters; the conservative remap onto a host grid and the f_<class> -> DryDepositionGas.f_<class> edges belong to the host's coupling (esm-spec §8.6), like every other source in this repo. Every native cell sums to exactly 100%, so the fractions sum to 1.\n\nThe URL is pinned to the reference commit in the jialinl6/DepositionMTK.jl fork; point it elsewhere if the file moves (it is the same 1,317,215-byte file either way).\n\nNo inline tests: a data-fed model's values come from the fetched file. The class axis was checked against the file directly: its class_name variable lists the 11 classes in this order, every cell sums to 100, and the dominant class is urban over Los Angeles, agricultural over Iowa (96%) and water over the Gulf of Mexico, the same checks as upstream's test/fractional_test.jl."
+      },
+      "variables": {
+        "lon": {
+          "type": "parameter",
+          "units": "rad",
+          "default": 0.0,
+          "description": "Longitude of the model grid point (radians). Set by the host, as for the other loaders."
+        },
+        "lat": {
+          "type": "parameter",
+          "units": "rad",
+          "default": 0.0,
+          "description": "Latitude of the model grid point (radians). Set by the host, as for the other loaders."
+        },
+        "f_urban": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 1 (urban), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 0}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 1, lat, lon): class 1 (urban) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_agricultural": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 2 (agricultural), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 1}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 2, lat, lon): class 2 (agricultural) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_range": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 3 (range), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 2}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 3, lat, lon): class 3 (range) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_deciduous": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 4 (deciduous), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 3}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 4, lat, lon): class 4 (deciduous) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_coniferous": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 5 (coniferous), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 4}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 5, lat, lon): class 5 (coniferous) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_mixedforest": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 6 (mixedforest), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 5}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 6, lat, lon): class 6 (mixedforest) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_water": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 7 (water), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 6}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 7, lat, lon): class 7 (water) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_barren": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 8 (barren), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 7}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 8, lat, lon): class 8 (barren) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_wetland": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 9 (wetland), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 8}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 9, lat, lon): class 9 (wetland) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_rangeag": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 10 (rangeag), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 9}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 10, lat, lon): class 10 (rangeag) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        },
+        "f_rockyshrubs": {
+          "type": "parameter",
+          "units": "1",
+          "shape": [],
+          "description": "Area fraction of Wesely (1989) land-use class 11 (rockyshrubs), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
+          "update": {
+            "kind": "data",
+            "source": "WESELY_LANDUSE_CONUS",
+            "from": {
+              "file_variable": "percent",
+              "select": {"axes": [{"fixed": 10}, "all", "all"]},
+              "unit_conversion": 0.01,
+              "description": "percent(class = 11, lat, lon): class 11 (rockyshrubs) slice of the UInt8 percentage cube; the native dims are (class, lat, lon) and `fixed` is 0-based."
+            }
+          }
+        }
+      },
+      "equations": [],
+      "tests": []
+    }
+  }
+}

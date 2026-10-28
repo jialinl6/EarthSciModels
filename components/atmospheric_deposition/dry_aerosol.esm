@@ -29,7 +29,7 @@
         "DryDepositionAerosol": {
             "reference": {
                 "citation": "Seinfeld, J. H., & Pandis, S. N. (2006). Atmospheric Chemistry and Physics: From Air Pollution to Climate Change (2nd ed.), Ch. 19, Eq. 19.7 (particle dry deposition velocity). John Wiley & Sons, Inc.",
-                "notes": "source_ref: AtmosphericDeposition.jl@e4468c79c8dd4aae88646cd16d6bcf290874742c:src/dry_deposition.jl:1040\n\nUpstream `DryDepositionAerosol` is an MTK builder -- `System(eqs, t, [v; k], params)` with no subsystems -- carrying two equations: v ~ DryDepParticle(...) and k ~ v/z. `DryDepParticle` (src/dry_deposition.jl:272) is a plain Julia function, not a registered symbolic, so it and its entire helper chain (ra, mu, mfp, cc, vs, dParticle, sc, stSmooth, stVeg, RbParticle) are inlined here. There is no time derivative anywhere (no D operator); the component is purely algebraic, so every computed quantity migrates as a `type: observed` variable carrying its inline `expression`, the `equations` array is empty, and `system_kind` is left unset. This is the pure-algebraic convention (matching sibling observed-only migrations such as aerosol/radiative_forcing/cloud_albedo.esm): the ESS Python runner evaluates an observed-only model by direct expression sampling, with no ODE integration. The 27 observed expressions are written in a valid topological order; the runner re-sorts and substitutes them regardless.\n\nResistance network. v is Eq. 19.7, v = 1/(R_a + R_b + R_a*R_b*V_s) + V_s, gated by ifelse(lev == 1, ..., 0) so deposition acts only in the surface layer. R_a (Ra) is the aerodynamic resistance of `ra`, Eqs. 19.13-19.14, with three stability regimes: the unstable branch (zeta < 0) uses the integrated similarity form, the stable branch (zeta > 0) adds the 4.7*(zeta - zeta_0) term, and the neutral branch is the bare log profile. The intermediate i_unstable (upstream `i`) is the domain guard from the source comment: eta and eta_0 evaluate (1 - 15*zeta)^(1/4), whose base is negative for zeta > 0; multiplying zeta by i_unstable (1 only when zeta < 0, else 0) forces the base to exactly 1 in the stable/neutral regimes, so the fractional power is always taken of a base >= 1. R_b (Rb) is RbParticle, Eq. 19.27, summing the Brownian term Sc^(-gamma), the impaction term (St/(alpha + St))^2 and the interception term 0.5*(Dp/A)^2, scaled by the rebound factor R1 = exp(-sqrt(St)). V_s (Vs) is the Cunningham-corrected Stokes settling velocity of `vs`, Eq. 9.42, with the upstream Dp > 20 um cutoff returning the 99999999 m/s sentinel.\n\nNeutral-stability guard. The default L = 0 is the neutral-stability sentinel and upstream `ra` writes zeta = ifelse(L/unit_m == 0, 0, z/L). The ESS Python runner lowers ifelse to a numpy select that evaluates every branch eagerly, rewrites any 1/L as L**(-1), and simplifies comparisons such as 0 < zeta -- so any guarded division by L, and even an ifelse(L==0,1,0) in the denominator, is reduced back to a bare 1/L that raises at L = 0 (float division by zero / 0.0**negative). zeta and zeta_0 are therefore reformulated as z*L/(L*L + 1e-300) and z0*L/(L*L + 1e-300): the 1e-300 floor is a plain non-zero constant the simplifier cannot drop, keeps the denominator strictly positive, and sits ~284 orders of magnitude below L*L for every physical L, so the expression rounds to z/L (resp. z0/L) for L != 0 and is exactly 0 for L = 0 -- the values the upstream guard produces, to within one ulp.\n\nLookup tables. The three Seinfeld & Pandis land-use tables are migrated as `interp.linear` over column-major-flattened `const` vectors, matching the sibling wesley1989/surface_resistance.esm precedent. A_table (the 5x5 season x land-use characteristic collector radius, S&P Table 19.2) flattens column-major (Julia `vec`) to a 25-entry vector on the integer axis [1..25], queried at A_table_index = (SeinfeldLandUse - 1)*5 + SeinfeldSeason; the upstream *1.0e-3 mm-to-m factor is baked into the stored entries. alpha and gamma (5-entry, land-use only) are queried directly at SeinfeldLandUse on the axis [1..5]. SeinfeldSeason in 1..5 and SeinfeldLandUse in 1..5 are categorical integers, so every lookup lands exactly on an integer axis knot -- interp.linear returns the exact table entry with a zero blend weight, reproducing the upstream direct array indexing SA_F32[...][iSeason, iLandUse].\n\nDesert sentinel. A_table's land-use-4 (desert) column is `Inf` upstream -- a sentinel that makes the vegetation-collector terms vanish (term_3 = 0.5*(Dp/A)^2 -> 0, and the unused st_veg -> 0; the St Stokes-number ifelse selects st_smooth for desert anyway). JSON cannot encode Inf, so the five desert entries are stored as the finite sentinel 1.0e25. At a desert query interp.linear returns 1.0e25 exactly (zero blend weight); term_3 = 0.5*(Dp/1e25)^2 is about 3e-65, reproducing the upstream Inf -> 0 behaviour to ~60 digits. A column-major 1-D flatten (rather than interp.bilinear) is used so the desert column never participates in a blend that could cancel the sentinel.\n\nFloat32 tables. The upstream tables are SA_F32 (Float32) static arrays. alpha and gamma have non-integer entries (0.8, 1.2, 1.3, 0.56, 0.54) that are not exact in Float32; each is stored as its exact Float64-promoted Float32 value (e.g. 0.8 -> 0.800000011920929) to reproduce upstream arithmetic. A_table's entries (2, 5, 10) are exact in Float32, so A_table*1e-3 is stored as the clean 0.002 / 0.005 / 0.01.\n\nDropped declarations. `DryDepositionAerosol` declares WesleySeason and WesleyLandUse as @parameters and passes them to DryDepParticle, but DryDepParticle's body never references its iWesleySeason / iWesleyLandUse arguments -- they are dead -- so they are omitted from the migration. The upstream unit-one @constants (unit_m, unit_T, unit_convert_mu, unit_v) are identically 1 and the ESS runners do no dimensional analysis, so they fold away (e.g. ifelse(L/unit_m == 0, ...) becomes ifelse(L == 0, ...); Dp > 20e-6*unit_m becomes Dp > 2.0e-5). dH2O and its constants (T_unitless, unit_dH2O) belong to the gas-deposition pathway and are not part of this component.\n\nConstants. g, kappa (von Karman), k_B, M_air and R migrate as fixed-default parameters (ESM has no constant variable type). k_B and R use the schema-recognized physical-constant names with units J/K and J/(mol*K); their defaults are the upstream values (k_B = 1.3806488e-23, R = 8.3144621). pi is inlined as the literal 3.141592653589793 (Julia Float64 pi). The upstream component coupling tag `metadata = Dict(CoupleType => DryDepositionAerosolCoupler)` is informational only and, following the rig convention for migrated components, is not carried into a `coupletype` field.\n\nInputs. lev, z, z0, u_star, L, Dp, Ts, P, rho_particle and rho_a carry the upstream `DryDepositionAerosol` @parameter defaults. SeinfeldSeason (default 1 = midsummer) and SeinfeldLandUse (default 3 = grass) are the integer S&P season and land-use indices (land use: 1 evergreen, 2 deciduous, 3 grass, 4 desert, 5 shrubs; season: 1 midsummer, 2 autumn, 3 late autumn, 4 winter, 5 transitional).\n\nUnits. ESM `units` fields are descriptive only; the runners perform no dimensional analysis.\n\nTolerance rationale (model-level rel=1e-6): a closed-form algebraic system with no ODE integration -- each observed value is the Float64 evaluation of the inlined Eq. 19.7 cascade. rel=1e-6 absorbs round-off across the reciprocal-sum resistance chain and the libm exp / log / atan / pow evaluations, well above the agreement expected between conforming runners. The supercoarse Dp > 20 um regime is migrated faithfully (the `vs` sentinel branch) but not given a dedicated inline test, because there exp(-sqrt(St)) underflows and drives Rb to a non-finite value that JSON assertions cannot express; v itself stays finite at the V_s sentinel."
+                "notes": "source_ref: AtmosphericDeposition.jl@e4468c79c8dd4aae88646cd16d6bcf290874742c:src/dry_deposition.jl:1040\n\nUpstream `DryDepositionAerosol` is an MTK builder -- `System(eqs, t, [v; k], params)` with no subsystems -- carrying two equations: v ~ DryDepParticle(...) and k ~ v/z. `DryDepParticle` (src/dry_deposition.jl:272) is a plain Julia function, not a registered symbolic, so it and its entire helper chain (ra, mu, mfp, cc, vs, dParticle, sc, stSmooth, stVeg, RbParticle) are inlined here. There is no time derivative anywhere (no D operator); the component is purely algebraic, so every computed quantity migrates as a `type: observed` variable carrying its inline `expression`, the `equations` array is empty, and `system_kind` is left unset. This is the pure-algebraic convention (matching sibling observed-only migrations such as aerosol/radiative_forcing/cloud_albedo.esm): the ESS Python runner evaluates an observed-only model by direct expression sampling, with no ODE integration. The 27 observed expressions are written in a valid topological order; the runner re-sorts and substitutes them regardless.\n\nResistance network. v is Eq. 19.7, v = 1/(R_a + R_b + R_a*R_b*V_s) + V_s, gated by ifelse(lev == 1, ..., 0) so deposition acts only in the surface layer. R_a (Ra) is the aerodynamic resistance of `ra`, Eqs. 19.13-19.14, with three stability regimes: the unstable branch (zeta < 0) uses the integrated similarity form, the stable branch (zeta > 0) adds the 4.7*(zeta - zeta_0) term, and the neutral branch is the bare log profile. The intermediate i_unstable (upstream `i`) is the domain guard from the source comment: eta and eta_0 evaluate (1 - 15*zeta)^(1/4), whose base is negative for zeta > 0; multiplying zeta by i_unstable (1 only when zeta < 0, else 0) forces the base to exactly 1 in the stable/neutral regimes, so the fractional power is always taken of a base >= 1. R_b (Rb) is RbParticle, Eq. 19.27, summing the Brownian term Sc^(-gamma), the impaction term (St/(alpha + St))^2 and the interception term 0.5*(Dp/A)^2, scaled by the rebound factor R1 = exp(-sqrt(St)). V_s (Vs) is the Cunningham-corrected Stokes settling velocity of `vs`, Eq. 9.42, with the upstream Dp > 20 um cutoff returning the 99999999 m/s sentinel.\n\nNeutral-stability guard. The default L = 0 is the neutral-stability sentinel and upstream `ra` writes zeta = ifelse(L/unit_m == 0, 0, z/L). The ESS Python runner lowers ifelse to a numpy select that evaluates every branch eagerly, rewrites any 1/L as L**(-1), and simplifies comparisons such as 0 < zeta -- so any guarded division by L, and even an ifelse(L==0,1,0) in the denominator, is reduced back to a bare 1/L that raises at L = 0 (float division by zero / 0.0**negative). zeta and zeta_0 are therefore reformulated as z*L/(L*L + 1e-300) and z0*L/(L*L + 1e-300): the 1e-300 floor is a plain non-zero constant the simplifier cannot drop, keeps the denominator strictly positive, and sits ~284 orders of magnitude below L*L for every physical L, so the expression rounds to z/L (resp. z0/L) for L != 0 and is exactly 0 for L = 0 -- the values the upstream guard produces, to within one ulp.\n\nLookup tables. The three Seinfeld & Pandis land-use tables are migrated as `interp.linear` over column-major-flattened `const` vectors, matching the sibling wesley1989/surface_resistance.esm precedent. A_table (the 5x5 season x land-use characteristic collector radius, S&P Table 19.2) flattens column-major (Julia `vec`) to a 25-entry vector on the integer axis [1..25], queried at A_table_index = (SeinfeldLandUse - 1)*5 + SeinfeldSeason; the upstream *1.0e-3 mm-to-m factor is baked into the stored entries. alpha and gamma (5-entry, land-use only) are queried directly at SeinfeldLandUse on the axis [1..5]. SeinfeldSeason in 1..5 and SeinfeldLandUse in 1..5 are categorical integers, so every lookup lands exactly on an integer axis knot -- interp.linear returns the exact table entry with a zero blend weight, reproducing the upstream direct array indexing SA_F32[...][iSeason, iLandUse].\n\nDesert sentinel. A_table's land-use-4 (desert) column is `Inf` upstream -- a sentinel that makes the vegetation-collector terms vanish (term_3 = 0.5*(Dp/A)^2 -> 0, and the unused st_veg -> 0; the St Stokes-number ifelse selects st_smooth for desert anyway). JSON cannot encode Inf, so the five desert entries are stored as the finite sentinel 1.0e25. At a desert query interp.linear returns 1.0e25 exactly (zero blend weight); term_3 = 0.5*(Dp/1e25)^2 is about 3e-65, reproducing the upstream Inf -> 0 behaviour to ~60 digits. A column-major 1-D flatten (rather than interp.bilinear) is used so the desert column never participates in a blend that could cancel the sentinel.\n\nFloat32 tables. The upstream tables are SA_F32 (Float32) static arrays. alpha and gamma have non-integer entries (0.8, 1.2, 1.3, 0.56, 0.54) that are not exact in Float32; each is stored as its exact Float64-promoted Float32 value (e.g. 0.8 -> 0.800000011920929) to reproduce upstream arithmetic. A_table's entries (2, 5, 10) are exact in Float32, so A_table*1e-3 is stored as the clean 0.002 / 0.005 / 0.01.\n\nDropped declarations. `DryDepositionAerosol` declares WesleySeason and WesleyLandUse as @parameters and passes them to DryDepParticle, but DryDepParticle's body never references its iWesleySeason / iWesleyLandUse arguments -- they are dead -- so they are omitted from the migration. The upstream unit-one @constants (unit_m, unit_T, unit_convert_mu, unit_v) are identically 1 and the ESS runners do no dimensional analysis, so they fold away (e.g. ifelse(L/unit_m == 0, ...) becomes ifelse(L == 0, ...); Dp > 20e-6*unit_m becomes Dp > 2.0e-5). dH2O and its constants (T_unitless, unit_dH2O) belong to the gas-deposition pathway and are not part of this component.\n\nConstants. g, kappa (von Karman), k_B, M_air and R migrate as fixed-default parameters (ESM has no constant variable type). k_B and R use the schema-recognized physical-constant names with units J/K and J/(mol*K); their defaults are the upstream values (k_B = 1.3806488e-23, R = 8.3144621). pi is inlined as the literal 3.141592653589793 (Julia Float64 pi). The upstream component coupling tag `metadata = Dict(CoupleType => DryDepositionAerosolCoupler)` is informational only and, following the rig convention for migrated components, is not carried into a `coupletype` field.\n\nInputs. lev, z, z0, u_star, L, Dp, Ts, P, rho_particle and rho_a carry the upstream `DryDepositionAerosol` @parameter defaults. SeinfeldSeason (default 1 = midsummer) and SeinfeldLandUse (default 3 = grass) are the integer S&P season and land-use indices (land use: 1 evergreen, 2 deciduous, 3 grass, 4 desert, 5 shrubs; season: 1 midsummer, 2 autumn, 3 late autumn, 4 winter, 5 transitional).\n\nUnits. ESM `units` fields are descriptive only; the runners perform no dimensional analysis.\n\nTolerance rationale (model-level rel=1e-6): a closed-form algebraic system with no ODE integration -- each observed value is the Float64 evaluation of the inlined Eq. 19.7 cascade. rel=1e-6 absorbs round-off across the reciprocal-sum resistance chain and the libm exp / log / atan / pow evaluations, well above the agreement expected between conforming runners. The supercoarse Dp > 20 um regime is migrated faithfully (the `vs` sentinel branch) but not given a dedicated inline test, because there exp(-sqrt(St)) underflows and drives Rb to a non-finite value that JSON assertions cannot express; v itself stays finite at the V_s sentinel.\n\nUpdated 2026-10-28 to jialinl6/DepositionMTK.jl@cbe7d7db (branch superfast-gas-only): the rate is k = v*g*rho_a/del_P (the gas system's form) instead of v/z; del_P is a new parameter (upstream default 1520 Pa). v is unchanged. The expected v and k are upstream's DryDepParticle at each test's inputs."
             },
             "tolerance": {
                 "rel": 1e-06
@@ -270,7 +270,13 @@
                 "k": {
                     "type": "unknown",
                     "units": "1/s",
-                    "description": "First-order particle dry deposition rate, v/z."
+                    "description": "Particle dry deposition rate [1/s] = v*g*rho_a/del_P: the deposition flux v*c spread over the level-1 air mass (upstream; it was v/z)."
+                },
+                "del_P": {
+                    "type": "parameter",
+                    "units": "Pa",
+                    "default": 1520.0,
+                    "description": "Pressure thickness of level 1 [Pa] (upstream del_P), for k = v*g*rho_a/del_P."
                 }
             },
             "equations": [
@@ -1232,8 +1238,15 @@
                     "rhs": {
                         "op": "/",
                         "args": [
-                            "v",
-                            "z"
+                            {
+                                "op": "*",
+                                "args": [
+                                    "v",
+                                    "g",
+                                    "rho_a"
+                                ]
+                            },
+                            "del_P"
                         ]
                     }
                 }
@@ -1314,17 +1327,17 @@
                         {
                             "variable": "v",
                             "time": 0.0,
-                            "expected": 0.0011457331839425675
+                            "expected": 0.0011457331839425677
                         },
                         {
                             "variable": "v",
                             "time": 1.0,
-                            "expected": 0.0011457331839425675
+                            "expected": 0.0011457331839425677
                         },
                         {
                             "variable": "k",
                             "time": 0.0,
-                            "expected": 2.291466367885135e-05
+                            "expected": 8.87340200090257e-06
                         }
                     ]
                 },
@@ -1388,7 +1401,7 @@
                         {
                             "variable": "k",
                             "time": 0.0,
-                            "expected": 3.96536862111781e-05
+                            "expected": 6.14214729049985e-06
                         }
                     ]
                 },
@@ -1452,7 +1465,7 @@
                         {
                             "variable": "k",
                             "time": 0.0,
-                            "expected": 0.0008737852744989026
+                            "expected": 0.00013534474015001425
                         }
                     ]
                 },
@@ -1506,12 +1519,12 @@
                         {
                             "variable": "v",
                             "time": 0.0,
-                            "expected": 0.006329359878097312
+                            "expected": 0.0063293598780973116
                         },
                         {
                             "variable": "k",
                             "time": 0.0,
-                            "expected": 0.0003164679939048656
+                            "expected": 4.901922663484313e-05
                         }
                     ]
                 },
@@ -1565,12 +1578,12 @@
                         {
                             "variable": "v",
                             "time": 0.0,
-                            "expected": 0.0009961771830953518
+                            "expected": 0.0009961771830953516
                         },
                         {
                             "variable": "k",
                             "time": 0.0,
-                            "expected": 1.9923543661907037e-05
+                            "expected": 7.71513013118321e-06
                         }
                     ]
                 },
@@ -1614,7 +1627,7 @@
                         {
                             "variable": "k",
                             "time": 0.0,
-                            "expected": 2.307361728230157e-05
+                            "expected": 8.934954692343883e-06
                         }
                     ]
                 },
@@ -1658,7 +1671,7 @@
                         {
                             "variable": "k",
                             "time": 0.0,
-                            "expected": 2.2744496393888367e-05
+                            "expected": 8.807506958843876e-06
                         }
                     ]
                 },
@@ -1732,7 +1745,7 @@
                         {
                             "variable": "k",
                             "time": 0.0,
-                            "expected": 1.8309775409543368e-05
+                            "expected": 7.0902196092481745e-06
                         }
                     ]
                 },
