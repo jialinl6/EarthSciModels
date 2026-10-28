@@ -296,6 +296,25 @@ class EvaluateGridTest(unittest.TestCase):
         np.testing.assert_array_equal(env["y"][1:], np.array([1.0]))
         np.testing.assert_array_equal(env["z"][1:], np.array([2.0]))
 
+    def test_observed_reading_the_independent_variable(self):
+        # Fast-JX shape: an observed of `t + t_ref`. Without `t` bound the plan
+        # cannot resolve it; with it, every grid point reads the same instant.
+        m = _model(
+            {
+                "t_ref": {"type": "parameter", "default": 0.0},
+                "t_utc": {"type": "unknown"},
+            },
+            equations=[{"lhs": "t_utc", "rhs": ExprNode(op="+", args=["t", "t_ref"])}],
+        )
+        with self.assertRaises(mod.UnsupportedExpression):
+            mod._evaluate_grid(
+                m, base_bindings={}, sweep_names=["t_ref"], sweep_values=[np.array([0.0, 10.0])]
+            )
+        env = mod._evaluate_grid(
+            m, base_bindings={}, sweep_names=["t_ref"], sweep_values=[np.array([0.0, 10.0])], t=1.0
+        )
+        np.testing.assert_array_equal(env["t_utc"], np.array([1.0, 11.0]))
+
 
 class ExtractOdeEquationsTest(unittest.TestCase):
     def test_separates_ode_from_algebraic(self):

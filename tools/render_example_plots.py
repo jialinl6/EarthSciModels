@@ -80,6 +80,7 @@ from earthsci_ast import (  # noqa: E402
     free_variables,
     from_sympy,
     load_path,
+    substitute,
     to_sympy,
 )
 from earthsci_ast.classification import (  # noqa: E402
@@ -313,6 +314,7 @@ def _evaluate_grid(
     base_bindings: dict[str, float],
     sweep_names: list[str],
     sweep_values: list[np.ndarray],
+    t: float | None = None,
 ) -> dict[str, np.ndarray]:
     """Evaluate every observed/algebraic target across the cartesian sweep.
 
@@ -323,6 +325,11 @@ def _evaluate_grid(
     The resolution plan is built once symbolically (handling forward
     definitions and constraint equations alike) and then evaluated per
     grid point through ESS's scalar `fold_constant_expr()`.
+
+    `t`, when given, binds the independent variable, so an observed that
+    reads it (Fast-JX's solar geometry on `t + t_ref`) resolves; the caller
+    passes the analysis window's end, the instant a stateless sweep point
+    is reported at.
     """
     grids = np.meshgrid(*sweep_values, indexing="ij")
     shape = grids[0].shape
@@ -330,7 +337,13 @@ def _evaluate_grid(
     n = int(np.prod(shape))
 
     bound_names = set(base_bindings.keys()) | set(sweep_names)
+    if t is not None:
+        bound_names.add("t")
     plan = _build_resolution_plan(model, bound_names)
+    if t is not None:
+        # `fold_constant_expr` evaluates in a context whose time is fixed at 0
+        # and does not read `t` from its bindings, so fold the instant in.
+        plan = [(name, substitute(expr, {"t": float(t)})) for name, expr in plan]
     target_names = [name for name, _ in plan]
     point_results: dict[str, np.ndarray] = {
         name: np.empty(n, dtype=float) for name in target_names
@@ -1262,7 +1275,9 @@ def _render_one_analysis(
         sweep_names, sweep_values, sweep_scales = _build_sweep_grid(
             analysis.parameter_sweep
         )
-        env = _evaluate_grid(model, base_bindings, sweep_names, sweep_values)
+        span = getattr(analysis, "time_span", None)
+        t_eval = float(span.end) if span is not None else None
+        env = _evaluate_grid(model, base_bindings, sweep_names, sweep_values, t=t_eval)
     except UnsupportedExpression as exc:
         for _ in plots:
             stats.plots_skipped += 1

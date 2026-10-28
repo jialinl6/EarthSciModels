@@ -2,7 +2,7 @@
     "esm": "1.0.0",
     "metadata": {
         "name": "FastJXTroposphericChemistryCoupling",
-        "description": "Coupling interface routing FastJX photolysis rates to the TroposphericChemistrySystem via param_to_var. Two mappings: (1) FastJX j_O31D → TroposphericChemistrySystem.oh.j_O3 supplies the O(¹D) production rate driving OH generation (OHProduction subsystem, Seinfeld & Pandis §5.2); (2) FastJX j_NO2 → TroposphericChemistrySystem.nox.j_NO2 supplies the NO₂ photolysis rate driving the Leighton photostationary-state cycle (NOxPhotochemistry subsystem, S&P §6.2).\n\nBlocking gap gt-p3ep (inherits): FastJX gt-p3ep was resolved by esm-lnl6 via inline Spencer-Fourier solar zenith angle + bilinear actinic-flux interpolation over the precomputed Z_all[i] table (replacing the calc_direct_flux / flux_interp registered-symbolic chain). No additional gap for this coupling interface.\n\nSource: GasChem.jl@8c12c048 src/fastjx_couplings.jl:113.",
+        "description": "Coupling interface routing FastJX photolysis rates to the TroposphericChemistrySystem via param_to_var. Two mappings: (1) FastJX j_O31D → TroposphericChemistrySystem.oh.j_O3 supplies the O(¹D) production rate driving OH generation (OHProduction subsystem, Seinfeld & Pandis §5.2); (2) FastJX j_NO2 → TroposphericChemistrySystem.nox.j_NO2 supplies the NO₂ photolysis rate driving the Leighton photostationary-state cycle (NOxPhotochemistry subsystem, S&P §6.2).\n\nBlocking gap gt-p3ep (inherits): FastJX's gt-p3ep is resolved in components/gaschem/fastjx/fastjx.esm, which since 2026-10-28 transcribes upstream FastJX (GasChemMTK.jl@37792b29): upstream's own solar-zenith formula, the online direct beam in closed form plus the precomputed diffuse field. No additional gap for this coupling interface.\n\nSource: GasChem.jl@8c12c048 src/fastjx_couplings.jl:113.",
         "tags": [
             "gaschem",
             "fastjx",
@@ -33,7 +33,7 @@
     "models": {
         "FastJX": {
             "reference": {
-                "notes": "Coupling-interface stub: declares the two J-rate observed variables used in this coupling file. Full model definition with all 13 J-rates, 18 actinic-flux channels, σ/ϕ interpolation tables, and solar zenith angle computation lives in components/gaschem/fastjx/fastjx.esm (migrated by esm-lnl6). gt-p3ep resolved there via inline Spencer-Fourier + bilinear flux-lookup; no additional gap here.\n\nUpstream: GasChem.jl@8c12c048 src/Fast-JX.jl:1276."
+                "notes": "Coupling-interface stub: declares the two J-rate observed variables used in this coupling file. Full model definition with all 13 J-rates, 18 actinic-flux channels, σ/ϕ interpolation tables, and solar zenith angle computation lives in components/gaschem/fastjx/fastjx.esm (migrated by esm-lnl6). gt-p3ep resolved there (upstream solar geometry, closed-form direct beam + precomputed diffuse field); no additional gap here.\n\nUpstream: GasChem.jl@8c12c048 src/Fast-JX.jl:1276."
             },
             "variables": {
                 "j_O31D": {
