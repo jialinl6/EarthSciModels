@@ -2,7 +2,7 @@
     "esm": "1.0.0",
     "metadata": {
         "name": "EarthSciDataSpatialParamsCoupling",
-        "description": "Coupling interface routing spatial coordinates (lat, lon, lev) from meteorology providers (GEOSFP, ERA5) to emissions models (CEDS, EDGARv81MonthlyEmis, NEI2016MonthlyEmis) via param_to_var. All five models declare lat/lon/lev as parameters; param_to_var replaces each parameter default with the value computed by the coupled system at runtime, ensuring all models operate on the same spatial grid point.\n\nSource: EarthSciData.jl@830435a src/coupling.jl:24,31,...\n\nCoupling topology:\n- CEDS is surface-only (no lev): GEOSFP.lat → CEDS.lat, GEOSFP.lon → CEDS.lon (2 mappings).\n- NEI2016MonthlyEmis ↔ GEOSFP: lat, lon, lev (3 mappings).\n- EDGARv81MonthlyEmis ↔ GEOSFP: lat, lon, lev (3 mappings).\n- NEI2016MonthlyEmis ↔ ERA5: lat, lon, lev (3 mappings).\n- EDGARv81MonthlyEmis ↔ ERA5: lat, lon, lev (3 mappings).\nTotal: 14 variable_map entries.",
+        "description": "Coupling interface routing spatial coordinates (lat, lon, lev) from meteorology providers (GEOSFP, ERA5) to emissions models (CEDS, EDGARv81MonthlyEmis, NEI2016MonthlyEmis, NEI2016ElevatedEmis) via param_to_var. All six models declare lat/lon/lev as parameters; param_to_var replaces each parameter default with the value computed by the coupled system at runtime, ensuring all models operate on the same spatial grid point.\n\nSource: EarthSciData.jl@830435a src/coupling.jl:24,31,...; NEI2016ElevatedEmis: EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1), which couples it through NEI2016MonthlyEmisCoupler.\n\nCoupling topology:\n- CEDS is surface-only (no lev): GEOSFP.lat → CEDS.lat, GEOSFP.lon → CEDS.lon (2 mappings).\n- NEI2016MonthlyEmis ↔ GEOSFP: lat, lon, lev (3 mappings).\n- NEI2016ElevatedEmis ↔ GEOSFP: lat, lon, lev (3 mappings).\n- EDGARv81MonthlyEmis ↔ GEOSFP: lat, lon, lev (3 mappings).\n- NEI2016MonthlyEmis ↔ ERA5: lat, lon, lev (3 mappings).\n- NEI2016ElevatedEmis ↔ ERA5: lat, lon, lev (3 mappings).\n- EDGARv81MonthlyEmis ↔ ERA5: lat, lon, lev (3 mappings).\nTotal: 20 variable_map entries.",
         "tags": [
             "earthsci_data",
             "coupling",
@@ -152,6 +152,32 @@
                 }
             },
             "equations": []
+        },
+        "NEI2016ElevatedEmis": {
+            "reference": {
+                "notes": "Coupling-interface stub: declares the three spatial parameter variables (lat, lon, lev) used as targets in this coupling file. Full model definition lives in components/earthsci_data/nei2016_elevated.esm.\n\nUpstream: EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1) src/coupling.jl (NEI2016ElevatedEmis shares NEI2016MonthlyEmisCoupler, so _couple_emis_to_met applies)."
+            },
+            "variables": {
+                "lat": {
+                    "type": "parameter",
+                    "units": "rad",
+                    "default": 0.6981317007977318,
+                    "description": "Latitude (radians). Default 0.6981317007977318 rad = 40.0° (US-domain default). Receives spatial coordinate via param_to_var coupling from met provider (GEOSFP or ERA5) lat."
+                },
+                "lon": {
+                    "type": "parameter",
+                    "units": "rad",
+                    "default": -1.7017327985067427,
+                    "description": "Longitude (radians). Default -1.7017327985067427 rad = -97.5° (US-domain default). Receives spatial coordinate via param_to_var coupling from met provider (GEOSFP or ERA5) lon."
+                },
+                "lev": {
+                    "type": "parameter",
+                    "units": "1",
+                    "default": 1.0,
+                    "description": "Vertical level index (1=surface); the elevated sectors emit into layers 1..11. Coupled via param_to_var from met provider (GEOSFP or ERA5) lev."
+                }
+            },
+            "equations": []
         }
     },
     "coupling": [
@@ -252,6 +278,48 @@
             "to": "EDGARv81MonthlyEmis.lev",
             "transform": "param_to_var",
             "description": "Route ERA5 pressure level index to EDGARv81MonthlyEmis lev parameter. EDGAR applies emissions only at lev < 2; param_to_var ensures the level index matches the ERA5 grid (index 1 = 1000 hPa near-surface). Units: dimensionless (both sides). Source: EarthSciData.jl@830435a src/coupling.jl:31 (_couple_emis_to_met)."
+        },
+        {
+            "type": "variable_map",
+            "from": "GEOSFP.lat",
+            "to": "NEI2016ElevatedEmis.lat",
+            "transform": "param_to_var",
+            "description": "Route GEOSFP grid latitude to NEI2016ElevatedEmis lat parameter. param_to_var replaces the NEI default lat (0.6981317007977318 rad = 40°) with the runtime GEOSFP.lat value. Units: rad (both sides). Source: EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1) src/coupling.jl (_couple_emis_to_met via NEI2016MonthlyEmisCoupler)."
+        },
+        {
+            "type": "variable_map",
+            "from": "GEOSFP.lon",
+            "to": "NEI2016ElevatedEmis.lon",
+            "transform": "param_to_var",
+            "description": "Route GEOSFP grid longitude to NEI2016ElevatedEmis lon parameter. param_to_var replaces the NEI default lon (-1.7017327985067427 rad = -97.5°) with the runtime GEOSFP.lon value. Units: rad (both sides). Source: EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1) src/coupling.jl (_couple_emis_to_met via NEI2016MonthlyEmisCoupler)."
+        },
+        {
+            "type": "variable_map",
+            "from": "GEOSFP.lev",
+            "to": "NEI2016ElevatedEmis.lev",
+            "transform": "param_to_var",
+            "description": "Route GEOSFP vertical level index to NEI2016ElevatedEmis lev parameter. The elevated sectors' vertical profiles are in GEOS-FP layers 1..11, so lev selects the layer receiving its share of each column. Units: dimensionless (both sides). Source: EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1) src/coupling.jl (_couple_emis_to_met via NEI2016MonthlyEmisCoupler)."
+        },
+        {
+            "type": "variable_map",
+            "from": "ERA5.lat",
+            "to": "NEI2016ElevatedEmis.lat",
+            "transform": "param_to_var",
+            "description": "Route ERA5 grid latitude to NEI2016ElevatedEmis lat parameter. param_to_var replaces the NEI default lat (40° = 0.6981317007977318 rad) with the runtime ERA5.lat value. Units: rad (both sides). Source: EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1) src/coupling.jl (_couple_emis_to_met via NEI2016MonthlyEmisCoupler)."
+        },
+        {
+            "type": "variable_map",
+            "from": "ERA5.lon",
+            "to": "NEI2016ElevatedEmis.lon",
+            "transform": "param_to_var",
+            "description": "Route ERA5 grid longitude to NEI2016ElevatedEmis lon parameter. param_to_var replaces the NEI default lon (-97.5° = -1.7017327985067427 rad) with the runtime ERA5.lon value. Units: rad (both sides). Source: EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1) src/coupling.jl (_couple_emis_to_met via NEI2016MonthlyEmisCoupler)."
+        },
+        {
+            "type": "variable_map",
+            "from": "ERA5.lev",
+            "to": "NEI2016ElevatedEmis.lev",
+            "transform": "param_to_var",
+            "description": "Route ERA5 pressure level index to NEI2016ElevatedEmis lev parameter. The elevated sectors' vertical profiles are defined on GEOS-FP's 72 layers; on ERA5's pressure-level grid (index 1 = 1000 hPa) they are applied by level index, as upstream's coupling does. Units: dimensionless (both sides). Source: EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1) src/coupling.jl (_couple_emis_to_met via NEI2016MonthlyEmisCoupler)."
         }
     ]
 }

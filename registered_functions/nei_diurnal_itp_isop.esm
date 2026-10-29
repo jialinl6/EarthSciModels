@@ -26,7 +26,7 @@
   "models": {
     "diurnal_itp_ISOP": {
       "reference": {
-        "notes": "source_ref: EarthSciData.jl@830435a:src/nei2016monthly.jl:80\nFactors: [0, 0, 0, 0, 0, 0, 0.2376, 0.7224, 1.2048, 1.656, 2.0496, 2.3616, 2.5728, 2.6616, 2.6184, 2.4408, 2.1288, 1.6896, 1.1448, 0.5136, 0, 0, 0, 0]"
+        "notes": "source_ref: EarthSciData.jl@830435a:src/nei2016monthly.jl:80\nFactors: [0, 0, 0, 0, 0, 0, 0.2376, 0.7224, 1.2048, 1.656, 2.0496, 2.3616, 2.5728, 2.6616, 2.6184, 2.4408, 2.1288, 1.6896, 1.1448, 0.5136, 0, 0, 0, 0]\n\nUpdated 2026-10-28 to EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1): the local time uses round(lon/15) with ties to even, the EDGAR NOx hourly clock GEOS-Chem uses, instead of floor(lon/15). Expected values are upstream's function at each test's inputs."
       },
       "tolerance": {
         "rel": 1e-10
@@ -129,13 +129,85 @@
                         "op": "*",
                         "args": [
                           {
-                            "op": "floor",
+                            "op": "-",
                             "args": [
                               {
-                                "op": "*",
+                                "op": "floor",
                                 "args": [
-                                  "lon",
-                                  3.819718634205488
+                                  {
+                                    "op": "+",
+                                    "args": [
+                                      {
+                                        "op": "*",
+                                        "args": [
+                                          "lon",
+                                          3.819718634205488
+                                        ]
+                                      },
+                                      0.5
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "op": "ifelse",
+                                "args": [
+                                  {
+                                    "op": "==",
+                                    "args": [
+                                      {
+                                        "op": "-",
+                                        "args": [
+                                          {
+                                            "op": "/",
+                                            "args": [
+                                              {
+                                                "op": "+",
+                                                "args": [
+                                                  {
+                                                    "op": "*",
+                                                    "args": [
+                                                      "lon",
+                                                      3.819718634205488
+                                                    ]
+                                                  },
+                                                  0.5
+                                                ]
+                                              },
+                                              2.0
+                                            ]
+                                          },
+                                          {
+                                            "op": "floor",
+                                            "args": [
+                                              {
+                                                "op": "/",
+                                                "args": [
+                                                  {
+                                                    "op": "+",
+                                                    "args": [
+                                                      {
+                                                        "op": "*",
+                                                        "args": [
+                                                          "lon",
+                                                          3.819718634205488
+                                                        ]
+                                                      },
+                                                      0.5
+                                                    ]
+                                                  },
+                                                  2.0
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      0.5
+                                    ]
+                                  },
+                                  1.0,
+                                  0.0
                                 ]
                               }
                             ]
@@ -167,7 +239,7 @@
             {
               "variable": "diurnal_itp_ISOP",
               "time": 0.0,
-              "expected": 0,
+              "expected": 0.0,
               "tolerance": {
                 "rel": 1e-10
               }
@@ -497,10 +569,48 @@
             {
               "variable": "diurnal_itp_ISOP",
               "time": 0.0,
-              "expected": 0,
+              "expected": 0.0,
               "tolerance": {
                 "rel": 1e-10
               }
+            }
+          ]
+        },
+        {
+          "id": "halfhour_meridian_m97_5_t1462125600",
+          "description": "lon = -97.5 deg, where lon/15 = -6.5 is a tie: round-half-even gives UTC-6 and floor UTC-7. Expected value is upstream's function (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "t_utc": 1462125600.0,
+            "lon": -1.7016960206944713
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "assertions": [
+            {
+              "variable": "diurnal_itp_ISOP",
+              "time": 0.0,
+              "expected": 2.5728
+            }
+          ]
+        },
+        {
+          "id": "halfhour_meridian_m97_5_t1462168800",
+          "description": "lon = -97.5 deg, where lon/15 = -6.5 is a tie: round-half-even gives UTC-6 and floor UTC-7. Expected value is upstream's function (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "t_utc": 1462168800.0,
+            "lon": -1.7016960206944713
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "assertions": [
+            {
+              "variable": "diurnal_itp_ISOP",
+              "time": 0.0,
+              "expected": 0.0
             }
           ]
         }

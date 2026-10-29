@@ -2,7 +2,7 @@
   "esm": "1.0.0",
   "metadata": {
     "name": "GEOSFP",
-    "description": "GEOS-FP regridding model — the coupler half of the geosfp loader+regridding-model split (RFC pure-io-data-loaders §6/§7; bead esm-3nc.2, following the esm-3nc.1 era5/wrf pattern). Exposes NASA GMAO GEOS-FP assimilated meteorology (0.25°×0.3125° global, GEOS-Chem 72-level) on the simulation's target grid for coupling into EarthSciML systems.\n\nStructure (RFC §6): at 0.7.0 it declared the six pure-I/O GEOS-FP grid loaders as subsystems under their original names (GEOSFP_A1/A3cld/A3dyn/A3mstC/A3mstE/I3 → ./geosfp_<coll>_loader.esm); at esm 1.0.0 those six files are merged BACK into this one as the `data_sources` entries GEOSFP_A1 … GEOSFP_I3, keeping the SAME registry names, so fields are still referenced as GEOSFP.<coll>.<var> and re-exposed as model observeds (GEOSFP.T, GEOSFP.U, …). Each merged file's own metadata is preserved verbatim under its registry entry's metadata.merged_file_metadata. Native grids are geographic (longlat/WGS84) → longlat identity reprojection (esd-47z.1). Regridding is per-variable (`regrid`): A3dyn staggered winds U/V/OMEGA → B-spline (esd-47z.3); all other fields → conservative. The hybrid sigma-pressure Ap/Bp tables (former GEOSFP_hybrid_coefs kind:lookup, removed in the 0.6.0 hard break) are now the top-level function_tables geosfp_Ap_pa and geosfp_Bp, consumed by P = Ap(lev)+Bp(lev)·PS.\n\nDerived observeds on the target grid: pressure P, virtual temperature Tv and Tv_sfc, layer-mean virtual temperature Tv_bar, and the lat/lon coordinate metrics δxδlon, δyδlat. MeanWind coupling: GEOSFP.U/V/OMEGA → MeanWind v_lon/v_lat/v_lev.\n\nMigrated from EarthSciData.jl@830435a065f27e99f10bba91107ca1730322cc6b:src/geosfp.jl:410 (GEOSFP constructor, esm-1c6s); split into pure loaders + regridding model by esm-3nc.2.",
+    "description": "GEOS-FP regridding model — the coupler half of the geosfp loader+regridding-model split (RFC pure-io-data-loaders §6/§7; bead esm-3nc.2, following the esm-3nc.1 era5/wrf pattern). Exposes NASA GMAO GEOS-FP assimilated meteorology (0.25°×0.3125° global, GEOS-Chem 72-level) on the simulation's target grid for coupling into EarthSciML systems.\n\nStructure (RFC §6): at 0.7.0 it declared the six pure-I/O GEOS-FP grid loaders as subsystems under their original names (GEOSFP_A1/A3cld/A3dyn/A3mstC/A3mstE/I3 → ./geosfp_<coll>_loader.esm); at esm 1.0.0 those six files are merged BACK into this one as the `data_sources` entries GEOSFP_A1 … GEOSFP_I3, keeping the SAME registry names, so fields are still referenced as GEOSFP.<coll>.<var> and re-exposed as model observeds (GEOSFP.T, GEOSFP.U, …). Each merged file's own metadata is preserved verbatim under its registry entry's metadata.merged_file_metadata. Native grids are geographic (longlat/WGS84) → longlat identity reprojection (esd-47z.1). Regridding is per-variable (`regrid`): A3dyn staggered winds U/V/OMEGA → B-spline (esd-47z.3); all other fields → conservative. The hybrid sigma-pressure Ap/Bp tables (former GEOSFP_hybrid_coefs kind:lookup, removed in the 0.6.0 hard break) are now the top-level function_tables geosfp_Ap_pa and geosfp_Bp, consumed by P = Ap(lev)+Bp(lev)·PS.\n\nDerived observeds on the target grid: pressure P, virtual temperature Tv and Tv_sfc, the level derivative δPδlev, and the lat/lon coordinate metrics δxδlon, δyδlat. MeanWind coupling: GEOSFP.U/V/OMEGA → MeanWind v_lon/v_lat/v_lev.\n\nMigrated from EarthSciData.jl@830435a065f27e99f10bba91107ca1730322cc6b:src/geosfp.jl:410 (GEOSFP constructor, esm-1c6s); split into pure loaders + regridding model by esm-3nc.2.",
     "tags": [
       "earthsci_data",
       "meteorology",
@@ -564,7 +564,7 @@
   "models": {
     "GEOSFP": {
       "reference": {
-        "notes": "This is the regridding-model half of the pure-IO loader migration (RFC pure-io-data-loaders §6/§7; esm-3nc.1 era5/wrf pattern, bead esm-3nc.2). The pre-migration geosfp.esm carried both the GEOSFP coupler model AND seven co-located data_loaders blocks (six grid loaders GEOSFP_A1/A3cld/A3dyn/A3mstC/A3mstE/I3 plus a GEOSFP_hybrid_coefs kind:lookup table). The six grid loaders became, at 0.7.0, pure-I/O files referenced as subsystems under their ORIGINAL names (GEOSFP_A1 … GEOSFP_I3 → ./geosfp_<coll>_loader.esm). At esm 1.0.0 they are six `data_sources` entries in THIS file under those same names — a data source is not a component, so it neither needs nor may be a subsystem — and every observed expression GEOSFP_<coll>.<var> keeps resolving unchanged. The GEOSFP_hybrid_coefs lookup became the top-level function_tables geosfp_Ap_pa and geosfp_Bp (kind:lookup is no longer a valid DataLoader kind in esm 0.6.0).\n\nReprojection (RFC §6 step 2): every loader's grid.crs.projection is 'longlat' (geographic WGS84), so the reprojection rule selected by convention is ESD reprojection/longlat.esm (esd-47z.1) — the IDENTITY transform (a no-op for an unprojected grid).\n\nRegridding (RFC §6 step 3 / §5.2): declared per variable in the model `regrid` block. The A3dyn C-grid wind components U (x-edge), V (y-edge), OMEGA (z-edge interface) are staggered → B-spline interpolating regridder (ESD regridding/bspline_regrid.esm, esd-47z.3); every other consumed loader field (all A1/A3cld/A3mstC/A3mstE/I3 fields and A3dyn RH/DTRAIN) is cell-centered → conservative area-weighted overlap join (ESD regridding/conservative_regrid_overlap_join.esm). OMEGA's upstream zero-extrapolation (extrapolate_type=0.0) has no schema field and is documented in the A3dyn loader metadata.\n\nMeanWind coupling: the re-exposed top-level GEOSFP.U/V/OMEGA observeds preserve the couple2 contract (GEOSFP.U/V/OMEGA → MeanWind v_lon/v_lat/v_lev).\n\nsource_ref: EarthSciData.jl@830435a065f27e99f10bba91107ca1730322cc6b:src/geosfp.jl:410\n\nUpstream GEOSFP(domain, domaininfo; name=:GEOSFP, stream=true, spatial_interp=:linear) creates an MTK System with:\n  - @parameters: lon/lat (rad) and lev (1) from pvars(domaininfo); t_ref (s)\n  - For every varname in every GEOSFPFileSet collection (A1/A3cld/A3dyn/A3mstC/A3mstE/I3),\n    one DataSetInterpolator and one observed equation via create_interp_equation (uses interp_unsafe)\n  - Coordinate mapping: lon/lat in radians (loadmetadata converts from degrees); lev=1..72\n  - Staggering: geosfp_staggering() returns:\n      A3dyn/U   → (true, false, false)  # x-staggered (lon edges)\n      A3dyn/V   → (false, true, false)  # y-staggered (lat edges)\n      A3dyn/OMEGA → (false, false, true)  # z-staggered (lev interfaces)\n      all others → (false, false, false) # cell-centered\n  - Extrapolation: OMEGA uses zero extrapolation (extrapolate_type=0.0); all others use Flat() (clamp)\n  - Hybrid pressure: P ~ P_unit * Ap(lev) + Bp(lev) * I3₊PS\n    where Ap/Bp are DataInterpolations.LinearInterpolation tables indexed 1:73\n    (lev=1 → surface ≈ PS, lev=73 → 1 Pa). Encoded as the top-level function_tables geosfp_Ap_pa (Pa) and geosfp_Bp (dimensionless); P is observed = table_lookup(geosfp_Ap_pa, lev) + table_lookup(geosfp_Bp, lev) * GEOSFP_I3.PS.\n  - Virtual temperature: Tv ~ T * (1 + 0.61 * QV); Tv_sfc ~ T2M * (1 + 0.61 * QV2M)\n  - Layer-mean virtual temp: Tv̄ ~ 0.5 * (Tv + Tv_sfc)\n  - Coordinate metrics (lat/lon domain only): δxδlon ~ lon2m * cos(lat); δyδlat ~ lat2meters\n  - discrete_events: build_interp_event fires at each file collection boundary to reload buffers\n  - metadata: Dict(CoupleType => GEOSFPCoupler, SysDomainInfo => domaininfo)\n  - couple2 with MeanWindCoupler: maps GEOSFP.A3dyn₊U/V/OMEGA → MeanWind v_lon/v_lat/v_lev\n\ngt-p3ep resolution: the @register_symbolic interp_unsafe pattern for all file-variable equations is replaced by the data_loaders §8 mechanism (GEOSFP_A1.*, GEOSFP_A3*.*, GEOSFP_I3.* references). The Ap/Bp hybrid coordinate tables — formerly the GEOSFP_hybrid_coefs (kind: lookup) data loader, a kind removed in the 0.6.0 hard break — are now the top-level function_tables geosfp_Ap_pa and geosfp_Bp, resolving the fixed-table lookup gap for P.\n\ngt-6ohw gap (DataInterpolations.derivative): δPδlev and δZδlev require the symbolic derivative of Ap(lev) and Bp(lev) with respect to lev (via DataInterpolations.derivative), which is not yet representable in the ESM expression language. These variables are omitted. When gt-6ohw is resolved:\n  δPδlev (Pa): d(P)/d(lev) = d(Ap(lev))/d(lev) + d(Bp(lev))/d(lev) * PS\n    For the linear interpolation with unit spacing: d(Ap)/d(lev) at integer lev n = Ap[n+1]-Ap[n]\n    The upstream code uses: expand_derivatives(Differential(lev)(P_unit * Ap(lev) + Bp(lev) * PS))\n  δZδlev (m): d(Z_agl)/d(lev) — requires Pmid = P_unit*Ap(lev+0.5)+Bp(lev+0.5)*PS (gt-p3ep(lookup)\n    with lev+0.5 offset) and derivatives of Ap/Bp at lev+0.5 (gt-6ohw). Both gaps must be resolved.\n\nZ_agl gap (gt-p3ep(lookup)): Z_agl = (Rd * Tv̄ / g) * log(PS / Pmid) where\n  Pmid = P_unit * Ap(lev+0.5) + Bp(lev+0.5) * PS\n  Evaluating Ap and Bp at the fractional level lev+0.5 is an offset-indexed lookup (gt-p3ep(lookup))\n  not yet representable in the ESM expression language. Z_agl is omitted; when gt-p3ep(lookup) is\n  resolved, add:\n    Pmid = table_lookup(geosfp_Ap_pa, lev+0.5) + table_lookup(geosfp_Bp, lev+0.5) * GEOSFP_I3.PS\n    Z_agl = (287.05 * Tv̄ / 9.80665) * log(I3₊PS / Pmid)\n\nUpstream test values at (-155.7°, 39.1°) for domain '4x5' (EarthSciData.jl test/geosfp_test.jl):\n  P at lev=[1,2,3,71,72,73]: [102340.38, 101572.77, 100805.17, 2.0, 1.5, 1.0] Pa\n  OMEGA at lev=[0.5,1,1.5,2,35,70,72.5]: [0.0, -0.00385, -0.00770, -0.00652, 1.12e-5, 0.0, 0.0] Pa/s\n  Z_agl at various levels: 63.38 m (lev=1.5) to 80132.64 m (lev=72.5)\n\nDomain notes: the default domain '0.25x0.3125' is the native GEOS-FP global grid. Regional and coarser domains (e.g. '4x5', '0.25x0.3125_NA', '2x2.5') change the URL prefix GEOS_{domain}/GEOS_FP/ and the filename suffix. The transformed domain in the filename replaces dots with nothing and underscores with dots: '0.25x0.3125_NA' → '025x03125.NA'. This ESM documents the default 0.25x0.3125 global domain."
+        "notes": "This is the regridding-model half of the pure-IO loader migration (RFC pure-io-data-loaders §6/§7; esm-3nc.1 era5/wrf pattern, bead esm-3nc.2). The pre-migration geosfp.esm carried both the GEOSFP coupler model AND seven co-located data_loaders blocks (six grid loaders GEOSFP_A1/A3cld/A3dyn/A3mstC/A3mstE/I3 plus a GEOSFP_hybrid_coefs kind:lookup table). The six grid loaders became, at 0.7.0, pure-I/O files referenced as subsystems under their ORIGINAL names (GEOSFP_A1 … GEOSFP_I3 → ./geosfp_<coll>_loader.esm). At esm 1.0.0 they are six `data_sources` entries in THIS file under those same names — a data source is not a component, so it neither needs nor may be a subsystem — and every observed expression GEOSFP_<coll>.<var> keeps resolving unchanged. The GEOSFP_hybrid_coefs lookup became the top-level function_tables geosfp_Ap_pa and geosfp_Bp (kind:lookup is no longer a valid DataLoader kind in esm 0.6.0).\n\nReprojection (RFC §6 step 2): every loader's grid.crs.projection is 'longlat' (geographic WGS84), so the reprojection rule selected by convention is ESD reprojection/longlat.esm (esd-47z.1) — the IDENTITY transform (a no-op for an unprojected grid).\n\nRegridding (RFC §6 step 3 / §5.2): declared per variable in the model `regrid` block. The A3dyn C-grid wind components U (x-edge), V (y-edge), OMEGA (z-edge interface) are staggered → B-spline interpolating regridder (ESD regridding/bspline_regrid.esm, esd-47z.3); every other consumed loader field (all A1/A3cld/A3mstC/A3mstE/I3 fields and A3dyn RH/DTRAIN) is cell-centered → conservative area-weighted overlap join (ESD regridding/conservative_regrid_overlap_join.esm). OMEGA's upstream zero-extrapolation (extrapolate_type=0.0) has no schema field and is documented in the A3dyn loader metadata.\n\nMeanWind coupling: the re-exposed top-level GEOSFP.U/V/OMEGA observeds preserve the couple2 contract (GEOSFP.U/V/OMEGA → MeanWind v_lon/v_lat/v_lev).\n\nsource_ref: EarthSciData.jl@830435a065f27e99f10bba91107ca1730322cc6b:src/geosfp.jl:410\n\nUpstream GEOSFP(domain, domaininfo; name=:GEOSFP, stream=true, spatial_interp=:linear) creates an MTK System with:\n  - @parameters: lon/lat (rad) and lev (1) from pvars(domaininfo); t_ref (s)\n  - For every varname in every GEOSFPFileSet collection (A1/A3cld/A3dyn/A3mstC/A3mstE/I3),\n    one DataSetInterpolator and one observed equation via create_interp_equation (uses interp_unsafe)\n  - Coordinate mapping: lon/lat in radians (loadmetadata converts from degrees); lev=1..72\n  - Staggering: geosfp_staggering() returns:\n      A3dyn/U   → (true, false, false)  # x-staggered (lon edges)\n      A3dyn/V   → (false, true, false)  # y-staggered (lat edges)\n      A3dyn/OMEGA → (false, false, true)  # z-staggered (lev interfaces)\n      all others → (false, false, false) # cell-centered\n  - Extrapolation: OMEGA uses zero extrapolation (extrapolate_type=0.0); all others use Flat() (clamp)\n  - Hybrid pressure: P ~ P_unit * Ap(lev) + Bp(lev) * I3₊PS\n    where Ap/Bp are DataInterpolations.LinearInterpolation tables indexed 1:73\n    (lev=1 → surface ≈ PS, lev=73 → 1 Pa). Encoded as the top-level function_tables geosfp_Ap_pa (Pa) and geosfp_Bp (dimensionless); P is observed = table_lookup(geosfp_Ap_pa, lev) + table_lookup(geosfp_Bp, lev) * GEOSFP_I3.PS.\n  - Virtual temperature: Tv ~ T * (1 + 0.61 * QV); Tv_sfc ~ T2M * (1 + 0.61 * QV2M)\n  - Layer-mean virtual temp: Tv̄ ~ 0.5 * (Tv + Tv_sfc)\n  - Coordinate metrics (lat/lon domain only): δxδlon ~ lon2m * cos(lat); δyδlat ~ lat2meters\n  - discrete_events: build_interp_event fires at each file collection boundary to reload buffers\n  - metadata: Dict(CoupleType => GEOSFPCoupler, SysDomainInfo => domaininfo)\n  - couple2 with MeanWindCoupler: maps GEOSFP.A3dyn₊U/V/OMEGA → MeanWind v_lon/v_lat/v_lev\n\ngt-p3ep resolution: the @register_symbolic interp_unsafe pattern for all file-variable equations is replaced by the data_loaders §8 mechanism (GEOSFP_A1.*, GEOSFP_A3*.*, GEOSFP_I3.* references). The Ap/Bp hybrid coordinate tables — formerly the GEOSFP_hybrid_coefs (kind: lookup) data loader, a kind removed in the 0.6.0 hard break — are now the top-level function_tables geosfp_Ap_pa and geosfp_Bp, resolving the fixed-table lookup gap for P.\n\ngt-6ohw gap (DataInterpolations.derivative): δPδlev and δZδlev require the symbolic derivative of Ap(lev) and Bp(lev) with respect to lev (via DataInterpolations.derivative), which is not yet representable in the ESM expression language. These variables are omitted. When gt-6ohw is resolved:\n  δPδlev (Pa): d(P)/d(lev) = d(Ap(lev))/d(lev) + d(Bp(lev))/d(lev) * PS\n    For the linear interpolation with unit spacing: d(Ap)/d(lev) at integer lev n = Ap[n+1]-Ap[n]\n    The upstream code uses: expand_derivatives(Differential(lev)(P_unit * Ap(lev) + Bp(lev) * PS))\n  δZδlev (m): d(Z_agl)/d(lev) — requires Pmid = P_unit*Ap(lev+0.5)+Bp(lev+0.5)*PS (gt-p3ep(lookup)\n    with lev+0.5 offset) and derivatives of Ap/Bp at lev+0.5 (gt-6ohw). Both gaps must be resolved.\n\nZ_agl gap (gt-p3ep(lookup)): Z_agl = (Rd * Tv̄ / g) * log(PS / Pmid) where\n  Pmid = P_unit * Ap(lev+0.5) + Bp(lev+0.5) * PS\n  Evaluating Ap and Bp at the fractional level lev+0.5 is an offset-indexed lookup (gt-p3ep(lookup))\n  not yet representable in the ESM expression language. Z_agl is omitted; when gt-p3ep(lookup) is\n  resolved, add:\n    Pmid = table_lookup(geosfp_Ap_pa, lev+0.5) + table_lookup(geosfp_Bp, lev+0.5) * GEOSFP_I3.PS\n    Z_agl = (287.05 * Tv̄ / 9.80665) * log(I3₊PS / Pmid)\n\nUpstream test values at (-155.7°, 39.1°) for domain '4x5' (EarthSciData.jl test/geosfp_test.jl):\n  P at lev=[1,2,3,71,72,73]: [102340.38, 101572.77, 100805.17, 2.0, 1.5, 1.0] Pa\n  OMEGA at lev=[0.5,1,1.5,2,35,70,72.5]: [0.0, -0.00385, -0.00770, -0.00652, 1.12e-5, 0.0, 0.0] Pa/s\n  Z_agl at various levels: 63.38 m (lev=1.5) to 80132.64 m (lev=72.5)\n\nDomain notes: the default domain '0.25x0.3125' is the native GEOS-FP global grid. Regional and coarser domains (e.g. '4x5', '0.25x0.3125_NA', '2x2.5') change the URL prefix GEOS_{domain}/GEOS_FP/ and the filename suffix. The transformed domain in the filename replaces dots with nothing and underscores with dots: '0.25x0.3125_NA' → '025x03125.NA'. This ESM documents the default 0.25x0.3125 global domain.\n\nChecked 2026-10-28 against EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1). δPδlev is now carried: upstream replaced the DataInterpolations tables with its own piecewise-linear Ap/Bp and their closed-form derivative (the slope of the segment below an integer lev), which an interp.linear over the 72 segment differences reproduces, so the gt-6ohw gap above no longer applies to it. δZδlev and Tv_bar (Tv̄) are gone upstream and removed here. Z_agl is still not carried: upstream now sums the hypsometric thickness of every layer from the surface up to lev, which needs T and QV at each of those layers (a column read the data-fed parameters here, one value per cell, do not give), and nothing in the SuperFast gas-only stack reads it. Inline tests pin PS and check P and δPδlev against upstream. Outside 1 <= lev <= 73 upstream's P extrapolates the end segments while interp.linear here clamps; GEOS-FP levels stay inside that range. EarthSciData #222 (interpolation on the true, non-uniform latitude knots of the half-polar GEOS-FP grid) and the PR's index-box subset reads are inside the Julia loader, which a data source here does not encode: an esm host regrids the source itself."
       },
       "tolerance": {
         "rel": 1e-06
@@ -1218,12 +1218,7 @@
         "Tv_sfc": {
           "type": "unknown",
           "units": "K",
-          "description": "Near-surface virtual temperature at 2m (K). Tv_sfc = T2M × (1 + 0.61 × QV2M). Used in layer-mean virtual temperature Tv̄."
-        },
-        "Tv_bar": {
-          "type": "unknown",
-          "units": "K",
-          "description": "Layer-mean virtual temperature (K). Tv̄ = 0.5 × (Tv + Tv_sfc). Used in Z_agl hypsometric height calculation (omitted; see reference.notes)."
+          "description": "Near-surface virtual temperature at 2m (K). Tv_sfc = T2M × (1 + 0.61 × QV2M)."
         },
         "δxδlon": {
           "type": "unknown",
@@ -1262,6 +1257,11 @@
               "description": "Sensible heat flux from turbulence (W/m^2), positive upward. Time-averaged over 1-hour interval. Needed together with TS and USTAR to form the Monin-Obukhov length L = -rho_air*Cp*Ts*u_star^3/(vK*g*HFLUX), the stability input to Wesley (1989) dry deposition — see AtmosphericDeposition.jl ext/EarthSciDataExt.jl couple2(DryDepositionGasCoupler, GEOSFPCoupler)."
             }
           }
+        },
+        "δPδlev": {
+          "type": "unknown",
+          "units": "Pa",
+          "description": "Pressure gradient with respect to the hybrid level, dP/dlev (Pa): the slope of P's piecewise-linear Ap/Bp segment, (Ap[i+1] - Ap[i]) + (Bp[i+1] - Bp[i])*PS with i = clamp(ceil(lev) - 1, 1, 72), so an integer lev takes the segment below it (upstream Ap_deriv/Bp_deriv)."
         }
       },
       "equations": [
@@ -1771,22 +1771,6 @@
           }
         },
         {
-          "lhs": "Tv_bar",
-          "rhs": {
-            "op": "*",
-            "args": [
-              0.5,
-              {
-                "op": "+",
-                "args": [
-                  "Tv",
-                  "Tv_sfc"
-                ]
-              }
-            ]
-          }
-        },
-        {
           "lhs": "δxδlon",
           "rhs": {
             "op": "*",
@@ -1804,9 +1788,1110 @@
         {
           "lhs": "δyδlat",
           "rhs": 6378166.0
+        },
+        {
+          "lhs": "δPδlev",
+          "rhs": {
+            "op": "+",
+            "args": [
+              {
+                "op": "fn",
+                "name": "interp.linear",
+                "args": [
+                  {
+                    "op": "const",
+                    "args": [],
+                    "value": [
+                      4.804826,
+                      654.5703739999999,
+                      654.1048000000001,
+                      647.8309999999999,
+                      647.8900000000001,
+                      647.8800000000001,
+                      641.1199999999999,
+                      635.6999999999998,
+                      635.71,
+                      635.71,
+                      630.9430000000002,
+                      625.9340000000002,
+                      821.2239999999993,
+                      1026.5700000000006,
+                      1026.5290000000005,
+                      981.6489999999994,
+                      977.6900000000005,
+                      973.7299999999996,
+                      1421.4099999999999,
+                      1335.0,
+                      1334.9000000000015,
+                      1201.0,
+                      1147.7999999999993,
+                      1016.2000000000007,
+                      889.0999999999985,
+                      662.5999999999985,
+                      512.2000000000007,
+                      46.5,
+                      -749.7999999999993,
+                      -1567.2999999999993,
+                      -2426.2000000000007,
+                      -2653.7000000000007,
+                      -2255.5999999999985,
+                      -1917.4000000000015,
+                      -1629.7279999999992,
+                      -1385.3410000000003,
+                      -1190.8899999999994,
+                      -1021.5500000000002,
+                      -874.4000000000005,
+                      -746.8499999999995,
+                      -636.54,
+                      -544.2200000000003,
+                      -463.7399999999998,
+                      -393.8810000000001,
+                      -333.45000000000005,
+                      -281.3700000000001,
+                      -236.64999999999986,
+                      -198.3958,
+                      -167.31000000000006,
+                      -140.30409999999995,
+                      -117.00000000000006,
+                      -97.02299999999997,
+                      -80.01400000000001,
+                      -65.62200000000001,
+                      -53.524099999999976,
+                      -43.418000000000006,
+                      -35.02800000000002,
+                      -28.106999999999985,
+                      -22.43059000000001,
+                      -17.835499999999996,
+                      -14.097299999999997,
+                      -11.076500000000003,
+                      -8.651499999999999,
+                      -6.71771,
+                      -5.185399999999998,
+                      -3.9792000000000005,
+                      -3.0357979999999998,
+                      -2.3345010000000004,
+                      -1.8415,
+                      -1.4885009999999999,
+                      -1.27,
+                      -1.0
+                    ]
+                  },
+                  {
+                    "op": "const",
+                    "args": [],
+                    "value": [
+                      1.0,
+                      2.0,
+                      3.0,
+                      4.0,
+                      5.0,
+                      6.0,
+                      7.0,
+                      8.0,
+                      9.0,
+                      10.0,
+                      11.0,
+                      12.0,
+                      13.0,
+                      14.0,
+                      15.0,
+                      16.0,
+                      17.0,
+                      18.0,
+                      19.0,
+                      20.0,
+                      21.0,
+                      22.0,
+                      23.0,
+                      24.0,
+                      25.0,
+                      26.0,
+                      27.0,
+                      28.0,
+                      29.0,
+                      30.0,
+                      31.0,
+                      32.0,
+                      33.0,
+                      34.0,
+                      35.0,
+                      36.0,
+                      37.0,
+                      38.0,
+                      39.0,
+                      40.0,
+                      41.0,
+                      42.0,
+                      43.0,
+                      44.0,
+                      45.0,
+                      46.0,
+                      47.0,
+                      48.0,
+                      49.0,
+                      50.0,
+                      51.0,
+                      52.0,
+                      53.0,
+                      54.0,
+                      55.0,
+                      56.0,
+                      57.0,
+                      58.0,
+                      59.0,
+                      60.0,
+                      61.0,
+                      62.0,
+                      63.0,
+                      64.0,
+                      65.0,
+                      66.0,
+                      67.0,
+                      68.0,
+                      69.0,
+                      70.0,
+                      71.0,
+                      72.0
+                    ]
+                  },
+                  {
+                    "op": "max",
+                    "args": [
+                      1.0,
+                      {
+                        "op": "min",
+                        "args": [
+                          72.0,
+                          {
+                            "op": "-",
+                            "args": [
+                              {
+                                "op": "*",
+                                "args": [
+                                  -1.0,
+                                  {
+                                    "op": "floor",
+                                    "args": [
+                                      {
+                                        "op": "*",
+                                        "args": [
+                                          -1.0,
+                                          "lev"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              1.0
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "*",
+                "args": [
+                  {
+                    "op": "fn",
+                    "name": "interp.linear",
+                    "args": [
+                      {
+                        "op": "const",
+                        "args": [],
+                        "value": [
+                          -0.01504799999999995,
+                          -0.021546000000000065,
+                          -0.021541000000000032,
+                          -0.021477999999999997,
+                          -0.021478999999999915,
+                          -0.021479000000000026,
+                          -0.02141100000000007,
+                          -0.021357099999999907,
+                          -0.02135700000000007,
+                          -0.02135699999999996,
+                          -0.021309400000000034,
+                          -0.02125929999999998,
+                          -0.02821220000000002,
+                          -0.03526609999999997,
+                          -0.03526499999999999,
+                          -0.03481650000000003,
+                          -0.0347769,
+                          -0.03473729999999997,
+                          -0.05171400000000004,
+                          -0.050850000000000006,
+                          -0.05084909999999998,
+                          -0.04951,
+                          -0.04897800000000002,
+                          -0.04766199999999998,
+                          -0.04639099999999999,
+                          -0.044126,
+                          -0.04262200000000001,
+                          -0.04988204,
+                          -0.035710019999999995,
+                          -0.021050015,
+                          -0.006960016824587,
+                          -8.175413e-09,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      },
+                      {
+                        "op": "const",
+                        "args": [],
+                        "value": [
+                          1.0,
+                          2.0,
+                          3.0,
+                          4.0,
+                          5.0,
+                          6.0,
+                          7.0,
+                          8.0,
+                          9.0,
+                          10.0,
+                          11.0,
+                          12.0,
+                          13.0,
+                          14.0,
+                          15.0,
+                          16.0,
+                          17.0,
+                          18.0,
+                          19.0,
+                          20.0,
+                          21.0,
+                          22.0,
+                          23.0,
+                          24.0,
+                          25.0,
+                          26.0,
+                          27.0,
+                          28.0,
+                          29.0,
+                          30.0,
+                          31.0,
+                          32.0,
+                          33.0,
+                          34.0,
+                          35.0,
+                          36.0,
+                          37.0,
+                          38.0,
+                          39.0,
+                          40.0,
+                          41.0,
+                          42.0,
+                          43.0,
+                          44.0,
+                          45.0,
+                          46.0,
+                          47.0,
+                          48.0,
+                          49.0,
+                          50.0,
+                          51.0,
+                          52.0,
+                          53.0,
+                          54.0,
+                          55.0,
+                          56.0,
+                          57.0,
+                          58.0,
+                          59.0,
+                          60.0,
+                          61.0,
+                          62.0,
+                          63.0,
+                          64.0,
+                          65.0,
+                          66.0,
+                          67.0,
+                          68.0,
+                          69.0,
+                          70.0,
+                          71.0,
+                          72.0
+                        ]
+                      },
+                      {
+                        "op": "max",
+                        "args": [
+                          1.0,
+                          {
+                            "op": "min",
+                            "args": [
+                              72.0,
+                              {
+                                "op": "-",
+                                "args": [
+                                  {
+                                    "op": "*",
+                                    "args": [
+                                      -1.0,
+                                      {
+                                        "op": "floor",
+                                        "args": [
+                                          {
+                                            "op": "*",
+                                            "args": [
+                                              -1.0,
+                                              "lev"
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  1.0
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "PS"
+                ]
+              }
+            ]
+          }
         }
       ],
-      "tests": []
+      "tests": [
+        {
+          "id": "hybrid_pressure_lev_1_0_ps_101325",
+          "description": "P and δPδlev at lev = 1.0 with the surface pressure pinned to PS = 101325.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 101325.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 1.0
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 101325.0
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1519.9337739999949
+            }
+          ]
+        },
+        {
+          "id": "hybrid_pressure_lev_1_25_ps_85000",
+          "description": "P and δPδlev at lev = 1.25 with the surface pressure pinned to PS = 85000.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 85000.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 1.25
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 84681.4312065
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1274.2751739999958
+            }
+          ]
+        },
+        {
+          "id": "hybrid_pressure_lev_2_0_ps_101325",
+          "description": "P and δPδlev at lev = 2.0 with the surface pressure pinned to PS = 101325.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 101325.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 2.0
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 99805.06622600001
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1519.9337739999949
+            }
+          ]
+        },
+        {
+          "id": "hybrid_pressure_lev_2_5_ps_85000",
+          "description": "P and δPδlev at lev = 2.5 with the surface pressure pinned to PS = 85000.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 85000.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 2.5
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 83137.30501299999
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1176.8396260000054
+            }
+          ]
+        },
+        {
+          "id": "hybrid_pressure_lev_3_0_ps_101325",
+          "description": "P and δPδlev at lev = 3.0 with the surface pressure pinned to PS = 101325.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 101325.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 3.0
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 98276.48814999999
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1528.5780760000066
+            }
+          ]
+        },
+        {
+          "id": "hybrid_pressure_lev_36_7_ps_85000",
+          "description": "P and δPδlev at lev = 36.7 with the surface pressure pinned to PS = 85000.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 85000.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 36.7
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 8266.833299999997
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1385.3410000000003
+            }
+          ]
+        },
+        {
+          "id": "hybrid_pressure_lev_71_0_ps_101325",
+          "description": "P and δPδlev at lev = 71.0 with the surface pressure pinned to PS = 101325.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 101325.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 71.0
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 3.27
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1.4885009999999999
+            }
+          ]
+        },
+        {
+          "id": "hybrid_pressure_lev_72_0_ps_85000",
+          "description": "P and δPδlev at lev = 72.0 with the surface pressure pinned to PS = 85000.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 85000.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 72.0
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 2.0
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1.27
+            }
+          ]
+        },
+        {
+          "id": "hybrid_pressure_lev_72_5_ps_101325",
+          "description": "P and δPδlev at lev = 72.5 with the surface pressure pinned to PS = 101325.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 101325.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 72.5
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 1.5
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1.0
+            }
+          ]
+        },
+        {
+          "id": "hybrid_pressure_lev_73_0_ps_85000",
+          "description": "P and δPδlev at lev = 73.0 with the surface pressure pinned to PS = 85000.0 Pa and the other data-fed parameters to 1 (no data is read). Expected values are upstream's Ap(lev) + Bp(lev)*PS and Ap_deriv(lev) + Bp_deriv(lev)*PS (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "CLDTOT": 1.0,
+            "CLOUD": 1.0,
+            "CMFMC": 1.0,
+            "CMFMC_OCE": 1.0,
+            "DQRCU": 1.0,
+            "DQRLSAN": 1.0,
+            "DTRAIN": 1.0,
+            "EFLUX": 1.0,
+            "FRSEAICE": 1.0,
+            "GWETTOP": 1.0,
+            "HFLUX": 1.0,
+            "LAI": 1.0,
+            "OMEGA": 1.0,
+            "OPTDEPTH": 1.0,
+            "PBLH": 1.0,
+            "PFICU": 1.0,
+            "PFILSAN": 1.0,
+            "PFLCU": 1.0,
+            "PFLLSAN": 1.0,
+            "PRECANV": 1.0,
+            "PRECTOT": 1.0,
+            "PS": 85000.0,
+            "QI": 1.0,
+            "QL": 1.0,
+            "QV": 1.0,
+            "QV2M": 1.0,
+            "REEEVAP": 1.0,
+            "RH": 1.0,
+            "SLP": 1.0,
+            "SWGDN": 1.0,
+            "T": 1.0,
+            "T2M": 1.0,
+            "TAUCLI": 1.0,
+            "TAUCLW": 1.0,
+            "TROPP_H": 1.0,
+            "TS": 1.0,
+            "U": 1.0,
+            "U10M": 1.0,
+            "USTAR": 1.0,
+            "V": 1.0,
+            "V10M": 1.0,
+            "Z0M": 1.0,
+            "lev": 73.0
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "tolerance": {
+            "rel": 1e-12,
+            "abs": 1e-09
+          },
+          "assertions": [
+            {
+              "variable": "P",
+              "time": 0.0,
+              "expected": 1.0
+            },
+            {
+              "variable": "δPδlev",
+              "time": 0.0,
+              "expected": -1.0
+            }
+          ]
+        }
+      ]
     }
   }
 }

@@ -25,7 +25,7 @@
   "models": {
     "dayofweek_itp_NOx": {
       "reference": {
-        "notes": "source_ref: EarthSciData.jl@830435a:src/nei2016monthly.jl:112\nFactors: [1.0706, 1.0706, 1.0706, 1.0706, 1.0706, 0.863, 0.784]\nday_of_week (1=Mon, 7=Sun) = (D+3) mod 7 + 1\n  where D = floor(t_local/86400), t_local = t_utc + floor(lon*180/(pi*15))*3600\nNote: Test timestamps use positive values (>= epoch) to avoid float rounding\nissue where 1/86400 coefficient causes floor error for negative timestamps."
+        "notes": "source_ref: EarthSciData.jl@830435a:src/nei2016monthly.jl:112\nFactors: [1.0706, 1.0706, 1.0706, 1.0706, 1.0706, 0.863, 0.784]\nday_of_week (1=Mon, 7=Sun) = (D+3) mod 7 + 1\n  where D = floor(t_local/86400), t_local = t_utc + floor(lon*180/(pi*15))*3600\nNote: Test timestamps use positive values (>= epoch) to avoid float rounding\nissue where 1/86400 coefficient causes floor error for negative timestamps.\n\nUpdated 2026-10-28 to EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1): the local time uses round(lon/15) with ties to even, the EDGAR NOx hourly clock GEOS-Chem uses, instead of floor(lon/15). Expected values are upstream's function at each test's inputs."
       },
       "tolerance": {
         "rel": 1e-10
@@ -105,13 +105,85 @@
                                         "op": "*",
                                         "args": [
                                           {
-                                            "op": "floor",
+                                            "op": "-",
                                             "args": [
                                               {
-                                                "op": "*",
+                                                "op": "floor",
                                                 "args": [
-                                                  "lon",
-                                                  3.819718634205488
+                                                  {
+                                                    "op": "+",
+                                                    "args": [
+                                                      {
+                                                        "op": "*",
+                                                        "args": [
+                                                          "lon",
+                                                          3.819718634205488
+                                                        ]
+                                                      },
+                                                      0.5
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "op": "ifelse",
+                                                "args": [
+                                                  {
+                                                    "op": "==",
+                                                    "args": [
+                                                      {
+                                                        "op": "-",
+                                                        "args": [
+                                                          {
+                                                            "op": "/",
+                                                            "args": [
+                                                              {
+                                                                "op": "+",
+                                                                "args": [
+                                                                  {
+                                                                    "op": "*",
+                                                                    "args": [
+                                                                      "lon",
+                                                                      3.819718634205488
+                                                                    ]
+                                                                  },
+                                                                  0.5
+                                                                ]
+                                                              },
+                                                              2.0
+                                                            ]
+                                                          },
+                                                          {
+                                                            "op": "floor",
+                                                            "args": [
+                                                              {
+                                                                "op": "/",
+                                                                "args": [
+                                                                  {
+                                                                    "op": "+",
+                                                                    "args": [
+                                                                      {
+                                                                        "op": "*",
+                                                                        "args": [
+                                                                          "lon",
+                                                                          3.819718634205488
+                                                                        ]
+                                                                      },
+                                                                      0.5
+                                                                    ]
+                                                                  },
+                                                                  2.0
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      0.5
+                                                    ]
+                                                  },
+                                                  1.0,
+                                                  0.0
                                                 ]
                                               }
                                             ]
@@ -156,13 +228,85 @@
                                                     "op": "*",
                                                     "args": [
                                                       {
-                                                        "op": "floor",
+                                                        "op": "-",
                                                         "args": [
                                                           {
-                                                            "op": "*",
+                                                            "op": "floor",
                                                             "args": [
-                                                              "lon",
-                                                              3.819718634205488
+                                                              {
+                                                                "op": "+",
+                                                                "args": [
+                                                                  {
+                                                                    "op": "*",
+                                                                    "args": [
+                                                                      "lon",
+                                                                      3.819718634205488
+                                                                    ]
+                                                                  },
+                                                                  0.5
+                                                                ]
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "op": "ifelse",
+                                                            "args": [
+                                                              {
+                                                                "op": "==",
+                                                                "args": [
+                                                                  {
+                                                                    "op": "-",
+                                                                    "args": [
+                                                                      {
+                                                                        "op": "/",
+                                                                        "args": [
+                                                                          {
+                                                                            "op": "+",
+                                                                            "args": [
+                                                                              {
+                                                                                "op": "*",
+                                                                                "args": [
+                                                                                  "lon",
+                                                                                  3.819718634205488
+                                                                                ]
+                                                                              },
+                                                                              0.5
+                                                                            ]
+                                                                          },
+                                                                          2.0
+                                                                        ]
+                                                                      },
+                                                                      {
+                                                                        "op": "floor",
+                                                                        "args": [
+                                                                          {
+                                                                            "op": "/",
+                                                                            "args": [
+                                                                              {
+                                                                                "op": "+",
+                                                                                "args": [
+                                                                                  {
+                                                                                    "op": "*",
+                                                                                    "args": [
+                                                                                      "lon",
+                                                                                      3.819718634205488
+                                                                                    ]
+                                                                                  },
+                                                                                  0.5
+                                                                                ]
+                                                                              },
+                                                                              2.0
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  0.5
+                                                                ]
+                                                              },
+                                                              1.0,
+                                                              0.0
                                                             ]
                                                           }
                                                         ]
@@ -304,6 +448,44 @@
               "tolerance": {
                 "rel": 1e-10
               }
+            }
+          ]
+        },
+        {
+          "id": "halfhour_meridian_m97_5_t1462125600",
+          "description": "lon = -97.5 deg, where lon/15 = -6.5 is a tie: round-half-even gives UTC-6 and floor UTC-7. Expected value is upstream's function (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "t_utc": 1462125600.0,
+            "lon": -1.7016960206944713
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "assertions": [
+            {
+              "variable": "dayofweek_itp_NOx",
+              "time": 0.0,
+              "expected": 0.784
+            }
+          ]
+        },
+        {
+          "id": "halfhour_meridian_m97_5_t1462168800",
+          "description": "lon = -97.5 deg, where lon/15 = -6.5 is a tie: round-half-even gives UTC-6 and floor UTC-7. Expected value is upstream's function (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "t_utc": 1462168800.0,
+            "lon": -1.7016960206944713
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "assertions": [
+            {
+              "variable": "dayofweek_itp_NOx",
+              "time": 0.0,
+              "expected": 1.0706
             }
           ]
         }

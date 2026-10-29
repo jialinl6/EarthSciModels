@@ -25,7 +25,7 @@
   "models": {
     "dayofweek_itp_CO": {
       "reference": {
-        "notes": "source_ref: EarthSciData.jl@830435a:src/nei2016monthly.jl:99\nFactors: [1.076, 1.1076, 1.0706, 1.0706, 1.0706, 0.779, 0.683]\nday_of_week (1=Mon, 7=Sun) = (D+3) mod 7 + 1\n  where D = floor(t_local/86400), t_local = t_utc + floor(lon*180/(pi*15))*3600\nNote: Test timestamps use positive values (>= epoch) to avoid float rounding\nissue where 1/86400 coefficient causes floor error for negative timestamps."
+        "notes": "source_ref: EarthSciData.jl@830435a:src/nei2016monthly.jl:99\nFactors: [1.076, 1.1076, 1.0706, 1.0706, 1.0706, 0.779, 0.683]\nday_of_week (1=Mon, 7=Sun) = (D+3) mod 7 + 1\n  where D = floor(t_local/86400), t_local = t_utc + floor(lon*180/(pi*15))*3600\nNote: Test timestamps use positive values (>= epoch) to avoid float rounding\nissue where 1/86400 coefficient causes floor error for negative timestamps.\n\nUpdated 2026-10-28 to EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1): the weekday table is 1.1076 on all five weekdays (it read 1.076 on Monday and 1.0706 Tue-Fri, which summed to 6.85). Expected values are upstream's function at each test's inputs."
       },
       "tolerance": {
         "rel": 1e-10
@@ -59,11 +59,11 @@
               {
                 "op": "const",
                 "value": [
-                  1.076,
                   1.1076,
-                  1.0706,
-                  1.0706,
-                  1.0706,
+                  1.1076,
+                  1.1076,
+                  1.1076,
+                  1.1076,
                   0.779,
                   0.683
                 ],
@@ -212,7 +212,7 @@
             {
               "variable": "dayofweek_itp_CO",
               "time": 0.0,
-              "expected": 1.076,
+              "expected": 1.1076,
               "tolerance": {
                 "rel": 1e-10
               }
@@ -234,7 +234,7 @@
             {
               "variable": "dayofweek_itp_CO",
               "time": 0.0,
-              "expected": 1.0706,
+              "expected": 1.1076,
               "tolerance": {
                 "rel": 1e-10
               }
@@ -256,7 +256,7 @@
             {
               "variable": "dayofweek_itp_CO",
               "time": 0.0,
-              "expected": 1.0706,
+              "expected": 1.1076,
               "tolerance": {
                 "rel": 1e-10
               }

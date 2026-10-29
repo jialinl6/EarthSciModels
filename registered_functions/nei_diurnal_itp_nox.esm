@@ -30,7 +30,7 @@
   "models": {
     "diurnal_itp_NOx": {
       "reference": {
-        "notes": "source_ref: EarthSciData.jl@830435a065f27e99f10bba91107ca1730322cc6b:src/nei2016monthly.jl\n\nUpstream definition:\n  const DIURNAL_FACTORS_NOx = [0.39598674,0.31852847,0.30128068,0.29590213,0.33177775,0.43871498,0.9094625,1.5850095,1.6223788,1.3429453,1.2265036,1.1937649,1.254314,1.3282939,1.331211,1.4135737,1.6848333,1.710925,1.3491899,1.0586671,0.84439224,0.761263,0.72693235,0.5741503]\n  function diurnal_itp_NOx(t, lon)\n      dt = floor(rad2deg(lon) / 15)  # timezone offset in hours\n      t_local = t + dt * 3600\n      hour_of_day = Dates.hour(Dates.unix2datetime(t_local)) + 1  # 1-based\n      return DIURNAL_FACTORS_NOx[hour_of_day]\n  end\n  @register_symbolic diurnal_itp_NOx(t, lon)\n\nThe @register_symbolic gap is resolved by composing:\n  1. t_local = t_utc + floor((lon * (180/π)) / 15) * 3600\n  2. hour = datetime.hour(t_local)  — UTC hour of local time in [0,23]\n  3. interp.linear(DIURNAL_FACTORS_NOx, [0..23], hour) — exact table lookup\n\nParameter rename: upstream `t` → ESM `t_utc` to avoid collision with the\nsimulation independent variable `t`.\n\nDIURNAL_FACTORS_NOx (24 entries, local hours 0-23):\n  hour  0: 0.39598674\n  hour  1: 0.31852847\n  hour  2: 0.30128068\n  hour  3: 0.29590213\n  hour  4: 0.33177775\n  hour  5: 0.43871498\n  hour  6: 0.9094625\n  hour  7: 1.5850095\n  hour  8: 1.6223788\n  hour  9: 1.3429453\n  hour 10: 1.2265036\n  hour 11: 1.1937649\n  hour 12: 1.254314\n  hour 13: 1.3282939\n  hour 14: 1.331211\n  hour 15: 1.4135737\n  hour 16: 1.6848333\n  hour 17: 1.710925\n  hour 18: 1.3491899\n  hour 19: 1.0586671\n  hour 20: 0.84439224\n  hour 21: 0.761263\n  hour 22: 0.72693235\n  hour 23: 0.5741503"
+        "notes": "source_ref: EarthSciData.jl@830435a065f27e99f10bba91107ca1730322cc6b:src/nei2016monthly.jl\n\nUpstream definition:\n  const DIURNAL_FACTORS_NOx = [0.39598674,0.31852847,0.30128068,0.29590213,0.33177775,0.43871498,0.9094625,1.5850095,1.6223788,1.3429453,1.2265036,1.1937649,1.254314,1.3282939,1.331211,1.4135737,1.6848333,1.710925,1.3491899,1.0586671,0.84439224,0.761263,0.72693235,0.5741503]\n  function diurnal_itp_NOx(t, lon)\n      dt = floor(rad2deg(lon) / 15)  # timezone offset in hours\n      t_local = t + dt * 3600\n      hour_of_day = Dates.hour(Dates.unix2datetime(t_local)) + 1  # 1-based\n      return DIURNAL_FACTORS_NOx[hour_of_day]\n  end\n  @register_symbolic diurnal_itp_NOx(t, lon)\n\nThe @register_symbolic gap is resolved by composing:\n  1. t_local = t_utc + floor((lon * (180/π)) / 15) * 3600\n  2. hour = datetime.hour(t_local)  — UTC hour of local time in [0,23]\n  3. interp.linear(DIURNAL_FACTORS_NOx, [0..23], hour) — exact table lookup\n\nParameter rename: upstream `t` → ESM `t_utc` to avoid collision with the\nsimulation independent variable `t`.\n\nDIURNAL_FACTORS_NOx (24 entries, local hours 0-23):\n  hour  0: 0.39598674\n  hour  1: 0.31852847\n  hour  2: 0.30128068\n  hour  3: 0.29590213\n  hour  4: 0.33177775\n  hour  5: 0.43871498\n  hour  6: 0.9094625\n  hour  7: 1.5850095\n  hour  8: 1.6223788\n  hour  9: 1.3429453\n  hour 10: 1.2265036\n  hour 11: 1.1937649\n  hour 12: 1.254314\n  hour 13: 1.3282939\n  hour 14: 1.331211\n  hour 15: 1.4135737\n  hour 16: 1.6848333\n  hour 17: 1.710925\n  hour 18: 1.3491899\n  hour 19: 1.0586671\n  hour 20: 0.84439224\n  hour 21: 0.761263\n  hour 22: 0.72693235\n  hour 23: 0.5741503\n\nUpdated 2026-10-28 to EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1): the local time uses round(lon/15) with ties to even, the EDGAR NOx hourly clock GEOS-Chem uses, instead of floor(lon/15). Expected values are upstream's function at each test's inputs."
       },
       "tolerance": {
         "rel": 1e-12
@@ -133,19 +133,103 @@
                         "op": "*",
                         "args": [
                           {
-                            "op": "floor",
+                            "op": "-",
                             "args": [
                               {
-                                "op": "/",
+                                "op": "floor",
                                 "args": [
                                   {
-                                    "op": "*",
+                                    "op": "+",
                                     "args": [
-                                      "lon",
-                                      57.29577951308232
+                                      {
+                                        "op": "/",
+                                        "args": [
+                                          {
+                                            "op": "*",
+                                            "args": [
+                                              "lon",
+                                              57.29577951308232
+                                            ]
+                                          },
+                                          15.0
+                                        ]
+                                      },
+                                      0.5
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "op": "ifelse",
+                                "args": [
+                                  {
+                                    "op": "==",
+                                    "args": [
+                                      {
+                                        "op": "-",
+                                        "args": [
+                                          {
+                                            "op": "/",
+                                            "args": [
+                                              {
+                                                "op": "+",
+                                                "args": [
+                                                  {
+                                                    "op": "/",
+                                                    "args": [
+                                                      {
+                                                        "op": "*",
+                                                        "args": [
+                                                          "lon",
+                                                          57.29577951308232
+                                                        ]
+                                                      },
+                                                      15.0
+                                                    ]
+                                                  },
+                                                  0.5
+                                                ]
+                                              },
+                                              2.0
+                                            ]
+                                          },
+                                          {
+                                            "op": "floor",
+                                            "args": [
+                                              {
+                                                "op": "/",
+                                                "args": [
+                                                  {
+                                                    "op": "+",
+                                                    "args": [
+                                                      {
+                                                        "op": "/",
+                                                        "args": [
+                                                          {
+                                                            "op": "*",
+                                                            "args": [
+                                                              "lon",
+                                                              57.29577951308232
+                                                            ]
+                                                          },
+                                                          15.0
+                                                        ]
+                                                      },
+                                                      0.5
+                                                    ]
+                                                  },
+                                                  2.0
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      0.5
                                     ]
                                   },
-                                  15.0
+                                  1.0,
+                                  0.0
                                 ]
                               }
                             ]
@@ -309,7 +393,7 @@
             {
               "variable": "diurnal_itp_NOx",
               "time": 0.0,
-              "expected": 0.5741503,
+              "expected": 0.39598674,
               "tolerance": {
                 "rel": 1e-12
               }
@@ -357,6 +441,44 @@
               "tolerance": {
                 "rel": 1e-12
               }
+            }
+          ]
+        },
+        {
+          "id": "halfhour_meridian_m97_5_t1462125600",
+          "description": "lon = -97.5 deg, where lon/15 = -6.5 is a tie: round-half-even gives UTC-6 and floor UTC-7. Expected value is upstream's function (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "t_utc": 1462125600.0,
+            "lon": -1.7016960206944713
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "assertions": [
+            {
+              "variable": "diurnal_itp_NOx",
+              "time": 0.0,
+              "expected": 1.254314
+            }
+          ]
+        },
+        {
+          "id": "halfhour_meridian_m97_5_t1462168800",
+          "description": "lon = -97.5 deg, where lon/15 = -6.5 is a tie: round-half-even gives UTC-6 and floor UTC-7. Expected value is upstream's function (EarthSciML/EarthSciData.jl PR #226 (head jialinl6:Oct_merge @87f8da1)).",
+          "parameter_overrides": {
+            "t_utc": 1462168800.0,
+            "lon": -1.7016960206944713
+          },
+          "time_span": {
+            "start": 0.0,
+            "end": 1.0
+          },
+          "assertions": [
+            {
+              "variable": "diurnal_itp_NOx",
+              "time": 0.0,
+              "expected": 0.39598674
             }
           ]
         }
