@@ -260,7 +260,7 @@
         "correction": {
           "type": "unknown",
           "units": "s/m",
-          "description": "Cold-surface correction [s/m] added to r_lux, r_clx and r_gsx below 0 °C (Wesely 1989 p. 4)."
+          "description": "Cold-surface correction [s/m] added to r_lux, r_clx and r_gsx below 0 °C (Wesely 1989 p. 4). Wesely (1989) writes the exponent with Ts_c as a number of degrees Celsius, so it is divided by a 1 degC constant to make the argument of exp dimensionless, and the 1000 s/m factor carries its unit on a const (as upstream EarthSciModels f4239fe)."
         },
         "r_i_urban": {
           "type": "unknown",
@@ -3179,7 +3179,12 @@
               {
                 "op": "*",
                 "args": [
-                  1000.0,
+                  {
+                    "op": "const",
+                    "args": [],
+                    "value": 1000.0,
+                    "units": "s/m"
+                  },
                   {
                     "op": "exp",
                     "args": [
@@ -3189,7 +3194,18 @@
                           {
                             "op": "-",
                             "args": [
-                              "Ts_c"
+                              {
+                                "op": "/",
+                                "args": [
+                                  "Ts_c",
+                                  {
+                                    "op": "const",
+                                    "args": [],
+                                    "value": 1.0,
+                                    "units": "degC"
+                                  }
+                                ]
+                              }
                             ]
                           },
                           4
