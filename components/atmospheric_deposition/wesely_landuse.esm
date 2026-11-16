@@ -1,5 +1,5 @@
 {
-  "esm": "1.0.0",
+  "esm": "2.0.0",
   "metadata": {
     "name": "WeselyLandUse",
     "description": "Wesely (1989) land-use area fractions for CONUS at 0.05°, from MODIS MCD12C1 v6.1 (2016): the 11 class fractions f_<class> that DryDepositionGas weights its mosaic deposition velocity by. Data source + loader model; the host regrids it onto its grid.",

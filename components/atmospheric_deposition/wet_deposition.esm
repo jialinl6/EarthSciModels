@@ -1,5 +1,5 @@
 {
-  "esm": "1.0.0",
+  "esm": "2.0.0",
   "metadata": {
     "name": "WetDeposition",
     "description": "EMEP wet deposition for particles, SO2 and other soluble gases (upstream WetDeposition). First-order rates k = W*P/(h_s*rho_water), with precipitation flux P = qrain*Vdr*rho_air, sub-cloud and cloudFrac-weighted in-cloud scavenging ratios W from EMEP Status Report 1/2003 Table 9.1 (times 1e6, the tabulated unit), and the fixed EMEP scavenging depth h_s = 1000 m; the particle sub-cloud term is A_wd*E*qrain*rho_air.",
