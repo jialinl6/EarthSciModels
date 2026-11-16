@@ -809,7 +809,6 @@
         "flux_ACET_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ACET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -823,7 +822,6 @@
         "flux_ACROLEIN_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ACROLEIN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -837,7 +835,6 @@
         "flux_ALD2_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ALD2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -851,7 +848,6 @@
         "flux_ALD2_PRIMARY_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ALD2_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -865,7 +861,6 @@
         "flux_ALDX_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ALDX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -879,7 +874,6 @@
         "flux_BENZ_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu BENZ column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -893,7 +887,6 @@
         "flux_BUTADIENE13_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu BUTADIENE13 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -907,7 +900,6 @@
         "flux_CH4_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu CH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -921,7 +913,6 @@
         "flux_CL2_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu CL2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -935,7 +926,6 @@
         "flux_CO_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu CO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -949,7 +939,6 @@
         "flux_ETH_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ETH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -963,7 +952,6 @@
         "flux_ETHA_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ETHA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -977,7 +965,6 @@
         "flux_ETHY_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ETHY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -991,7 +978,6 @@
         "flux_ETOH_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ETOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1005,7 +991,6 @@
         "flux_FORM_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu FORM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1019,7 +1004,6 @@
         "flux_FORM_PRIMARY_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu FORM_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1033,7 +1017,6 @@
         "flux_HCL_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu HCL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1047,7 +1030,6 @@
         "flux_HONO_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu HONO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1061,7 +1043,6 @@
         "flux_IOLE_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu IOLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1075,7 +1056,6 @@
         "flux_ISOP_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu ISOP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1089,7 +1069,6 @@
         "flux_KET_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu KET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1103,7 +1082,6 @@
         "flux_MEOH_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu MEOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1117,7 +1095,6 @@
         "flux_NAPH_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu NAPH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1131,7 +1108,6 @@
         "flux_NH3_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu NH3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1145,7 +1121,6 @@
         "flux_NH3_FERT_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu NH3_FERT column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1159,7 +1134,6 @@
         "flux_NO_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu NO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1173,7 +1147,6 @@
         "flux_NO2_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu NO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1187,7 +1160,6 @@
         "flux_NOX_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu NOX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1201,7 +1173,6 @@
         "flux_NVOL_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu NVOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1215,7 +1186,6 @@
         "flux_OLE_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu OLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1229,7 +1199,6 @@
         "flux_PAL_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PAL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1243,7 +1212,6 @@
         "flux_PAR_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PAR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1257,7 +1225,6 @@
         "flux_PCA_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PCA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1271,7 +1238,6 @@
         "flux_PCL_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PCL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1285,7 +1251,6 @@
         "flux_PEC_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PEC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1299,7 +1264,6 @@
         "flux_PFE_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PFE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1313,7 +1277,6 @@
         "flux_PH2O_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PH2O column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1327,7 +1290,6 @@
         "flux_PK_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1341,7 +1303,6 @@
         "flux_PM2_5_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PM2_5 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1355,7 +1316,6 @@
         "flux_PMC_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PMC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1369,7 +1329,6 @@
         "flux_PMG_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PMG column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1383,7 +1342,6 @@
         "flux_PMN_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1397,7 +1355,6 @@
         "flux_PMOTHR_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PMOTHR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1411,7 +1368,6 @@
         "flux_PNA_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PNA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1425,7 +1381,6 @@
         "flux_PNCOM_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PNCOM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1439,7 +1394,6 @@
         "flux_PNH4_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PNH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1453,7 +1407,6 @@
         "flux_PNO3_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PNO3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1467,7 +1420,6 @@
         "flux_POC_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu POC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1481,7 +1433,6 @@
         "flux_PRPA_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PRPA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1495,7 +1446,6 @@
         "flux_PSI_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PSI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1509,7 +1459,6 @@
         "flux_PSO4_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PSO4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1523,7 +1472,6 @@
         "flux_PTI_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu PTI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1537,7 +1485,6 @@
         "flux_SO2_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu SO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1551,7 +1498,6 @@
         "flux_SOAALK_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu SOAALK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1565,7 +1511,6 @@
         "flux_SULF_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu SULF column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1579,7 +1524,6 @@
         "flux_TERP_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu TERP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1593,7 +1537,6 @@
         "flux_TOL_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu TOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1607,7 +1550,6 @@
         "flux_UNR_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu UNR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1621,7 +1563,6 @@
         "flux_VOC_INV_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu VOC_INV column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1635,7 +1576,6 @@
         "flux_XYLMN_ptegu": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptegu XYLMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1649,7 +1589,6 @@
         "flux_ACET_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ACET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1663,7 +1602,6 @@
         "flux_ACROLEIN_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ACROLEIN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1677,7 +1615,6 @@
         "flux_ALD2_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ALD2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1691,7 +1628,6 @@
         "flux_ALD2_PRIMARY_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ALD2_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1705,7 +1641,6 @@
         "flux_ALDX_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ALDX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1719,7 +1654,6 @@
         "flux_BENZ_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm BENZ column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1733,7 +1667,6 @@
         "flux_BUTADIENE13_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm BUTADIENE13 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1747,7 +1680,6 @@
         "flux_CH4_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm CH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1761,7 +1693,6 @@
         "flux_CL2_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm CL2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1775,7 +1706,6 @@
         "flux_CO_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm CO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1789,7 +1719,6 @@
         "flux_ETH_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ETH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1803,7 +1732,6 @@
         "flux_ETHA_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ETHA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1817,7 +1745,6 @@
         "flux_ETHY_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ETHY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1831,7 +1758,6 @@
         "flux_ETOH_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ETOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1845,7 +1771,6 @@
         "flux_FORM_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm FORM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1859,7 +1784,6 @@
         "flux_FORM_PRIMARY_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm FORM_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1873,7 +1797,6 @@
         "flux_HCL_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm HCL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1887,7 +1810,6 @@
         "flux_HONO_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm HONO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1901,7 +1823,6 @@
         "flux_IOLE_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm IOLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1915,7 +1836,6 @@
         "flux_ISOP_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm ISOP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1929,7 +1849,6 @@
         "flux_KET_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm KET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1943,7 +1862,6 @@
         "flux_MEOH_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm MEOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1957,7 +1875,6 @@
         "flux_NAPH_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm NAPH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1971,7 +1888,6 @@
         "flux_NH3_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm NH3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1985,7 +1901,6 @@
         "flux_NH3_FERT_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm NH3_FERT column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -1999,7 +1914,6 @@
         "flux_NO_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm NO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2013,7 +1927,6 @@
         "flux_NO2_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm NO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2027,7 +1940,6 @@
         "flux_NOX_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm NOX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2041,7 +1953,6 @@
         "flux_NVOL_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm NVOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2055,7 +1966,6 @@
         "flux_OLE_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm OLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2069,7 +1979,6 @@
         "flux_PAL_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PAL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2083,7 +1992,6 @@
         "flux_PAR_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PAR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2097,7 +2005,6 @@
         "flux_PCA_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PCA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2111,7 +2018,6 @@
         "flux_PCL_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PCL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2125,7 +2031,6 @@
         "flux_PEC_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PEC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2139,7 +2044,6 @@
         "flux_PFE_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PFE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2153,7 +2057,6 @@
         "flux_PH2O_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PH2O column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2167,7 +2070,6 @@
         "flux_PK_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2181,7 +2083,6 @@
         "flux_PM2_5_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PM2_5 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2195,7 +2096,6 @@
         "flux_PMC_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PMC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2209,7 +2109,6 @@
         "flux_PMG_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PMG column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2223,7 +2122,6 @@
         "flux_PMN_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2237,7 +2135,6 @@
         "flux_PMOTHR_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PMOTHR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2251,7 +2148,6 @@
         "flux_PNA_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PNA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2265,7 +2161,6 @@
         "flux_PNCOM_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PNCOM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2279,7 +2174,6 @@
         "flux_PNH4_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PNH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2293,7 +2187,6 @@
         "flux_PNO3_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PNO3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2307,7 +2200,6 @@
         "flux_POC_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm POC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2321,7 +2213,6 @@
         "flux_PRPA_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PRPA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2335,7 +2226,6 @@
         "flux_PSI_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PSI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2349,7 +2239,6 @@
         "flux_PSO4_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PSO4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2363,7 +2252,6 @@
         "flux_PTI_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm PTI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2377,7 +2265,6 @@
         "flux_SO2_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm SO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2391,7 +2278,6 @@
         "flux_SOAALK_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm SOAALK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2405,7 +2291,6 @@
         "flux_SULF_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm SULF column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2419,7 +2304,6 @@
         "flux_TERP_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm TERP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2433,7 +2317,6 @@
         "flux_TOL_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm TOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2447,7 +2330,6 @@
         "flux_UNR_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm UNR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2461,7 +2343,6 @@
         "flux_VOC_INV_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm VOC_INV column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2475,7 +2356,6 @@
         "flux_XYLMN_ptnonipm": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_ptnonipm XYLMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2489,7 +2369,6 @@
         "flux_ACET_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ACET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2503,7 +2382,6 @@
         "flux_ACROLEIN_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ACROLEIN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2517,7 +2395,6 @@
         "flux_ALD2_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ALD2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2531,7 +2408,6 @@
         "flux_ALD2_PRIMARY_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ALD2_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2545,7 +2421,6 @@
         "flux_ALDX_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ALDX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2559,7 +2434,6 @@
         "flux_BENZ_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas BENZ column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2573,7 +2447,6 @@
         "flux_BUTADIENE13_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas BUTADIENE13 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2587,7 +2460,6 @@
         "flux_CH4_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas CH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2601,7 +2473,6 @@
         "flux_CL2_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas CL2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2615,7 +2486,6 @@
         "flux_CO_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas CO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2629,7 +2499,6 @@
         "flux_ETH_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ETH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2643,7 +2512,6 @@
         "flux_ETHA_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ETHA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2657,7 +2525,6 @@
         "flux_ETHY_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ETHY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2671,7 +2538,6 @@
         "flux_ETOH_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ETOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2685,7 +2551,6 @@
         "flux_FORM_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas FORM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2699,7 +2564,6 @@
         "flux_FORM_PRIMARY_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas FORM_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2713,7 +2577,6 @@
         "flux_HCL_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas HCL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2727,7 +2590,6 @@
         "flux_HONO_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas HONO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2741,7 +2603,6 @@
         "flux_IOLE_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas IOLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2755,7 +2616,6 @@
         "flux_ISOP_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas ISOP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2769,7 +2629,6 @@
         "flux_KET_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas KET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2783,7 +2642,6 @@
         "flux_MEOH_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas MEOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2797,7 +2655,6 @@
         "flux_NAPH_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas NAPH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2811,7 +2668,6 @@
         "flux_NH3_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas NH3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2825,7 +2681,6 @@
         "flux_NH3_FERT_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas NH3_FERT column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2839,7 +2694,6 @@
         "flux_NO_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas NO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2853,7 +2707,6 @@
         "flux_NO2_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas NO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2867,7 +2720,6 @@
         "flux_NOX_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas NOX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2881,7 +2733,6 @@
         "flux_NVOL_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas NVOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2895,7 +2746,6 @@
         "flux_OLE_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas OLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2909,7 +2759,6 @@
         "flux_PAL_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PAL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2923,7 +2772,6 @@
         "flux_PAR_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PAR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2937,7 +2785,6 @@
         "flux_PCA_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PCA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2951,7 +2798,6 @@
         "flux_PCL_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PCL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2965,7 +2811,6 @@
         "flux_PEC_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PEC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2979,7 +2824,6 @@
         "flux_PFE_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PFE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -2993,7 +2837,6 @@
         "flux_PH2O_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PH2O column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3007,7 +2850,6 @@
         "flux_PK_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3021,7 +2863,6 @@
         "flux_PM2_5_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PM2_5 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3035,7 +2876,6 @@
         "flux_PMC_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PMC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3049,7 +2889,6 @@
         "flux_PMG_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PMG column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3063,7 +2902,6 @@
         "flux_PMN_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3077,7 +2915,6 @@
         "flux_PMOTHR_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PMOTHR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3091,7 +2928,6 @@
         "flux_PNA_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PNA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3105,7 +2941,6 @@
         "flux_PNCOM_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PNCOM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3119,7 +2954,6 @@
         "flux_PNH4_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PNH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3133,7 +2967,6 @@
         "flux_PNO3_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PNO3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3147,7 +2980,6 @@
         "flux_POC_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas POC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3161,7 +2993,6 @@
         "flux_PRPA_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PRPA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3175,7 +3006,6 @@
         "flux_PSI_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PSI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3189,7 +3019,6 @@
         "flux_PSO4_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PSO4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3203,7 +3032,6 @@
         "flux_PTI_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas PTI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3217,7 +3045,6 @@
         "flux_SO2_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas SO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3231,7 +3058,6 @@
         "flux_SOAALK_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas SOAALK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3245,7 +3071,6 @@
         "flux_SULF_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas SULF column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3259,7 +3084,6 @@
         "flux_TERP_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas TERP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3273,7 +3097,6 @@
         "flux_TOL_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas TOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3287,7 +3110,6 @@
         "flux_UNR_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas UNR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3301,7 +3123,6 @@
         "flux_VOC_INV_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas VOC_INV column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3315,7 +3136,6 @@
         "flux_XYLMN_pt_oilgas": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_pt_oilgas XYLMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3329,7 +3149,6 @@
         "flux_ACET_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt ACET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3343,7 +3162,6 @@
         "flux_ALD2_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt ALD2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3357,7 +3175,6 @@
         "flux_ALD2_PRIMARY_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt ALD2_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3371,7 +3188,6 @@
         "flux_ALDX_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt ALDX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3385,7 +3201,6 @@
         "flux_BENZ_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt BENZ column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3399,7 +3214,6 @@
         "flux_CH4_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt CH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3413,7 +3227,6 @@
         "flux_CO_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt CO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3427,7 +3240,6 @@
         "flux_ETH_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt ETH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3441,7 +3253,6 @@
         "flux_ETHA_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt ETHA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3455,7 +3266,6 @@
         "flux_ETHY_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt ETHY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3469,7 +3279,6 @@
         "flux_ETOH_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt ETOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3483,7 +3292,6 @@
         "flux_FORM_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt FORM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3497,7 +3305,6 @@
         "flux_FORM_PRIMARY_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt FORM_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3511,7 +3318,6 @@
         "flux_HONO_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt HONO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3525,7 +3331,6 @@
         "flux_IOLE_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt IOLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3539,7 +3344,6 @@
         "flux_ISOP_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt ISOP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3553,7 +3357,6 @@
         "flux_KET_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt KET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3567,7 +3370,6 @@
         "flux_MEOH_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt MEOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3581,7 +3383,6 @@
         "flux_NAPH_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt NAPH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3595,7 +3396,6 @@
         "flux_NH3_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt NH3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3609,7 +3409,6 @@
         "flux_NH3_FERT_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt NH3_FERT column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3623,7 +3422,6 @@
         "flux_NO_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt NO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3637,7 +3435,6 @@
         "flux_NO2_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt NO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3651,7 +3448,6 @@
         "flux_NOX_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt NOX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3665,7 +3461,6 @@
         "flux_NVOL_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt NVOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3679,7 +3474,6 @@
         "flux_OLE_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt OLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3693,7 +3487,6 @@
         "flux_PAL_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PAL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3707,7 +3500,6 @@
         "flux_PAR_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PAR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3721,7 +3513,6 @@
         "flux_PCA_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PCA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3735,7 +3526,6 @@
         "flux_PCL_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PCL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3749,7 +3539,6 @@
         "flux_PEC_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PEC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3763,7 +3552,6 @@
         "flux_PFE_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PFE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3777,7 +3565,6 @@
         "flux_PH2O_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PH2O column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3791,7 +3578,6 @@
         "flux_PK_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3805,7 +3591,6 @@
         "flux_PM2_5_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PM2_5 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3819,7 +3604,6 @@
         "flux_PMC_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PMC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3833,7 +3617,6 @@
         "flux_PMG_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PMG column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3847,7 +3630,6 @@
         "flux_PMN_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3861,7 +3643,6 @@
         "flux_PMOTHR_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PMOTHR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3875,7 +3656,6 @@
         "flux_PNA_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PNA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3889,7 +3669,6 @@
         "flux_PNCOM_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PNCOM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3903,7 +3682,6 @@
         "flux_PNH4_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PNH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3917,7 +3695,6 @@
         "flux_PNO3_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PNO3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3931,7 +3708,6 @@
         "flux_POC_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt POC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3945,7 +3721,6 @@
         "flux_PRPA_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PRPA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3959,7 +3734,6 @@
         "flux_PSI_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PSI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3973,7 +3747,6 @@
         "flux_PSO4_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PSO4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -3987,7 +3760,6 @@
         "flux_PTI_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt PTI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4001,7 +3773,6 @@
         "flux_SO2_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt SO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4015,7 +3786,6 @@
         "flux_SOAALK_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt SOAALK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4029,7 +3799,6 @@
         "flux_SULF_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt SULF column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4043,7 +3812,6 @@
         "flux_TERP_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt TERP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4057,7 +3825,6 @@
         "flux_TOL_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt TOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4071,7 +3838,6 @@
         "flux_UNR_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt UNR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4085,7 +3851,6 @@
         "flux_VOC_INV_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt VOC_INV column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4099,7 +3864,6 @@
         "flux_XYLMN_othpt": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_othpt XYLMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4113,7 +3877,6 @@
         "flux_ACET_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 ACET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4127,7 +3890,6 @@
         "flux_ALD2_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 ALD2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4141,7 +3903,6 @@
         "flux_ALD2_PRIMARY_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 ALD2_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4155,7 +3916,6 @@
         "flux_ALDX_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 ALDX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4169,7 +3929,6 @@
         "flux_BENZ_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 BENZ column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4183,7 +3942,6 @@
         "flux_CH4_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 CH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4197,7 +3955,6 @@
         "flux_CO_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 CO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4211,7 +3968,6 @@
         "flux_ETH_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 ETH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4225,7 +3981,6 @@
         "flux_ETHA_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 ETHA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4239,7 +3994,6 @@
         "flux_ETHY_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 ETHY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4253,7 +4007,6 @@
         "flux_ETOH_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 ETOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4267,7 +4020,6 @@
         "flux_FORM_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 FORM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4281,7 +4033,6 @@
         "flux_FORM_PRIMARY_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 FORM_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4295,7 +4046,6 @@
         "flux_HONO_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 HONO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4309,7 +4059,6 @@
         "flux_IOLE_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 IOLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4323,7 +4072,6 @@
         "flux_ISOP_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 ISOP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4337,7 +4085,6 @@
         "flux_KET_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 KET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4351,7 +4098,6 @@
         "flux_MEOH_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 MEOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4365,7 +4111,6 @@
         "flux_NAPH_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 NAPH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4379,7 +4124,6 @@
         "flux_NH3_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 NH3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4393,7 +4137,6 @@
         "flux_NH3_FERT_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 NH3_FERT column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4407,7 +4150,6 @@
         "flux_NO_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 NO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4421,7 +4163,6 @@
         "flux_NO2_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 NO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4435,7 +4176,6 @@
         "flux_NOX_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 NOX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4449,7 +4189,6 @@
         "flux_NVOL_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 NVOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4463,7 +4202,6 @@
         "flux_OLE_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 OLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4477,7 +4215,6 @@
         "flux_PAL_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PAL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4491,7 +4228,6 @@
         "flux_PAR_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PAR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4505,7 +4241,6 @@
         "flux_PCA_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PCA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4519,7 +4254,6 @@
         "flux_PCL_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PCL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4533,7 +4267,6 @@
         "flux_PEC_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PEC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4547,7 +4280,6 @@
         "flux_PFE_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PFE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4561,7 +4293,6 @@
         "flux_PH2O_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PH2O column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4575,7 +4306,6 @@
         "flux_PK_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4589,7 +4319,6 @@
         "flux_PM2_5_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PM2_5 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4603,7 +4332,6 @@
         "flux_PMC_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PMC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4617,7 +4345,6 @@
         "flux_PMG_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PMG column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4631,7 +4358,6 @@
         "flux_PMN_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4645,7 +4371,6 @@
         "flux_PMOTHR_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PMOTHR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4659,7 +4384,6 @@
         "flux_PNA_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PNA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4673,7 +4397,6 @@
         "flux_PNCOM_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PNCOM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4687,7 +4410,6 @@
         "flux_PNH4_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PNH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4701,7 +4423,6 @@
         "flux_PNO3_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PNO3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4715,7 +4436,6 @@
         "flux_POC_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 POC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4729,7 +4449,6 @@
         "flux_PRPA_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PRPA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4743,7 +4462,6 @@
         "flux_PSI_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PSI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4757,7 +4475,6 @@
         "flux_PSO4_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PSO4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4771,7 +4488,6 @@
         "flux_PTI_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 PTI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4785,7 +4501,6 @@
         "flux_SO2_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 SO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4799,7 +4514,6 @@
         "flux_SOAALK_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 SOAALK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4813,7 +4527,6 @@
         "flux_SULF_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 SULF column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4827,7 +4540,6 @@
         "flux_TERP_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 TERP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4841,7 +4553,6 @@
         "flux_TOL_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 TOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4855,7 +4566,6 @@
         "flux_UNR_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 UNR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4869,7 +4579,6 @@
         "flux_VOC_INV_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 VOC_INV column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4883,7 +4592,6 @@
         "flux_XYLMN_cmv_c3": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c3_12 XYLMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4897,7 +4605,6 @@
         "flux_ACET_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 ACET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4911,7 +4618,6 @@
         "flux_ALD2_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 ALD2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4925,7 +4631,6 @@
         "flux_ALD2_PRIMARY_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 ALD2_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4939,7 +4644,6 @@
         "flux_ALDX_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 ALDX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4953,7 +4657,6 @@
         "flux_BENZ_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 BENZ column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4967,7 +4670,6 @@
         "flux_CH4_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 CH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4981,7 +4683,6 @@
         "flux_CO_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 CO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -4995,7 +4696,6 @@
         "flux_ETH_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 ETH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5009,7 +4709,6 @@
         "flux_ETHA_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 ETHA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5023,7 +4722,6 @@
         "flux_ETHY_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 ETHY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5037,7 +4735,6 @@
         "flux_ETOH_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 ETOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5051,7 +4748,6 @@
         "flux_FORM_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 FORM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5065,7 +4761,6 @@
         "flux_FORM_PRIMARY_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 FORM_PRIMARY column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5079,7 +4774,6 @@
         "flux_HONO_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 HONO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5093,7 +4787,6 @@
         "flux_IOLE_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 IOLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5107,7 +4800,6 @@
         "flux_ISOP_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 ISOP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5121,7 +4813,6 @@
         "flux_KET_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 KET column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5135,7 +4826,6 @@
         "flux_MEOH_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 MEOH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5149,7 +4839,6 @@
         "flux_NAPH_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 NAPH column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5163,7 +4852,6 @@
         "flux_NH3_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 NH3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5177,7 +4865,6 @@
         "flux_NH3_FERT_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 NH3_FERT column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5191,7 +4878,6 @@
         "flux_NO_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 NO column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5205,7 +4891,6 @@
         "flux_NO2_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 NO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5219,7 +4904,6 @@
         "flux_NOX_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 NOX column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5233,7 +4917,6 @@
         "flux_NVOL_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 NVOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5247,7 +4930,6 @@
         "flux_OLE_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 OLE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5261,7 +4943,6 @@
         "flux_PAL_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PAL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5275,7 +4956,6 @@
         "flux_PAR_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PAR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5289,7 +4969,6 @@
         "flux_PCA_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PCA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5303,7 +4982,6 @@
         "flux_PCL_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PCL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5317,7 +4995,6 @@
         "flux_PEC_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PEC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5331,7 +5008,6 @@
         "flux_PFE_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PFE column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5345,7 +5021,6 @@
         "flux_PH2O_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PH2O column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5359,7 +5034,6 @@
         "flux_PK_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5373,7 +5047,6 @@
         "flux_PM2_5_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PM2_5 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5387,7 +5060,6 @@
         "flux_PMC_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PMC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5401,7 +5073,6 @@
         "flux_PMG_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PMG column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5415,7 +5086,6 @@
         "flux_PMN_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5429,7 +5099,6 @@
         "flux_PMOTHR_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PMOTHR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5443,7 +5112,6 @@
         "flux_PNA_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PNA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5457,7 +5125,6 @@
         "flux_PNCOM_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PNCOM column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5471,7 +5138,6 @@
         "flux_PNH4_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PNH4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5485,7 +5151,6 @@
         "flux_PNO3_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PNO3 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5499,7 +5164,6 @@
         "flux_POC_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 POC column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5513,7 +5177,6 @@
         "flux_PRPA_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PRPA column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5527,7 +5190,6 @@
         "flux_PSI_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PSI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5541,7 +5203,6 @@
         "flux_PSO4_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PSO4 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5555,7 +5216,6 @@
         "flux_PTI_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 PTI column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5569,7 +5229,6 @@
         "flux_SO2_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 SO2 column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5583,7 +5242,6 @@
         "flux_SOAALK_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 SOAALK column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5597,7 +5255,6 @@
         "flux_SULF_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 SULF column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5611,7 +5268,6 @@
         "flux_TERP_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 TERP column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5625,7 +5281,6 @@
         "flux_TOL_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 TOL column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5639,7 +5294,6 @@
         "flux_UNR_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 UNR column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5653,7 +5307,6 @@
         "flux_VOC_INV_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 VOC_INV column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
@@ -5667,7 +5320,6 @@
         "flux_XYLMN_cmv_c1c2": {
           "type": "parameter",
           "units": "kg/m^2/s",
-          "shape": [],
           "description": "NEI2016 emln_cmv_c1c2_12 XYLMN column emission flux density (kg/m²/s), the monthly file's total.",
           "update": {
             "kind": "data",
