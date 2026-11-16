@@ -817,7 +817,8 @@
               "file_variable": "ACET",
               "description": "ACET in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-10
         },
         "flux_ACROLEIN_ptegu": {
           "type": "parameter",
@@ -830,7 +831,8 @@
               "file_variable": "ACROLEIN",
               "description": "ACROLEIN in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8e-13
         },
         "flux_ALD2_ptegu": {
           "type": "parameter",
@@ -843,7 +845,8 @@
               "file_variable": "ALD2",
               "description": "ALD2 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALD2_PRIMARY_ptegu": {
           "type": "parameter",
@@ -856,7 +859,8 @@
               "file_variable": "ALD2_PRIMARY",
               "description": "ALD2_PRIMARY in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALDX_ptegu": {
           "type": "parameter",
@@ -869,7 +873,8 @@
               "file_variable": "ALDX",
               "description": "ALDX in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.6e-11
         },
         "flux_BENZ_ptegu": {
           "type": "parameter",
@@ -882,7 +887,8 @@
               "file_variable": "BENZ",
               "description": "BENZ in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-11
         },
         "flux_BUTADIENE13_ptegu": {
           "type": "parameter",
@@ -895,7 +901,8 @@
               "file_variable": "BUTADIENE13",
               "description": "BUTADIENE13 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.5e-12
         },
         "flux_CH4_ptegu": {
           "type": "parameter",
@@ -908,7 +915,8 @@
               "file_variable": "CH4",
               "description": "CH4 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_CL2_ptegu": {
           "type": "parameter",
@@ -921,7 +929,8 @@
               "file_variable": "CL2",
               "description": "CL2 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.9e-12
         },
         "flux_CO_ptegu": {
           "type": "parameter",
@@ -934,7 +943,8 @@
               "file_variable": "CO",
               "description": "CO in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-09
         },
         "flux_ETH_ptegu": {
           "type": "parameter",
@@ -947,7 +957,8 @@
               "file_variable": "ETH",
               "description": "ETH in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.4e-10
         },
         "flux_ETHA_ptegu": {
           "type": "parameter",
@@ -960,7 +971,8 @@
               "file_variable": "ETHA",
               "description": "ETHA in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-10
         },
         "flux_ETHY_ptegu": {
           "type": "parameter",
@@ -973,7 +985,8 @@
               "file_variable": "ETHY",
               "description": "ETHY in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-11
         },
         "flux_ETOH_ptegu": {
           "type": "parameter",
@@ -986,7 +999,8 @@
               "file_variable": "ETOH",
               "description": "ETOH in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_FORM_ptegu": {
           "type": "parameter",
@@ -999,7 +1013,8 @@
               "file_variable": "FORM",
               "description": "FORM in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_FORM_PRIMARY_ptegu": {
           "type": "parameter",
@@ -1012,7 +1027,8 @@
               "file_variable": "FORM_PRIMARY",
               "description": "FORM_PRIMARY in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_HCL_ptegu": {
           "type": "parameter",
@@ -1025,7 +1041,8 @@
               "file_variable": "HCL",
               "description": "HCL in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.1e-13
         },
         "flux_HONO_ptegu": {
           "type": "parameter",
@@ -1038,7 +1055,8 @@
               "file_variable": "HONO",
               "description": "HONO in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.5e-12
         },
         "flux_IOLE_ptegu": {
           "type": "parameter",
@@ -1051,7 +1069,8 @@
               "file_variable": "IOLE",
               "description": "IOLE in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_ISOP_ptegu": {
           "type": "parameter",
@@ -1064,7 +1083,8 @@
               "file_variable": "ISOP",
               "description": "ISOP in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_KET_ptegu": {
           "type": "parameter",
@@ -1077,7 +1097,8 @@
               "file_variable": "KET",
               "description": "KET in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3e-12
         },
         "flux_MEOH_ptegu": {
           "type": "parameter",
@@ -1090,7 +1111,8 @@
               "file_variable": "MEOH",
               "description": "MEOH in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-10
         },
         "flux_NAPH_ptegu": {
           "type": "parameter",
@@ -1103,7 +1125,8 @@
               "file_variable": "NAPH",
               "description": "NAPH in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-12
         },
         "flux_NH3_ptegu": {
           "type": "parameter",
@@ -1116,7 +1139,8 @@
               "file_variable": "NH3",
               "description": "NH3 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_NH3_FERT_ptegu": {
           "type": "parameter",
@@ -1129,7 +1153,8 @@
               "file_variable": "NH3_FERT",
               "description": "NH3_FERT in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-10
         },
         "flux_NO_ptegu": {
           "type": "parameter",
@@ -1142,7 +1167,8 @@
               "file_variable": "NO",
               "description": "NO in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-10
         },
         "flux_NO2_ptegu": {
           "type": "parameter",
@@ -1155,7 +1181,8 @@
               "file_variable": "NO2",
               "description": "NO2 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_NOX_ptegu": {
           "type": "parameter",
@@ -1168,7 +1195,8 @@
               "file_variable": "NOX",
               "description": "NOX in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 6.6e-10
         },
         "flux_NVOL_ptegu": {
           "type": "parameter",
@@ -1181,7 +1209,8 @@
               "file_variable": "NVOL",
               "description": "NVOL in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.2e-12
         },
         "flux_OLE_ptegu": {
           "type": "parameter",
@@ -1194,7 +1223,8 @@
               "file_variable": "OLE",
               "description": "OLE in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.9e-10
         },
         "flux_PAL_ptegu": {
           "type": "parameter",
@@ -1207,7 +1237,8 @@
               "file_variable": "PAL",
               "description": "PAL in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.1e-12
         },
         "flux_PAR_ptegu": {
           "type": "parameter",
@@ -1220,7 +1251,8 @@
               "file_variable": "PAR",
               "description": "PAR in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.1e-10
         },
         "flux_PCA_ptegu": {
           "type": "parameter",
@@ -1233,7 +1265,8 @@
               "file_variable": "PCA",
               "description": "PCA in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-12
         },
         "flux_PCL_ptegu": {
           "type": "parameter",
@@ -1246,7 +1279,8 @@
               "file_variable": "PCL",
               "description": "PCL in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-12
         },
         "flux_PEC_ptegu": {
           "type": "parameter",
@@ -1259,7 +1293,8 @@
               "file_variable": "PEC",
               "description": "PEC in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.5e-11
         },
         "flux_PFE_ptegu": {
           "type": "parameter",
@@ -1272,7 +1307,8 @@
               "file_variable": "PFE",
               "description": "PFE in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.9e-12
         },
         "flux_PH2O_ptegu": {
           "type": "parameter",
@@ -1285,7 +1321,8 @@
               "file_variable": "PH2O",
               "description": "PH2O in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4e-13
         },
         "flux_PK_ptegu": {
           "type": "parameter",
@@ -1298,7 +1335,8 @@
               "file_variable": "PK",
               "description": "PK in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-12
         },
         "flux_PM2_5_ptegu": {
           "type": "parameter",
@@ -1311,7 +1349,8 @@
               "file_variable": "PM2_5",
               "description": "PM2_5 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.7e-10
         },
         "flux_PMC_ptegu": {
           "type": "parameter",
@@ -1324,7 +1363,8 @@
               "file_variable": "PMC",
               "description": "PMC in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-10
         },
         "flux_PMG_ptegu": {
           "type": "parameter",
@@ -1337,7 +1377,8 @@
               "file_variable": "PMG",
               "description": "PMG in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-13
         },
         "flux_PMN_ptegu": {
           "type": "parameter",
@@ -1350,7 +1391,8 @@
               "file_variable": "PMN",
               "description": "PMN in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1e-13
         },
         "flux_PMOTHR_ptegu": {
           "type": "parameter",
@@ -1363,7 +1405,8 @@
               "file_variable": "PMOTHR",
               "description": "PMOTHR in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.2e-11
         },
         "flux_PNA_ptegu": {
           "type": "parameter",
@@ -1376,7 +1419,8 @@
               "file_variable": "PNA",
               "description": "PNA in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-13
         },
         "flux_PNCOM_ptegu": {
           "type": "parameter",
@@ -1389,7 +1433,8 @@
               "file_variable": "PNCOM",
               "description": "PNCOM in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-11
         },
         "flux_PNH4_ptegu": {
           "type": "parameter",
@@ -1402,7 +1447,8 @@
               "file_variable": "PNH4",
               "description": "PNH4 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7.4e-13
         },
         "flux_PNO3_ptegu": {
           "type": "parameter",
@@ -1415,7 +1461,8 @@
               "file_variable": "PNO3",
               "description": "PNO3 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 9.4e-13
         },
         "flux_POC_ptegu": {
           "type": "parameter",
@@ -1428,7 +1475,8 @@
               "file_variable": "POC",
               "description": "POC in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-11
         },
         "flux_PRPA_ptegu": {
           "type": "parameter",
@@ -1441,7 +1489,8 @@
               "file_variable": "PRPA",
               "description": "PRPA in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-11
         },
         "flux_PSI_ptegu": {
           "type": "parameter",
@@ -1454,7 +1503,8 @@
               "file_variable": "PSI",
               "description": "PSI in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.6e-11
         },
         "flux_PSO4_ptegu": {
           "type": "parameter",
@@ -1467,7 +1517,8 @@
               "file_variable": "PSO4",
               "description": "PSO4 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.3e-12
         },
         "flux_PTI_ptegu": {
           "type": "parameter",
@@ -1480,7 +1531,8 @@
               "file_variable": "PTI",
               "description": "PTI in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-13
         },
         "flux_SO2_ptegu": {
           "type": "parameter",
@@ -1493,7 +1545,8 @@
               "file_variable": "SO2",
               "description": "SO2 in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-11
         },
         "flux_SOAALK_ptegu": {
           "type": "parameter",
@@ -1506,7 +1559,8 @@
               "file_variable": "SOAALK",
               "description": "SOAALK in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_SULF_ptegu": {
           "type": "parameter",
@@ -1519,7 +1573,8 @@
               "file_variable": "SULF",
               "description": "SULF in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-13
         },
         "flux_TERP_ptegu": {
           "type": "parameter",
@@ -1532,7 +1587,8 @@
               "file_variable": "TERP",
               "description": "TERP in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-09
         },
         "flux_TOL_ptegu": {
           "type": "parameter",
@@ -1545,7 +1601,8 @@
               "file_variable": "TOL",
               "description": "TOL in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.5e-11
         },
         "flux_UNR_ptegu": {
           "type": "parameter",
@@ -1558,7 +1615,8 @@
               "file_variable": "UNR",
               "description": "UNR in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-11
         },
         "flux_VOC_INV_ptegu": {
           "type": "parameter",
@@ -1571,7 +1629,8 @@
               "file_variable": "VOC_INV",
               "description": "VOC_INV in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8e-10
         },
         "flux_XYLMN_ptegu": {
           "type": "parameter",
@@ -1584,7 +1643,8 @@
               "file_variable": "XYLMN",
               "description": "XYLMN in 2016fh_16j_emln_ptegu_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.4e-11
         },
         "flux_ACET_ptnonipm": {
           "type": "parameter",
@@ -1597,7 +1657,8 @@
               "file_variable": "ACET",
               "description": "ACET in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-10
         },
         "flux_ACROLEIN_ptnonipm": {
           "type": "parameter",
@@ -1610,7 +1671,8 @@
               "file_variable": "ACROLEIN",
               "description": "ACROLEIN in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8e-13
         },
         "flux_ALD2_ptnonipm": {
           "type": "parameter",
@@ -1623,7 +1685,8 @@
               "file_variable": "ALD2",
               "description": "ALD2 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALD2_PRIMARY_ptnonipm": {
           "type": "parameter",
@@ -1636,7 +1699,8 @@
               "file_variable": "ALD2_PRIMARY",
               "description": "ALD2_PRIMARY in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALDX_ptnonipm": {
           "type": "parameter",
@@ -1649,7 +1713,8 @@
               "file_variable": "ALDX",
               "description": "ALDX in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.6e-11
         },
         "flux_BENZ_ptnonipm": {
           "type": "parameter",
@@ -1662,7 +1727,8 @@
               "file_variable": "BENZ",
               "description": "BENZ in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-11
         },
         "flux_BUTADIENE13_ptnonipm": {
           "type": "parameter",
@@ -1675,7 +1741,8 @@
               "file_variable": "BUTADIENE13",
               "description": "BUTADIENE13 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.5e-12
         },
         "flux_CH4_ptnonipm": {
           "type": "parameter",
@@ -1688,7 +1755,8 @@
               "file_variable": "CH4",
               "description": "CH4 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_CL2_ptnonipm": {
           "type": "parameter",
@@ -1701,7 +1769,8 @@
               "file_variable": "CL2",
               "description": "CL2 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.9e-12
         },
         "flux_CO_ptnonipm": {
           "type": "parameter",
@@ -1714,7 +1783,8 @@
               "file_variable": "CO",
               "description": "CO in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-09
         },
         "flux_ETH_ptnonipm": {
           "type": "parameter",
@@ -1727,7 +1797,8 @@
               "file_variable": "ETH",
               "description": "ETH in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.4e-10
         },
         "flux_ETHA_ptnonipm": {
           "type": "parameter",
@@ -1740,7 +1811,8 @@
               "file_variable": "ETHA",
               "description": "ETHA in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-10
         },
         "flux_ETHY_ptnonipm": {
           "type": "parameter",
@@ -1753,7 +1825,8 @@
               "file_variable": "ETHY",
               "description": "ETHY in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-11
         },
         "flux_ETOH_ptnonipm": {
           "type": "parameter",
@@ -1766,7 +1839,8 @@
               "file_variable": "ETOH",
               "description": "ETOH in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_FORM_ptnonipm": {
           "type": "parameter",
@@ -1779,7 +1853,8 @@
               "file_variable": "FORM",
               "description": "FORM in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_FORM_PRIMARY_ptnonipm": {
           "type": "parameter",
@@ -1792,7 +1867,8 @@
               "file_variable": "FORM_PRIMARY",
               "description": "FORM_PRIMARY in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_HCL_ptnonipm": {
           "type": "parameter",
@@ -1805,7 +1881,8 @@
               "file_variable": "HCL",
               "description": "HCL in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.1e-13
         },
         "flux_HONO_ptnonipm": {
           "type": "parameter",
@@ -1818,7 +1895,8 @@
               "file_variable": "HONO",
               "description": "HONO in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.5e-12
         },
         "flux_IOLE_ptnonipm": {
           "type": "parameter",
@@ -1831,7 +1909,8 @@
               "file_variable": "IOLE",
               "description": "IOLE in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_ISOP_ptnonipm": {
           "type": "parameter",
@@ -1844,7 +1923,8 @@
               "file_variable": "ISOP",
               "description": "ISOP in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_KET_ptnonipm": {
           "type": "parameter",
@@ -1857,7 +1937,8 @@
               "file_variable": "KET",
               "description": "KET in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3e-12
         },
         "flux_MEOH_ptnonipm": {
           "type": "parameter",
@@ -1870,7 +1951,8 @@
               "file_variable": "MEOH",
               "description": "MEOH in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-10
         },
         "flux_NAPH_ptnonipm": {
           "type": "parameter",
@@ -1883,7 +1965,8 @@
               "file_variable": "NAPH",
               "description": "NAPH in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-12
         },
         "flux_NH3_ptnonipm": {
           "type": "parameter",
@@ -1896,7 +1979,8 @@
               "file_variable": "NH3",
               "description": "NH3 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_NH3_FERT_ptnonipm": {
           "type": "parameter",
@@ -1909,7 +1993,8 @@
               "file_variable": "NH3_FERT",
               "description": "NH3_FERT in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-10
         },
         "flux_NO_ptnonipm": {
           "type": "parameter",
@@ -1922,7 +2007,8 @@
               "file_variable": "NO",
               "description": "NO in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-10
         },
         "flux_NO2_ptnonipm": {
           "type": "parameter",
@@ -1935,7 +2021,8 @@
               "file_variable": "NO2",
               "description": "NO2 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_NOX_ptnonipm": {
           "type": "parameter",
@@ -1948,7 +2035,8 @@
               "file_variable": "NOX",
               "description": "NOX in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 6.6e-10
         },
         "flux_NVOL_ptnonipm": {
           "type": "parameter",
@@ -1961,7 +2049,8 @@
               "file_variable": "NVOL",
               "description": "NVOL in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.2e-12
         },
         "flux_OLE_ptnonipm": {
           "type": "parameter",
@@ -1974,7 +2063,8 @@
               "file_variable": "OLE",
               "description": "OLE in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.9e-10
         },
         "flux_PAL_ptnonipm": {
           "type": "parameter",
@@ -1987,7 +2077,8 @@
               "file_variable": "PAL",
               "description": "PAL in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.1e-12
         },
         "flux_PAR_ptnonipm": {
           "type": "parameter",
@@ -2000,7 +2091,8 @@
               "file_variable": "PAR",
               "description": "PAR in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.1e-10
         },
         "flux_PCA_ptnonipm": {
           "type": "parameter",
@@ -2013,7 +2105,8 @@
               "file_variable": "PCA",
               "description": "PCA in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-12
         },
         "flux_PCL_ptnonipm": {
           "type": "parameter",
@@ -2026,7 +2119,8 @@
               "file_variable": "PCL",
               "description": "PCL in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-12
         },
         "flux_PEC_ptnonipm": {
           "type": "parameter",
@@ -2039,7 +2133,8 @@
               "file_variable": "PEC",
               "description": "PEC in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.5e-11
         },
         "flux_PFE_ptnonipm": {
           "type": "parameter",
@@ -2052,7 +2147,8 @@
               "file_variable": "PFE",
               "description": "PFE in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.9e-12
         },
         "flux_PH2O_ptnonipm": {
           "type": "parameter",
@@ -2065,7 +2161,8 @@
               "file_variable": "PH2O",
               "description": "PH2O in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4e-13
         },
         "flux_PK_ptnonipm": {
           "type": "parameter",
@@ -2078,7 +2175,8 @@
               "file_variable": "PK",
               "description": "PK in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-12
         },
         "flux_PM2_5_ptnonipm": {
           "type": "parameter",
@@ -2091,7 +2189,8 @@
               "file_variable": "PM2_5",
               "description": "PM2_5 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.7e-10
         },
         "flux_PMC_ptnonipm": {
           "type": "parameter",
@@ -2104,7 +2203,8 @@
               "file_variable": "PMC",
               "description": "PMC in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-10
         },
         "flux_PMG_ptnonipm": {
           "type": "parameter",
@@ -2117,7 +2217,8 @@
               "file_variable": "PMG",
               "description": "PMG in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-13
         },
         "flux_PMN_ptnonipm": {
           "type": "parameter",
@@ -2130,7 +2231,8 @@
               "file_variable": "PMN",
               "description": "PMN in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1e-13
         },
         "flux_PMOTHR_ptnonipm": {
           "type": "parameter",
@@ -2143,7 +2245,8 @@
               "file_variable": "PMOTHR",
               "description": "PMOTHR in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.2e-11
         },
         "flux_PNA_ptnonipm": {
           "type": "parameter",
@@ -2156,7 +2259,8 @@
               "file_variable": "PNA",
               "description": "PNA in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-13
         },
         "flux_PNCOM_ptnonipm": {
           "type": "parameter",
@@ -2169,7 +2273,8 @@
               "file_variable": "PNCOM",
               "description": "PNCOM in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-11
         },
         "flux_PNH4_ptnonipm": {
           "type": "parameter",
@@ -2182,7 +2287,8 @@
               "file_variable": "PNH4",
               "description": "PNH4 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7.4e-13
         },
         "flux_PNO3_ptnonipm": {
           "type": "parameter",
@@ -2195,7 +2301,8 @@
               "file_variable": "PNO3",
               "description": "PNO3 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 9.4e-13
         },
         "flux_POC_ptnonipm": {
           "type": "parameter",
@@ -2208,7 +2315,8 @@
               "file_variable": "POC",
               "description": "POC in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-11
         },
         "flux_PRPA_ptnonipm": {
           "type": "parameter",
@@ -2221,7 +2329,8 @@
               "file_variable": "PRPA",
               "description": "PRPA in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-11
         },
         "flux_PSI_ptnonipm": {
           "type": "parameter",
@@ -2234,7 +2343,8 @@
               "file_variable": "PSI",
               "description": "PSI in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.6e-11
         },
         "flux_PSO4_ptnonipm": {
           "type": "parameter",
@@ -2247,7 +2357,8 @@
               "file_variable": "PSO4",
               "description": "PSO4 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.3e-12
         },
         "flux_PTI_ptnonipm": {
           "type": "parameter",
@@ -2260,7 +2371,8 @@
               "file_variable": "PTI",
               "description": "PTI in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-13
         },
         "flux_SO2_ptnonipm": {
           "type": "parameter",
@@ -2273,7 +2385,8 @@
               "file_variable": "SO2",
               "description": "SO2 in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-11
         },
         "flux_SOAALK_ptnonipm": {
           "type": "parameter",
@@ -2286,7 +2399,8 @@
               "file_variable": "SOAALK",
               "description": "SOAALK in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_SULF_ptnonipm": {
           "type": "parameter",
@@ -2299,7 +2413,8 @@
               "file_variable": "SULF",
               "description": "SULF in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-13
         },
         "flux_TERP_ptnonipm": {
           "type": "parameter",
@@ -2312,7 +2427,8 @@
               "file_variable": "TERP",
               "description": "TERP in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-09
         },
         "flux_TOL_ptnonipm": {
           "type": "parameter",
@@ -2325,7 +2441,8 @@
               "file_variable": "TOL",
               "description": "TOL in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.5e-11
         },
         "flux_UNR_ptnonipm": {
           "type": "parameter",
@@ -2338,7 +2455,8 @@
               "file_variable": "UNR",
               "description": "UNR in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-11
         },
         "flux_VOC_INV_ptnonipm": {
           "type": "parameter",
@@ -2351,7 +2469,8 @@
               "file_variable": "VOC_INV",
               "description": "VOC_INV in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8e-10
         },
         "flux_XYLMN_ptnonipm": {
           "type": "parameter",
@@ -2364,7 +2483,8 @@
               "file_variable": "XYLMN",
               "description": "XYLMN in 2016fh_16j_emln_ptnonipm_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.4e-11
         },
         "flux_ACET_pt_oilgas": {
           "type": "parameter",
@@ -2377,7 +2497,8 @@
               "file_variable": "ACET",
               "description": "ACET in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-10
         },
         "flux_ACROLEIN_pt_oilgas": {
           "type": "parameter",
@@ -2390,7 +2511,8 @@
               "file_variable": "ACROLEIN",
               "description": "ACROLEIN in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8e-13
         },
         "flux_ALD2_pt_oilgas": {
           "type": "parameter",
@@ -2403,7 +2525,8 @@
               "file_variable": "ALD2",
               "description": "ALD2 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALD2_PRIMARY_pt_oilgas": {
           "type": "parameter",
@@ -2416,7 +2539,8 @@
               "file_variable": "ALD2_PRIMARY",
               "description": "ALD2_PRIMARY in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALDX_pt_oilgas": {
           "type": "parameter",
@@ -2429,7 +2553,8 @@
               "file_variable": "ALDX",
               "description": "ALDX in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.6e-11
         },
         "flux_BENZ_pt_oilgas": {
           "type": "parameter",
@@ -2442,7 +2567,8 @@
               "file_variable": "BENZ",
               "description": "BENZ in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-11
         },
         "flux_BUTADIENE13_pt_oilgas": {
           "type": "parameter",
@@ -2455,7 +2581,8 @@
               "file_variable": "BUTADIENE13",
               "description": "BUTADIENE13 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.5e-12
         },
         "flux_CH4_pt_oilgas": {
           "type": "parameter",
@@ -2468,7 +2595,8 @@
               "file_variable": "CH4",
               "description": "CH4 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_CL2_pt_oilgas": {
           "type": "parameter",
@@ -2481,7 +2609,8 @@
               "file_variable": "CL2",
               "description": "CL2 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.9e-12
         },
         "flux_CO_pt_oilgas": {
           "type": "parameter",
@@ -2494,7 +2623,8 @@
               "file_variable": "CO",
               "description": "CO in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-09
         },
         "flux_ETH_pt_oilgas": {
           "type": "parameter",
@@ -2507,7 +2637,8 @@
               "file_variable": "ETH",
               "description": "ETH in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.4e-10
         },
         "flux_ETHA_pt_oilgas": {
           "type": "parameter",
@@ -2520,7 +2651,8 @@
               "file_variable": "ETHA",
               "description": "ETHA in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-10
         },
         "flux_ETHY_pt_oilgas": {
           "type": "parameter",
@@ -2533,7 +2665,8 @@
               "file_variable": "ETHY",
               "description": "ETHY in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-11
         },
         "flux_ETOH_pt_oilgas": {
           "type": "parameter",
@@ -2546,7 +2679,8 @@
               "file_variable": "ETOH",
               "description": "ETOH in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_FORM_pt_oilgas": {
           "type": "parameter",
@@ -2559,7 +2693,8 @@
               "file_variable": "FORM",
               "description": "FORM in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_FORM_PRIMARY_pt_oilgas": {
           "type": "parameter",
@@ -2572,7 +2707,8 @@
               "file_variable": "FORM_PRIMARY",
               "description": "FORM_PRIMARY in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_HCL_pt_oilgas": {
           "type": "parameter",
@@ -2585,7 +2721,8 @@
               "file_variable": "HCL",
               "description": "HCL in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.1e-13
         },
         "flux_HONO_pt_oilgas": {
           "type": "parameter",
@@ -2598,7 +2735,8 @@
               "file_variable": "HONO",
               "description": "HONO in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.5e-12
         },
         "flux_IOLE_pt_oilgas": {
           "type": "parameter",
@@ -2611,7 +2749,8 @@
               "file_variable": "IOLE",
               "description": "IOLE in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_ISOP_pt_oilgas": {
           "type": "parameter",
@@ -2624,7 +2763,8 @@
               "file_variable": "ISOP",
               "description": "ISOP in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_KET_pt_oilgas": {
           "type": "parameter",
@@ -2637,7 +2777,8 @@
               "file_variable": "KET",
               "description": "KET in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3e-12
         },
         "flux_MEOH_pt_oilgas": {
           "type": "parameter",
@@ -2650,7 +2791,8 @@
               "file_variable": "MEOH",
               "description": "MEOH in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-10
         },
         "flux_NAPH_pt_oilgas": {
           "type": "parameter",
@@ -2663,7 +2805,8 @@
               "file_variable": "NAPH",
               "description": "NAPH in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-12
         },
         "flux_NH3_pt_oilgas": {
           "type": "parameter",
@@ -2676,7 +2819,8 @@
               "file_variable": "NH3",
               "description": "NH3 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_NH3_FERT_pt_oilgas": {
           "type": "parameter",
@@ -2689,7 +2833,8 @@
               "file_variable": "NH3_FERT",
               "description": "NH3_FERT in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-10
         },
         "flux_NO_pt_oilgas": {
           "type": "parameter",
@@ -2702,7 +2847,8 @@
               "file_variable": "NO",
               "description": "NO in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-10
         },
         "flux_NO2_pt_oilgas": {
           "type": "parameter",
@@ -2715,7 +2861,8 @@
               "file_variable": "NO2",
               "description": "NO2 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_NOX_pt_oilgas": {
           "type": "parameter",
@@ -2728,7 +2875,8 @@
               "file_variable": "NOX",
               "description": "NOX in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 6.6e-10
         },
         "flux_NVOL_pt_oilgas": {
           "type": "parameter",
@@ -2741,7 +2889,8 @@
               "file_variable": "NVOL",
               "description": "NVOL in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.2e-12
         },
         "flux_OLE_pt_oilgas": {
           "type": "parameter",
@@ -2754,7 +2903,8 @@
               "file_variable": "OLE",
               "description": "OLE in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.9e-10
         },
         "flux_PAL_pt_oilgas": {
           "type": "parameter",
@@ -2767,7 +2917,8 @@
               "file_variable": "PAL",
               "description": "PAL in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.1e-12
         },
         "flux_PAR_pt_oilgas": {
           "type": "parameter",
@@ -2780,7 +2931,8 @@
               "file_variable": "PAR",
               "description": "PAR in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.1e-10
         },
         "flux_PCA_pt_oilgas": {
           "type": "parameter",
@@ -2793,7 +2945,8 @@
               "file_variable": "PCA",
               "description": "PCA in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-12
         },
         "flux_PCL_pt_oilgas": {
           "type": "parameter",
@@ -2806,7 +2959,8 @@
               "file_variable": "PCL",
               "description": "PCL in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-12
         },
         "flux_PEC_pt_oilgas": {
           "type": "parameter",
@@ -2819,7 +2973,8 @@
               "file_variable": "PEC",
               "description": "PEC in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.5e-11
         },
         "flux_PFE_pt_oilgas": {
           "type": "parameter",
@@ -2832,7 +2987,8 @@
               "file_variable": "PFE",
               "description": "PFE in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.9e-12
         },
         "flux_PH2O_pt_oilgas": {
           "type": "parameter",
@@ -2845,7 +3001,8 @@
               "file_variable": "PH2O",
               "description": "PH2O in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4e-13
         },
         "flux_PK_pt_oilgas": {
           "type": "parameter",
@@ -2858,7 +3015,8 @@
               "file_variable": "PK",
               "description": "PK in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-12
         },
         "flux_PM2_5_pt_oilgas": {
           "type": "parameter",
@@ -2871,7 +3029,8 @@
               "file_variable": "PM2_5",
               "description": "PM2_5 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.7e-10
         },
         "flux_PMC_pt_oilgas": {
           "type": "parameter",
@@ -2884,7 +3043,8 @@
               "file_variable": "PMC",
               "description": "PMC in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-10
         },
         "flux_PMG_pt_oilgas": {
           "type": "parameter",
@@ -2897,7 +3057,8 @@
               "file_variable": "PMG",
               "description": "PMG in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-13
         },
         "flux_PMN_pt_oilgas": {
           "type": "parameter",
@@ -2910,7 +3071,8 @@
               "file_variable": "PMN",
               "description": "PMN in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1e-13
         },
         "flux_PMOTHR_pt_oilgas": {
           "type": "parameter",
@@ -2923,7 +3085,8 @@
               "file_variable": "PMOTHR",
               "description": "PMOTHR in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.2e-11
         },
         "flux_PNA_pt_oilgas": {
           "type": "parameter",
@@ -2936,7 +3099,8 @@
               "file_variable": "PNA",
               "description": "PNA in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-13
         },
         "flux_PNCOM_pt_oilgas": {
           "type": "parameter",
@@ -2949,7 +3113,8 @@
               "file_variable": "PNCOM",
               "description": "PNCOM in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-11
         },
         "flux_PNH4_pt_oilgas": {
           "type": "parameter",
@@ -2962,7 +3127,8 @@
               "file_variable": "PNH4",
               "description": "PNH4 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7.4e-13
         },
         "flux_PNO3_pt_oilgas": {
           "type": "parameter",
@@ -2975,7 +3141,8 @@
               "file_variable": "PNO3",
               "description": "PNO3 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 9.4e-13
         },
         "flux_POC_pt_oilgas": {
           "type": "parameter",
@@ -2988,7 +3155,8 @@
               "file_variable": "POC",
               "description": "POC in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-11
         },
         "flux_PRPA_pt_oilgas": {
           "type": "parameter",
@@ -3001,7 +3169,8 @@
               "file_variable": "PRPA",
               "description": "PRPA in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-11
         },
         "flux_PSI_pt_oilgas": {
           "type": "parameter",
@@ -3014,7 +3183,8 @@
               "file_variable": "PSI",
               "description": "PSI in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.6e-11
         },
         "flux_PSO4_pt_oilgas": {
           "type": "parameter",
@@ -3027,7 +3197,8 @@
               "file_variable": "PSO4",
               "description": "PSO4 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.3e-12
         },
         "flux_PTI_pt_oilgas": {
           "type": "parameter",
@@ -3040,7 +3211,8 @@
               "file_variable": "PTI",
               "description": "PTI in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-13
         },
         "flux_SO2_pt_oilgas": {
           "type": "parameter",
@@ -3053,7 +3225,8 @@
               "file_variable": "SO2",
               "description": "SO2 in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-11
         },
         "flux_SOAALK_pt_oilgas": {
           "type": "parameter",
@@ -3066,7 +3239,8 @@
               "file_variable": "SOAALK",
               "description": "SOAALK in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_SULF_pt_oilgas": {
           "type": "parameter",
@@ -3079,7 +3253,8 @@
               "file_variable": "SULF",
               "description": "SULF in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-13
         },
         "flux_TERP_pt_oilgas": {
           "type": "parameter",
@@ -3092,7 +3267,8 @@
               "file_variable": "TERP",
               "description": "TERP in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-09
         },
         "flux_TOL_pt_oilgas": {
           "type": "parameter",
@@ -3105,7 +3281,8 @@
               "file_variable": "TOL",
               "description": "TOL in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.5e-11
         },
         "flux_UNR_pt_oilgas": {
           "type": "parameter",
@@ -3118,7 +3295,8 @@
               "file_variable": "UNR",
               "description": "UNR in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-11
         },
         "flux_VOC_INV_pt_oilgas": {
           "type": "parameter",
@@ -3131,7 +3309,8 @@
               "file_variable": "VOC_INV",
               "description": "VOC_INV in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8e-10
         },
         "flux_XYLMN_pt_oilgas": {
           "type": "parameter",
@@ -3144,7 +3323,8 @@
               "file_variable": "XYLMN",
               "description": "XYLMN in 2016fh_16j_emln_pt_oilgas_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.4e-11
         },
         "flux_ACET_othpt": {
           "type": "parameter",
@@ -3157,7 +3337,8 @@
               "file_variable": "ACET",
               "description": "ACET in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-10
         },
         "flux_ALD2_othpt": {
           "type": "parameter",
@@ -3170,7 +3351,8 @@
               "file_variable": "ALD2",
               "description": "ALD2 in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALD2_PRIMARY_othpt": {
           "type": "parameter",
@@ -3183,7 +3365,8 @@
               "file_variable": "ALD2_PRIMARY",
               "description": "ALD2_PRIMARY in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALDX_othpt": {
           "type": "parameter",
@@ -3196,7 +3379,8 @@
               "file_variable": "ALDX",
               "description": "ALDX in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.6e-11
         },
         "flux_BENZ_othpt": {
           "type": "parameter",
@@ -3209,7 +3393,8 @@
               "file_variable": "BENZ",
               "description": "BENZ in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-11
         },
         "flux_CH4_othpt": {
           "type": "parameter",
@@ -3222,7 +3407,8 @@
               "file_variable": "CH4",
               "description": "CH4 in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_CO_othpt": {
           "type": "parameter",
@@ -3235,7 +3421,8 @@
               "file_variable": "CO",
               "description": "CO in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-09
         },
         "flux_ETH_othpt": {
           "type": "parameter",
@@ -3248,7 +3435,8 @@
               "file_variable": "ETH",
               "description": "ETH in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.4e-10
         },
         "flux_ETHA_othpt": {
           "type": "parameter",
@@ -3261,7 +3449,8 @@
               "file_variable": "ETHA",
               "description": "ETHA in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-10
         },
         "flux_ETHY_othpt": {
           "type": "parameter",
@@ -3274,7 +3463,8 @@
               "file_variable": "ETHY",
               "description": "ETHY in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-11
         },
         "flux_ETOH_othpt": {
           "type": "parameter",
@@ -3287,7 +3477,8 @@
               "file_variable": "ETOH",
               "description": "ETOH in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_FORM_othpt": {
           "type": "parameter",
@@ -3300,7 +3491,8 @@
               "file_variable": "FORM",
               "description": "FORM in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_FORM_PRIMARY_othpt": {
           "type": "parameter",
@@ -3313,7 +3505,8 @@
               "file_variable": "FORM_PRIMARY",
               "description": "FORM_PRIMARY in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_HONO_othpt": {
           "type": "parameter",
@@ -3326,7 +3519,8 @@
               "file_variable": "HONO",
               "description": "HONO in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.5e-12
         },
         "flux_IOLE_othpt": {
           "type": "parameter",
@@ -3339,7 +3533,8 @@
               "file_variable": "IOLE",
               "description": "IOLE in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_ISOP_othpt": {
           "type": "parameter",
@@ -3352,7 +3547,8 @@
               "file_variable": "ISOP",
               "description": "ISOP in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_KET_othpt": {
           "type": "parameter",
@@ -3365,7 +3561,8 @@
               "file_variable": "KET",
               "description": "KET in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3e-12
         },
         "flux_MEOH_othpt": {
           "type": "parameter",
@@ -3378,7 +3575,8 @@
               "file_variable": "MEOH",
               "description": "MEOH in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-10
         },
         "flux_NAPH_othpt": {
           "type": "parameter",
@@ -3391,7 +3589,8 @@
               "file_variable": "NAPH",
               "description": "NAPH in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-12
         },
         "flux_NH3_othpt": {
           "type": "parameter",
@@ -3404,7 +3603,8 @@
               "file_variable": "NH3",
               "description": "NH3 in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_NH3_FERT_othpt": {
           "type": "parameter",
@@ -3417,7 +3617,8 @@
               "file_variable": "NH3_FERT",
               "description": "NH3_FERT in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-10
         },
         "flux_NO_othpt": {
           "type": "parameter",
@@ -3430,7 +3631,8 @@
               "file_variable": "NO",
               "description": "NO in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-10
         },
         "flux_NO2_othpt": {
           "type": "parameter",
@@ -3443,7 +3645,8 @@
               "file_variable": "NO2",
               "description": "NO2 in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_NOX_othpt": {
           "type": "parameter",
@@ -3456,7 +3659,8 @@
               "file_variable": "NOX",
               "description": "NOX in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 6.6e-10
         },
         "flux_NVOL_othpt": {
           "type": "parameter",
@@ -3469,7 +3673,8 @@
               "file_variable": "NVOL",
               "description": "NVOL in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.2e-12
         },
         "flux_OLE_othpt": {
           "type": "parameter",
@@ -3482,7 +3687,8 @@
               "file_variable": "OLE",
               "description": "OLE in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.9e-10
         },
         "flux_PAL_othpt": {
           "type": "parameter",
@@ -3495,7 +3701,8 @@
               "file_variable": "PAL",
               "description": "PAL in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.1e-12
         },
         "flux_PAR_othpt": {
           "type": "parameter",
@@ -3508,7 +3715,8 @@
               "file_variable": "PAR",
               "description": "PAR in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.1e-10
         },
         "flux_PCA_othpt": {
           "type": "parameter",
@@ -3521,7 +3729,8 @@
               "file_variable": "PCA",
               "description": "PCA in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-12
         },
         "flux_PCL_othpt": {
           "type": "parameter",
@@ -3534,7 +3743,8 @@
               "file_variable": "PCL",
               "description": "PCL in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-12
         },
         "flux_PEC_othpt": {
           "type": "parameter",
@@ -3547,7 +3757,8 @@
               "file_variable": "PEC",
               "description": "PEC in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.5e-11
         },
         "flux_PFE_othpt": {
           "type": "parameter",
@@ -3560,7 +3771,8 @@
               "file_variable": "PFE",
               "description": "PFE in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.9e-12
         },
         "flux_PH2O_othpt": {
           "type": "parameter",
@@ -3573,7 +3785,8 @@
               "file_variable": "PH2O",
               "description": "PH2O in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4e-13
         },
         "flux_PK_othpt": {
           "type": "parameter",
@@ -3586,7 +3799,8 @@
               "file_variable": "PK",
               "description": "PK in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-12
         },
         "flux_PM2_5_othpt": {
           "type": "parameter",
@@ -3599,7 +3813,8 @@
               "file_variable": "PM2_5",
               "description": "PM2_5 in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.7e-10
         },
         "flux_PMC_othpt": {
           "type": "parameter",
@@ -3612,7 +3827,8 @@
               "file_variable": "PMC",
               "description": "PMC in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-10
         },
         "flux_PMG_othpt": {
           "type": "parameter",
@@ -3625,7 +3841,8 @@
               "file_variable": "PMG",
               "description": "PMG in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-13
         },
         "flux_PMN_othpt": {
           "type": "parameter",
@@ -3638,7 +3855,8 @@
               "file_variable": "PMN",
               "description": "PMN in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1e-13
         },
         "flux_PMOTHR_othpt": {
           "type": "parameter",
@@ -3651,7 +3869,8 @@
               "file_variable": "PMOTHR",
               "description": "PMOTHR in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.2e-11
         },
         "flux_PNA_othpt": {
           "type": "parameter",
@@ -3664,7 +3883,8 @@
               "file_variable": "PNA",
               "description": "PNA in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-13
         },
         "flux_PNCOM_othpt": {
           "type": "parameter",
@@ -3677,7 +3897,8 @@
               "file_variable": "PNCOM",
               "description": "PNCOM in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-11
         },
         "flux_PNH4_othpt": {
           "type": "parameter",
@@ -3690,7 +3911,8 @@
               "file_variable": "PNH4",
               "description": "PNH4 in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7.4e-13
         },
         "flux_PNO3_othpt": {
           "type": "parameter",
@@ -3703,7 +3925,8 @@
               "file_variable": "PNO3",
               "description": "PNO3 in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 9.4e-13
         },
         "flux_POC_othpt": {
           "type": "parameter",
@@ -3716,7 +3939,8 @@
               "file_variable": "POC",
               "description": "POC in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-11
         },
         "flux_PRPA_othpt": {
           "type": "parameter",
@@ -3729,7 +3953,8 @@
               "file_variable": "PRPA",
               "description": "PRPA in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-11
         },
         "flux_PSI_othpt": {
           "type": "parameter",
@@ -3742,7 +3967,8 @@
               "file_variable": "PSI",
               "description": "PSI in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.6e-11
         },
         "flux_PSO4_othpt": {
           "type": "parameter",
@@ -3755,7 +3981,8 @@
               "file_variable": "PSO4",
               "description": "PSO4 in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.3e-12
         },
         "flux_PTI_othpt": {
           "type": "parameter",
@@ -3768,7 +3995,8 @@
               "file_variable": "PTI",
               "description": "PTI in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-13
         },
         "flux_SO2_othpt": {
           "type": "parameter",
@@ -3781,7 +4009,8 @@
               "file_variable": "SO2",
               "description": "SO2 in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-11
         },
         "flux_SOAALK_othpt": {
           "type": "parameter",
@@ -3794,7 +4023,8 @@
               "file_variable": "SOAALK",
               "description": "SOAALK in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_SULF_othpt": {
           "type": "parameter",
@@ -3807,7 +4037,8 @@
               "file_variable": "SULF",
               "description": "SULF in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-13
         },
         "flux_TERP_othpt": {
           "type": "parameter",
@@ -3820,7 +4051,8 @@
               "file_variable": "TERP",
               "description": "TERP in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-09
         },
         "flux_TOL_othpt": {
           "type": "parameter",
@@ -3833,7 +4065,8 @@
               "file_variable": "TOL",
               "description": "TOL in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.5e-11
         },
         "flux_UNR_othpt": {
           "type": "parameter",
@@ -3846,7 +4079,8 @@
               "file_variable": "UNR",
               "description": "UNR in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-11
         },
         "flux_VOC_INV_othpt": {
           "type": "parameter",
@@ -3859,7 +4093,8 @@
               "file_variable": "VOC_INV",
               "description": "VOC_INV in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8e-10
         },
         "flux_XYLMN_othpt": {
           "type": "parameter",
@@ -3872,7 +4107,8 @@
               "file_variable": "XYLMN",
               "description": "XYLMN in 2016fh_16j_emln_othpt_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.4e-11
         },
         "flux_ACET_cmv_c3": {
           "type": "parameter",
@@ -3885,7 +4121,8 @@
               "file_variable": "ACET",
               "description": "ACET in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-10
         },
         "flux_ALD2_cmv_c3": {
           "type": "parameter",
@@ -3898,7 +4135,8 @@
               "file_variable": "ALD2",
               "description": "ALD2 in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALD2_PRIMARY_cmv_c3": {
           "type": "parameter",
@@ -3911,7 +4149,8 @@
               "file_variable": "ALD2_PRIMARY",
               "description": "ALD2_PRIMARY in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALDX_cmv_c3": {
           "type": "parameter",
@@ -3924,7 +4163,8 @@
               "file_variable": "ALDX",
               "description": "ALDX in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.6e-11
         },
         "flux_BENZ_cmv_c3": {
           "type": "parameter",
@@ -3937,7 +4177,8 @@
               "file_variable": "BENZ",
               "description": "BENZ in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-11
         },
         "flux_CH4_cmv_c3": {
           "type": "parameter",
@@ -3950,7 +4191,8 @@
               "file_variable": "CH4",
               "description": "CH4 in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_CO_cmv_c3": {
           "type": "parameter",
@@ -3963,7 +4205,8 @@
               "file_variable": "CO",
               "description": "CO in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-09
         },
         "flux_ETH_cmv_c3": {
           "type": "parameter",
@@ -3976,7 +4219,8 @@
               "file_variable": "ETH",
               "description": "ETH in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.4e-10
         },
         "flux_ETHA_cmv_c3": {
           "type": "parameter",
@@ -3989,7 +4233,8 @@
               "file_variable": "ETHA",
               "description": "ETHA in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-10
         },
         "flux_ETHY_cmv_c3": {
           "type": "parameter",
@@ -4002,7 +4247,8 @@
               "file_variable": "ETHY",
               "description": "ETHY in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-11
         },
         "flux_ETOH_cmv_c3": {
           "type": "parameter",
@@ -4015,7 +4261,8 @@
               "file_variable": "ETOH",
               "description": "ETOH in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_FORM_cmv_c3": {
           "type": "parameter",
@@ -4028,7 +4275,8 @@
               "file_variable": "FORM",
               "description": "FORM in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_FORM_PRIMARY_cmv_c3": {
           "type": "parameter",
@@ -4041,7 +4289,8 @@
               "file_variable": "FORM_PRIMARY",
               "description": "FORM_PRIMARY in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_HONO_cmv_c3": {
           "type": "parameter",
@@ -4054,7 +4303,8 @@
               "file_variable": "HONO",
               "description": "HONO in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.5e-12
         },
         "flux_IOLE_cmv_c3": {
           "type": "parameter",
@@ -4067,7 +4317,8 @@
               "file_variable": "IOLE",
               "description": "IOLE in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_ISOP_cmv_c3": {
           "type": "parameter",
@@ -4080,7 +4331,8 @@
               "file_variable": "ISOP",
               "description": "ISOP in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_KET_cmv_c3": {
           "type": "parameter",
@@ -4093,7 +4345,8 @@
               "file_variable": "KET",
               "description": "KET in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3e-12
         },
         "flux_MEOH_cmv_c3": {
           "type": "parameter",
@@ -4106,7 +4359,8 @@
               "file_variable": "MEOH",
               "description": "MEOH in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-10
         },
         "flux_NAPH_cmv_c3": {
           "type": "parameter",
@@ -4119,7 +4373,8 @@
               "file_variable": "NAPH",
               "description": "NAPH in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-12
         },
         "flux_NH3_cmv_c3": {
           "type": "parameter",
@@ -4132,7 +4387,8 @@
               "file_variable": "NH3",
               "description": "NH3 in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_NH3_FERT_cmv_c3": {
           "type": "parameter",
@@ -4145,7 +4401,8 @@
               "file_variable": "NH3_FERT",
               "description": "NH3_FERT in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-10
         },
         "flux_NO_cmv_c3": {
           "type": "parameter",
@@ -4158,7 +4415,8 @@
               "file_variable": "NO",
               "description": "NO in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-10
         },
         "flux_NO2_cmv_c3": {
           "type": "parameter",
@@ -4171,7 +4429,8 @@
               "file_variable": "NO2",
               "description": "NO2 in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_NOX_cmv_c3": {
           "type": "parameter",
@@ -4184,7 +4443,8 @@
               "file_variable": "NOX",
               "description": "NOX in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 6.6e-10
         },
         "flux_NVOL_cmv_c3": {
           "type": "parameter",
@@ -4197,7 +4457,8 @@
               "file_variable": "NVOL",
               "description": "NVOL in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.2e-12
         },
         "flux_OLE_cmv_c3": {
           "type": "parameter",
@@ -4210,7 +4471,8 @@
               "file_variable": "OLE",
               "description": "OLE in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.9e-10
         },
         "flux_PAL_cmv_c3": {
           "type": "parameter",
@@ -4223,7 +4485,8 @@
               "file_variable": "PAL",
               "description": "PAL in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.1e-12
         },
         "flux_PAR_cmv_c3": {
           "type": "parameter",
@@ -4236,7 +4499,8 @@
               "file_variable": "PAR",
               "description": "PAR in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.1e-10
         },
         "flux_PCA_cmv_c3": {
           "type": "parameter",
@@ -4249,7 +4513,8 @@
               "file_variable": "PCA",
               "description": "PCA in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-12
         },
         "flux_PCL_cmv_c3": {
           "type": "parameter",
@@ -4262,7 +4527,8 @@
               "file_variable": "PCL",
               "description": "PCL in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-12
         },
         "flux_PEC_cmv_c3": {
           "type": "parameter",
@@ -4275,7 +4541,8 @@
               "file_variable": "PEC",
               "description": "PEC in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.5e-11
         },
         "flux_PFE_cmv_c3": {
           "type": "parameter",
@@ -4288,7 +4555,8 @@
               "file_variable": "PFE",
               "description": "PFE in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.9e-12
         },
         "flux_PH2O_cmv_c3": {
           "type": "parameter",
@@ -4301,7 +4569,8 @@
               "file_variable": "PH2O",
               "description": "PH2O in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4e-13
         },
         "flux_PK_cmv_c3": {
           "type": "parameter",
@@ -4314,7 +4583,8 @@
               "file_variable": "PK",
               "description": "PK in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-12
         },
         "flux_PM2_5_cmv_c3": {
           "type": "parameter",
@@ -4327,7 +4597,8 @@
               "file_variable": "PM2_5",
               "description": "PM2_5 in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.7e-10
         },
         "flux_PMC_cmv_c3": {
           "type": "parameter",
@@ -4340,7 +4611,8 @@
               "file_variable": "PMC",
               "description": "PMC in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-10
         },
         "flux_PMG_cmv_c3": {
           "type": "parameter",
@@ -4353,7 +4625,8 @@
               "file_variable": "PMG",
               "description": "PMG in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-13
         },
         "flux_PMN_cmv_c3": {
           "type": "parameter",
@@ -4366,7 +4639,8 @@
               "file_variable": "PMN",
               "description": "PMN in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1e-13
         },
         "flux_PMOTHR_cmv_c3": {
           "type": "parameter",
@@ -4379,7 +4653,8 @@
               "file_variable": "PMOTHR",
               "description": "PMOTHR in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.2e-11
         },
         "flux_PNA_cmv_c3": {
           "type": "parameter",
@@ -4392,7 +4667,8 @@
               "file_variable": "PNA",
               "description": "PNA in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-13
         },
         "flux_PNCOM_cmv_c3": {
           "type": "parameter",
@@ -4405,7 +4681,8 @@
               "file_variable": "PNCOM",
               "description": "PNCOM in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-11
         },
         "flux_PNH4_cmv_c3": {
           "type": "parameter",
@@ -4418,7 +4695,8 @@
               "file_variable": "PNH4",
               "description": "PNH4 in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7.4e-13
         },
         "flux_PNO3_cmv_c3": {
           "type": "parameter",
@@ -4431,7 +4709,8 @@
               "file_variable": "PNO3",
               "description": "PNO3 in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 9.4e-13
         },
         "flux_POC_cmv_c3": {
           "type": "parameter",
@@ -4444,7 +4723,8 @@
               "file_variable": "POC",
               "description": "POC in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-11
         },
         "flux_PRPA_cmv_c3": {
           "type": "parameter",
@@ -4457,7 +4737,8 @@
               "file_variable": "PRPA",
               "description": "PRPA in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-11
         },
         "flux_PSI_cmv_c3": {
           "type": "parameter",
@@ -4470,7 +4751,8 @@
               "file_variable": "PSI",
               "description": "PSI in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.6e-11
         },
         "flux_PSO4_cmv_c3": {
           "type": "parameter",
@@ -4483,7 +4765,8 @@
               "file_variable": "PSO4",
               "description": "PSO4 in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.3e-12
         },
         "flux_PTI_cmv_c3": {
           "type": "parameter",
@@ -4496,7 +4779,8 @@
               "file_variable": "PTI",
               "description": "PTI in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-13
         },
         "flux_SO2_cmv_c3": {
           "type": "parameter",
@@ -4509,7 +4793,8 @@
               "file_variable": "SO2",
               "description": "SO2 in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-11
         },
         "flux_SOAALK_cmv_c3": {
           "type": "parameter",
@@ -4522,7 +4807,8 @@
               "file_variable": "SOAALK",
               "description": "SOAALK in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_SULF_cmv_c3": {
           "type": "parameter",
@@ -4535,7 +4821,8 @@
               "file_variable": "SULF",
               "description": "SULF in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-13
         },
         "flux_TERP_cmv_c3": {
           "type": "parameter",
@@ -4548,7 +4835,8 @@
               "file_variable": "TERP",
               "description": "TERP in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-09
         },
         "flux_TOL_cmv_c3": {
           "type": "parameter",
@@ -4561,7 +4849,8 @@
               "file_variable": "TOL",
               "description": "TOL in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.5e-11
         },
         "flux_UNR_cmv_c3": {
           "type": "parameter",
@@ -4574,7 +4863,8 @@
               "file_variable": "UNR",
               "description": "UNR in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-11
         },
         "flux_VOC_INV_cmv_c3": {
           "type": "parameter",
@@ -4587,7 +4877,8 @@
               "file_variable": "VOC_INV",
               "description": "VOC_INV in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8e-10
         },
         "flux_XYLMN_cmv_c3": {
           "type": "parameter",
@@ -4600,7 +4891,8 @@
               "file_variable": "XYLMN",
               "description": "XYLMN in 2016fh_16j_emln_cmv_c3_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.4e-11
         },
         "flux_ACET_cmv_c1c2": {
           "type": "parameter",
@@ -4613,7 +4905,8 @@
               "file_variable": "ACET",
               "description": "ACET in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-10
         },
         "flux_ALD2_cmv_c1c2": {
           "type": "parameter",
@@ -4626,7 +4919,8 @@
               "file_variable": "ALD2",
               "description": "ALD2 in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALD2_PRIMARY_cmv_c1c2": {
           "type": "parameter",
@@ -4639,7 +4933,8 @@
               "file_variable": "ALD2_PRIMARY",
               "description": "ALD2_PRIMARY in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.5e-11
         },
         "flux_ALDX_cmv_c1c2": {
           "type": "parameter",
@@ -4652,7 +4947,8 @@
               "file_variable": "ALDX",
               "description": "ALDX in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.6e-11
         },
         "flux_BENZ_cmv_c1c2": {
           "type": "parameter",
@@ -4665,7 +4961,8 @@
               "file_variable": "BENZ",
               "description": "BENZ in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-11
         },
         "flux_CH4_cmv_c1c2": {
           "type": "parameter",
@@ -4678,7 +4975,8 @@
               "file_variable": "CH4",
               "description": "CH4 in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_CO_cmv_c1c2": {
           "type": "parameter",
@@ -4691,7 +4989,8 @@
               "file_variable": "CO",
               "description": "CO in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-09
         },
         "flux_ETH_cmv_c1c2": {
           "type": "parameter",
@@ -4704,7 +5003,8 @@
               "file_variable": "ETH",
               "description": "ETH in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.4e-10
         },
         "flux_ETHA_cmv_c1c2": {
           "type": "parameter",
@@ -4717,7 +5017,8 @@
               "file_variable": "ETHA",
               "description": "ETHA in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-10
         },
         "flux_ETHY_cmv_c1c2": {
           "type": "parameter",
@@ -4730,7 +5031,8 @@
               "file_variable": "ETHY",
               "description": "ETHY in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-11
         },
         "flux_ETOH_cmv_c1c2": {
           "type": "parameter",
@@ -4743,7 +5045,8 @@
               "file_variable": "ETOH",
               "description": "ETOH in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_FORM_cmv_c1c2": {
           "type": "parameter",
@@ -4756,7 +5059,8 @@
               "file_variable": "FORM",
               "description": "FORM in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_FORM_PRIMARY_cmv_c1c2": {
           "type": "parameter",
@@ -4769,7 +5073,8 @@
               "file_variable": "FORM_PRIMARY",
               "description": "FORM_PRIMARY in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_HONO_cmv_c1c2": {
           "type": "parameter",
@@ -4782,7 +5087,8 @@
               "file_variable": "HONO",
               "description": "HONO in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.5e-12
         },
         "flux_IOLE_cmv_c1c2": {
           "type": "parameter",
@@ -4795,7 +5101,8 @@
               "file_variable": "IOLE",
               "description": "IOLE in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_ISOP_cmv_c1c2": {
           "type": "parameter",
@@ -4808,7 +5115,8 @@
               "file_variable": "ISOP",
               "description": "ISOP in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2e-09
         },
         "flux_KET_cmv_c1c2": {
           "type": "parameter",
@@ -4821,7 +5129,8 @@
               "file_variable": "KET",
               "description": "KET in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3e-12
         },
         "flux_MEOH_cmv_c1c2": {
           "type": "parameter",
@@ -4834,7 +5143,8 @@
               "file_variable": "MEOH",
               "description": "MEOH in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-10
         },
         "flux_NAPH_cmv_c1c2": {
           "type": "parameter",
@@ -4847,7 +5157,8 @@
               "file_variable": "NAPH",
               "description": "NAPH in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-12
         },
         "flux_NH3_cmv_c1c2": {
           "type": "parameter",
@@ -4860,7 +5171,8 @@
               "file_variable": "NH3",
               "description": "NH3 in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.5e-10
         },
         "flux_NH3_FERT_cmv_c1c2": {
           "type": "parameter",
@@ -4873,7 +5185,8 @@
               "file_variable": "NH3_FERT",
               "description": "NH3_FERT in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.3e-10
         },
         "flux_NO_cmv_c1c2": {
           "type": "parameter",
@@ -4886,7 +5199,8 @@
               "file_variable": "NO",
               "description": "NO in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-10
         },
         "flux_NO2_cmv_c1c2": {
           "type": "parameter",
@@ -4899,7 +5213,8 @@
               "file_variable": "NO2",
               "description": "NO2 in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.2e-10
         },
         "flux_NOX_cmv_c1c2": {
           "type": "parameter",
@@ -4912,7 +5227,8 @@
               "file_variable": "NOX",
               "description": "NOX in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 6.6e-10
         },
         "flux_NVOL_cmv_c1c2": {
           "type": "parameter",
@@ -4925,7 +5241,8 @@
               "file_variable": "NVOL",
               "description": "NVOL in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.2e-12
         },
         "flux_OLE_cmv_c1c2": {
           "type": "parameter",
@@ -4938,7 +5255,8 @@
               "file_variable": "OLE",
               "description": "OLE in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.9e-10
         },
         "flux_PAL_cmv_c1c2": {
           "type": "parameter",
@@ -4951,7 +5269,8 @@
               "file_variable": "PAL",
               "description": "PAL in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.1e-12
         },
         "flux_PAR_cmv_c1c2": {
           "type": "parameter",
@@ -4964,7 +5283,8 @@
               "file_variable": "PAR",
               "description": "PAR in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8.1e-10
         },
         "flux_PCA_cmv_c1c2": {
           "type": "parameter",
@@ -4977,7 +5297,8 @@
               "file_variable": "PCA",
               "description": "PCA in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-12
         },
         "flux_PCL_cmv_c1c2": {
           "type": "parameter",
@@ -4990,7 +5311,8 @@
               "file_variable": "PCL",
               "description": "PCL in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-12
         },
         "flux_PEC_cmv_c1c2": {
           "type": "parameter",
@@ -5003,7 +5325,8 @@
               "file_variable": "PEC",
               "description": "PEC in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.5e-11
         },
         "flux_PFE_cmv_c1c2": {
           "type": "parameter",
@@ -5016,7 +5339,8 @@
               "file_variable": "PFE",
               "description": "PFE in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.9e-12
         },
         "flux_PH2O_cmv_c1c2": {
           "type": "parameter",
@@ -5029,7 +5353,8 @@
               "file_variable": "PH2O",
               "description": "PH2O in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4e-13
         },
         "flux_PK_cmv_c1c2": {
           "type": "parameter",
@@ -5042,7 +5367,8 @@
               "file_variable": "PK",
               "description": "PK in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-12
         },
         "flux_PM2_5_cmv_c1c2": {
           "type": "parameter",
@@ -5055,7 +5381,8 @@
               "file_variable": "PM2_5",
               "description": "PM2_5 in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.7e-10
         },
         "flux_PMC_cmv_c1c2": {
           "type": "parameter",
@@ -5068,7 +5395,8 @@
               "file_variable": "PMC",
               "description": "PMC in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5e-10
         },
         "flux_PMG_cmv_c1c2": {
           "type": "parameter",
@@ -5081,7 +5409,8 @@
               "file_variable": "PMG",
               "description": "PMG in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-13
         },
         "flux_PMN_cmv_c1c2": {
           "type": "parameter",
@@ -5094,7 +5423,8 @@
               "file_variable": "PMN",
               "description": "PMN in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1e-13
         },
         "flux_PMOTHR_cmv_c1c2": {
           "type": "parameter",
@@ -5107,7 +5437,8 @@
               "file_variable": "PMOTHR",
               "description": "PMOTHR in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.2e-11
         },
         "flux_PNA_cmv_c1c2": {
           "type": "parameter",
@@ -5120,7 +5451,8 @@
               "file_variable": "PNA",
               "description": "PNA in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.7e-13
         },
         "flux_PNCOM_cmv_c1c2": {
           "type": "parameter",
@@ -5133,7 +5465,8 @@
               "file_variable": "PNCOM",
               "description": "PNCOM in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-11
         },
         "flux_PNH4_cmv_c1c2": {
           "type": "parameter",
@@ -5146,7 +5479,8 @@
               "file_variable": "PNH4",
               "description": "PNH4 in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7.4e-13
         },
         "flux_PNO3_cmv_c1c2": {
           "type": "parameter",
@@ -5159,7 +5493,8 @@
               "file_variable": "PNO3",
               "description": "PNO3 in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 9.4e-13
         },
         "flux_POC_cmv_c1c2": {
           "type": "parameter",
@@ -5172,7 +5507,8 @@
               "file_variable": "POC",
               "description": "POC in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.4e-11
         },
         "flux_PRPA_cmv_c1c2": {
           "type": "parameter",
@@ -5185,7 +5521,8 @@
               "file_variable": "PRPA",
               "description": "PRPA in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 7e-11
         },
         "flux_PSI_cmv_c1c2": {
           "type": "parameter",
@@ -5198,7 +5535,8 @@
               "file_variable": "PSI",
               "description": "PSI in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.6e-11
         },
         "flux_PSO4_cmv_c1c2": {
           "type": "parameter",
@@ -5211,7 +5549,8 @@
               "file_variable": "PSO4",
               "description": "PSO4 in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.3e-12
         },
         "flux_PTI_cmv_c1c2": {
           "type": "parameter",
@@ -5224,7 +5563,8 @@
               "file_variable": "PTI",
               "description": "PTI in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 3.8e-13
         },
         "flux_SO2_cmv_c1c2": {
           "type": "parameter",
@@ -5237,7 +5577,8 @@
               "file_variable": "SO2",
               "description": "SO2 in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.8e-11
         },
         "flux_SOAALK_cmv_c1c2": {
           "type": "parameter",
@@ -5250,7 +5591,8 @@
               "file_variable": "SOAALK",
               "description": "SOAALK in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-10
         },
         "flux_SULF_cmv_c1c2": {
           "type": "parameter",
@@ -5263,7 +5605,8 @@
               "file_variable": "SULF",
               "description": "SULF in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 2.3e-13
         },
         "flux_TERP_cmv_c1c2": {
           "type": "parameter",
@@ -5276,7 +5619,8 @@
               "file_variable": "TERP",
               "description": "TERP in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 1.1e-09
         },
         "flux_TOL_cmv_c1c2": {
           "type": "parameter",
@@ -5289,7 +5633,8 @@
               "file_variable": "TOL",
               "description": "TOL in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.5e-11
         },
         "flux_UNR_cmv_c1c2": {
           "type": "parameter",
@@ -5302,7 +5647,8 @@
               "file_variable": "UNR",
               "description": "UNR in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 4.8e-11
         },
         "flux_VOC_INV_cmv_c1c2": {
           "type": "parameter",
@@ -5315,7 +5661,8 @@
               "file_variable": "VOC_INV",
               "description": "VOC_INV in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 8e-10
         },
         "flux_XYLMN_cmv_c1c2": {
           "type": "parameter",
@@ -5328,7 +5675,8 @@
               "file_variable": "XYLMN",
               "description": "XYLMN in 2016fh_16j_emln_cmv_c1c2_12_12US1_month_MM.ncf."
             }
-          }
+          },
+          "default": 5.4e-11
         },
         "lon_deg": {
           "type": "unknown",

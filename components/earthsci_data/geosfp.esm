@@ -664,7 +664,8 @@
               "file_variable": "T",
               "description": "Air temperature (K). 3-hourly instantaneous 3D field at hybrid pressure levels. Clamp extrapolation."
             }
-          }
+          },
+          "default": 250.0
         },
         "QV": {
           "type": "parameter",
@@ -677,7 +678,8 @@
               "file_variable": "QV",
               "description": "Specific humidity of water vapor (kg/kg). 3-hourly instantaneous 3D field. Clamp extrapolation."
             }
-          }
+          },
+          "default": 0.005
         },
         "PS": {
           "type": "parameter",
@@ -690,7 +692,8 @@
               "file_variable": "PS",
               "description": "Surface pressure (Pa). 3-hourly instantaneous 2D field (lat×lon only, no lev dimension). Used for hybrid pressure calculation P = Ap[lev] + Bp[lev]*PS. Clamp extrapolation."
             }
-          }
+          },
+          "default": 100000.0
         },
         "T2M": {
           "type": "parameter",
@@ -703,7 +706,8 @@
               "file_variable": "T2M",
               "description": "Air temperature at 2m above displacement height. Time-averaged over 1-hour interval centered at record time."
             }
-          }
+          },
+          "default": 288.0
         },
         "QV2M": {
           "type": "parameter",
@@ -716,7 +720,8 @@
               "file_variable": "QV2M",
               "description": "Specific humidity at 2m above displacement height. Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 0.008
         },
         "U10M": {
           "type": "parameter",
@@ -729,7 +734,8 @@
               "file_variable": "U10M",
               "description": "Eastward (zonal) wind at 10m above displacement height. Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 3.0
         },
         "V10M": {
           "type": "parameter",
@@ -742,7 +748,8 @@
               "file_variable": "V10M",
               "description": "Northward (meridional) wind at 10m above displacement height. Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 3.0
         },
         "PBLH": {
           "type": "parameter",
@@ -755,7 +762,8 @@
               "file_variable": "PBLH",
               "description": "Planetary boundary layer height (m). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 1000.0
         },
         "PRECTOT": {
           "type": "parameter",
@@ -768,7 +776,8 @@
               "file_variable": "PRECTOT",
               "description": "Total precipitation rate (large-scale + convective). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 3e-05
         },
         "PRECANV": {
           "type": "parameter",
@@ -781,7 +790,8 @@
               "file_variable": "PRECANV",
               "description": "Anvil precipitation rate. Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 1e-06
         },
         "SLP": {
           "type": "parameter",
@@ -794,7 +804,8 @@
               "file_variable": "SLP",
               "description": "Sea-level pressure. Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 101300.0
         },
         "TS": {
           "type": "parameter",
@@ -807,7 +818,8 @@
               "file_variable": "TS",
               "description": "Surface skin temperature. Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 288.0
         },
         "CLDTOT": {
           "type": "parameter",
@@ -820,7 +832,8 @@
               "file_variable": "CLDTOT",
               "description": "Total cloud fraction (0–1). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 0.6
         },
         "SWGDN": {
           "type": "parameter",
@@ -833,7 +846,8 @@
               "file_variable": "SWGDN",
               "description": "Incident shortwave flux at ground (W m⁻²). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 250.0
         },
         "TROPP_H": {
           "type": "parameter",
@@ -846,7 +860,8 @@
               "file_variable": "TROPP_H",
               "description": "Tropopause pressure using the thermal definition (Pa). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 20000.0
         },
         "FRSEAICE": {
           "type": "parameter",
@@ -859,7 +874,8 @@
               "file_variable": "FRSEAICE",
               "description": "Sea ice area fraction (0–1). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 0.05
         },
         "GWETTOP": {
           "type": "parameter",
@@ -872,7 +888,8 @@
               "file_variable": "GWETTOP",
               "description": "Topsoil wetness (dimensionless). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 0.7
         },
         "LAI": {
           "type": "parameter",
@@ -885,7 +902,8 @@
               "file_variable": "LAI",
               "description": "Leaf area index (m² m⁻²). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 1.0
         },
         "USTAR": {
           "type": "parameter",
@@ -898,7 +916,8 @@
               "file_variable": "USTAR",
               "description": "Surface friction velocity (m/s). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 0.3
         },
         "Z0M": {
           "type": "parameter",
@@ -911,7 +930,8 @@
               "file_variable": "Z0M",
               "description": "Surface roughness length for momentum (m). Time-averaged over 1-hour interval."
             }
-          }
+          },
+          "default": 0.5
         },
         "U": {
           "type": "parameter",
@@ -924,7 +944,8 @@
               "file_variable": "U",
               "description": "Eastward wind component (m/s). x-edge-staggered (defined at lon-face centres, i.e. lon edges; de-staggered by runtime). Time-averaged over 3-hour interval. Clamp extrapolation."
             }
-          }
+          },
+          "default": 10.0
         },
         "V": {
           "type": "parameter",
@@ -937,7 +958,8 @@
               "file_variable": "V",
               "description": "Northward wind component (m/s). y-edge-staggered (defined at lat-face centres; de-staggered by runtime). Time-averaged over 3-hour interval. Clamp extrapolation."
             }
-          }
+          },
+          "default": 5.0
         },
         "OMEGA": {
           "type": "parameter",
@@ -950,7 +972,8 @@
               "file_variable": "OMEGA",
               "description": "Vertical pressure velocity (Pa/s). z-edge-staggered (defined at lev-interface; de-staggered by runtime). Time-averaged over 3-hour interval. Zero-extrapolation (prevents spurious mass transport through surface/top boundary)."
             }
-          }
+          },
+          "default": 0.05
         },
         "RH": {
           "type": "parameter",
@@ -963,7 +986,8 @@
               "file_variable": "RH",
               "description": "Relative humidity with respect to liquid water (dimensionless, 0–1). Time-averaged over 3-hour interval. Clamp extrapolation."
             }
-          }
+          },
+          "default": 0.5
         },
         "DTRAIN": {
           "type": "parameter",
@@ -976,7 +1000,8 @@
               "file_variable": "DTRAIN",
               "description": "Cloud detrainment from convective updrafts (kg m⁻² s⁻¹). Time-averaged over 3-hour interval. Clamp extrapolation."
             }
-          }
+          },
+          "default": 0.0002
         },
         "CLOUD": {
           "type": "parameter",
@@ -989,7 +1014,8 @@
               "file_variable": "CLOUD",
               "description": "3D cloud fraction (0–1). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 0.05
         },
         "QI": {
           "type": "parameter",
@@ -1002,7 +1028,8 @@
               "file_variable": "QI",
               "description": "Mass fraction of cloud ice water (kg/kg). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 2e-06
         },
         "QL": {
           "type": "parameter",
@@ -1015,7 +1042,8 @@
               "file_variable": "QL",
               "description": "Mass fraction of cloud liquid water (kg/kg). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 1e-05
         },
         "OPTDEPTH": {
           "type": "parameter",
@@ -1028,7 +1056,8 @@
               "file_variable": "OPTDEPTH",
               "description": "Grid-mean cloud optical depth at visible wavelengths. Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 1.0
         },
         "TAUCLI": {
           "type": "parameter",
@@ -1041,7 +1070,8 @@
               "file_variable": "TAUCLI",
               "description": "Optical thickness of convective ice cloud. Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 0.2
         },
         "TAUCLW": {
           "type": "parameter",
@@ -1054,7 +1084,8 @@
               "file_variable": "TAUCLW",
               "description": "Optical thickness of convective liquid cloud. Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 1.0
         },
         "CMFMC": {
           "type": "parameter",
@@ -1067,7 +1098,8 @@
               "file_variable": "CMFMC",
               "description": "Upward moist convective mass flux (kg m⁻² s⁻¹). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 0.001
         },
         "DQRCU": {
           "type": "parameter",
@@ -1080,7 +1112,8 @@
               "file_variable": "DQRCU",
               "description": "Convective rain production (kg kg⁻¹ s⁻¹). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 5e-10
         },
         "DQRLSAN": {
           "type": "parameter",
@@ -1093,7 +1126,8 @@
               "file_variable": "DQRLSAN",
               "description": "Large-scale rain and snow production (kg kg⁻¹ s⁻¹). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 5e-09
         },
         "REEEVAP": {
           "type": "parameter",
@@ -1106,7 +1140,8 @@
               "file_variable": "REEEVAP",
               "description": "Evaporation of convective precipitation (kg kg⁻¹ s⁻¹). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 1e-08
         },
         "CMFMC_OCE": {
           "type": "parameter",
@@ -1119,7 +1154,8 @@
               "file_variable": "CMFMC_OCE",
               "description": "Downward moist convective mass flux from ocean-type convection (kg m⁻² s⁻¹). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 0.001
         },
         "PFICU": {
           "type": "parameter",
@@ -1132,7 +1168,8 @@
               "file_variable": "PFICU",
               "description": "Downward flux of ice mass from convection (kg m⁻² s⁻¹). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 1e-06
         },
         "PFILSAN": {
           "type": "parameter",
@@ -1145,7 +1182,8 @@
               "file_variable": "PFILSAN",
               "description": "Downward flux of ice mass from large-scale precipitation and snowfall (kg m⁻² s⁻¹). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 1e-05
         },
         "PFLCU": {
           "type": "parameter",
@@ -1158,7 +1196,8 @@
               "file_variable": "PFLCU",
               "description": "Downward flux of liquid mass from convection (kg m⁻² s⁻¹). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 1e-05
         },
         "PFLLSAN": {
           "type": "parameter",
@@ -1171,7 +1210,8 @@
               "file_variable": "PFLLSAN",
               "description": "Downward flux of liquid mass from large-scale precipitation and snowfall (kg m⁻² s⁻¹). Time-averaged over 3-hour interval."
             }
-          }
+          },
+          "default": 1e-05
         },
         "P": {
           "type": "unknown",
@@ -1209,7 +1249,8 @@
               "file_variable": "EFLUX",
               "description": "Latent heat flux from turbulence (W/m^2), positive upward. Time-averaged over 1-hour interval. The moisture counterpart to HFLUX: a boundary-layer scheme needs BOTH to form the VIRTUAL heat flux w'theta_v' = w'theta'*(1+0.61*QV2M) + 0.61*T2M*w'q', which is what sets buoyancy and hence the Monin-Obukhov length and the convective velocity scale. HFLUX alone drops the moisture term and systematically under-predicts instability over moist surfaces."
             }
-          }
+          },
+          "default": 70.0
         },
         "HFLUX": {
           "type": "parameter",
@@ -1222,7 +1263,8 @@
               "file_variable": "HFLUX",
               "description": "Sensible heat flux from turbulence (W/m^2), positive upward. Time-averaged over 1-hour interval. Needed together with TS and USTAR to form the Monin-Obukhov length L = -rho_air*Cp*Ts*u_star^3/(vK*g*HFLUX), the stability input to Wesley (1989) dry deposition — see AtmosphericDeposition.jl ext/EarthSciDataExt.jl couple2(DryDepositionGasCoupler, GEOSFPCoupler)."
             }
-          }
+          },
+          "default": 40.0
         },
         "δPδlev": {
           "type": "unknown",
