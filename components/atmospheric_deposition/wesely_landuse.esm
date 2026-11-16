@@ -71,7 +71,6 @@
         "f_urban": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 1 (urban), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -87,7 +86,6 @@
         "f_agricultural": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 2 (agricultural), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -103,7 +101,6 @@
         "f_range": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 3 (range), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -119,7 +116,6 @@
         "f_deciduous": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 4 (deciduous), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -135,7 +131,6 @@
         "f_coniferous": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 5 (coniferous), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -151,7 +146,6 @@
         "f_mixedforest": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 6 (mixedforest), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -167,7 +161,6 @@
         "f_water": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 7 (water), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -183,7 +176,6 @@
         "f_barren": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 8 (barren), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -199,7 +191,6 @@
         "f_wetland": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 9 (wetland), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -215,7 +206,6 @@
         "f_rangeag": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 10 (rangeag), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
@@ -231,7 +221,6 @@
         "f_rockyshrubs": {
           "type": "parameter",
           "units": "1",
-          "shape": [],
           "description": "Area fraction of Wesely (1989) land-use class 11 (rockyshrubs), the native 0.05° cell's percentage / 100. Same name as the DryDepositionGas parameter it is meant to drive.",
           "update": {
             "kind": "data",
